@@ -12,7 +12,7 @@ var GS_getCellsInRange = null;
 function TeamX() {
   Teams.apply(this, Array.prototype.slice.call(arguments));
 
-  this.ID = 14;
+  this.ID = 23;
   this.name = 'No Collision Experimental Team';
 
   // configurations:
