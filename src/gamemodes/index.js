@@ -47,6 +47,9 @@ var get = function (id, gameServer) {
     case 7: // Shrinking ffa
       mode = new module.exports.SFFA();
       break;
+    case 8: // Experimental v2
+      mode = new module.exports.Experimental2();
+      break;
     case 10: // Tournament
       mode = new module.exports.Tournament();
       break;
@@ -83,8 +86,8 @@ var get = function (id, gameServer) {
     case 22: // BlackHole
       mode = new module.exports.BlackHole();
       break;
-    case 8: // Experimental v2
-      mode = new module.exports.Experimental2();
+    case 23: // No Collision Experimental Team
+      mode = new module.exports.NCTeamX();
       break;
     default: // FFA is default
       if (gameServer && gameServer.pluginGamemodes[id]) {
