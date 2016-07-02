@@ -18,7 +18,7 @@ const WebSocket = require('ws');
 const Updater = require('./Updater.js');
 const utilities = require('./utilities.js');
 const Physics = require('./Physics.js');
-
+const ChildService = require('./ChildService.js');
 const Gamemode = require('../gamemodes');
 const Packet = require('../packet');
 const Entity = require('../entity');
@@ -45,6 +45,7 @@ module.exports = class GameServer {
     this.lastPlayerId = 1;
     this.running = true;
     this.multiverse = multiverse;
+    this.childServices = [];
     this._nodesMother = [];
     this._nodesBeacon = [];
     this._nodesSticky = [];
@@ -453,6 +454,7 @@ startingFood() {
       if (this.config.showjlinfo == 1) {
         console.log("[" + this.name + "] A player with an IP of " + ws._socket.remoteAddress + " joined the game");
       }
+      
       if (this.config.porportional == 1) {
         this.config.borderLeft -= this.config.borderDec;
         this.config.borderRight += this.config.borderDec;
@@ -533,8 +535,24 @@ startingFood() {
       ws.remoteAddress = ws._socket.remoteAddress;
       ws.remotePort = ws._socket.remotePort;
       this.log.onConnect(ws.remoteAddress); // Log connections
-
-      ws.playerTracker = new PlayerTracker(this, ws);
+      var child = false;
+    for (var i in this.childServices) {
+      if (!this.childServices[i]) continue;
+      if (this.childServices[i].count < 5) {
+        this.childServices[i].count ++;
+        child = this.childServices[i];
+        
+        
+      }
+      
+    }
+    if (!child) {
+      var newchild = new ChildService()
+      child = newchild
+      this.childServices.push(newchild);
+      
+    }
+      ws.playerTracker = new PlayerTracker(this, ws,child);
       ws.packetHandler = new PacketHandler(this, ws);
       ws.on('message', ws.packetHandler.handleMessage.bind(ws.packetHandler));
       ws.on('error', function err(error) {
