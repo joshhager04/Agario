@@ -47,12 +47,12 @@ getCellsInRange(cell,gameServer) {
     },
     SquareSize: check.getSquareSize(),
     type: check.cellType,
-    EatingRange: check.getEatingRange();
+    EatingRange: check.getEatingRange(),
     };
     result.cells.push(a);
   });
   this.getCellsInRange.send(result);
-  this.getCellsInRange.on('message' (m)=>{
+  this.getCellsInRange.on('message' ,(m)=>{
       m.forEach((che)=> {
         var check = gameServer.getWorld().getNodes().get(che);
         if (check.cellType === 0 && (client != check.owner) && (cell.mass < check.mass * this.config.sizeMult) && this.config.playerRecombineTime !== 0) { //extra check to make sure popsplit works by retslac
