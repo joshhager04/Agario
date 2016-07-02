@@ -476,11 +476,12 @@ startingFood() {
          }
          
        }
-       this.socket.playerTracker.childService.killall()
+       this.socket.playerTracker.childService.count --;
         // Log disconnections
         if (showlmsg == 1) {
           console.log("[" + self.name + "] A player with an IP of " + this.socket.remoteAddress + " left the game");
         }
+        
         if (self.config.porportional == 1) {
           self.config.borderLeft += self.config.borderDec;
           self.config.borderRight -= self.config.borderDec;
@@ -538,7 +539,7 @@ startingFood() {
       var child = false;
     for (var i in this.childServices) {
       if (!this.childServices[i]) continue;
-      if (this.childServices[i].count < 5) {
+      if (this.childServices[i].count < 10) {
         this.childServices[i].count ++;
         child = this.childServices[i];
         
@@ -1691,6 +1692,18 @@ onWVerify(client) {
             this.rrticks++;
           }
       //  }
+      
+      for (var i in this.childServices) {
+        if (!this.childServices[i]) continue;
+        if (this.childServices[i].count <= 0) {
+          this.childServices[i].killall()
+          this.childServices[i] = false;
+        } else {
+          this.childServices[i].heartbeat();
+          
+        }
+        
+      }
         for (var i in this.plugins) {
           try {
           if (this.plugins[i] && this.plugins[i].author && this.plugins[i].name && this.plugins[i].version && this.plugins[i].onSecond) this.plugins[i].onSecond(this);
