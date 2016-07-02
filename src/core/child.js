@@ -14,6 +14,7 @@ process.on('message', (m) => {
     return;
   }
   if (m.action == "updatenodes") {
+    return;
 var un = new UpdateNodes(m.destroyQueue,m.nodes,m.nonVisibleNodes, m.scrambleX, m.scrambleY, m.gameServer);   
     var send = {
 processID: m.processID,
