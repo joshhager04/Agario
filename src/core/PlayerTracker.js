@@ -33,7 +33,9 @@ module.exports = class PlayerTracker {
     this.gameServer = gameServer;
     this.updateBuffer = Math.floor(Math.random() * 500) + 1;
     this.chatAllowed = true;
+    this.chat = true;
     this.isAdmin = false;
+    this.reservedNamesMap = [];
     this.checkTick = 40;
     this.isBot = false;
     this.visible = true;
@@ -50,6 +52,7 @@ module.exports = class PlayerTracker {
     this.recombineinstant = false;
     this.mi = 0;
     this.spect;
+    this.chatColor;
     this.vskin = "";
     this.customspeed = 0;
     this.vname = "";
@@ -64,6 +67,8 @@ module.exports = class PlayerTracker {
     this.oldname = "";
     this.norecombine = false;
     this.nodeAdditionQueue = [];
+    this.chatname = "";
+    this.reservedNames = [];
     this.minioncontrol = false;
     this.premium = '';
     this.nodeDestroyQueue = [];

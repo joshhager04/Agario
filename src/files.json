@@ -413,6 +413,26 @@
     "dst": "./modules/commands/quickrestart.js",
     "name": "quickrestart.js"
   },
+  {
+    "hash": "5bce55076e7613a017e6003a8d6a66e4a77fd9f0",
+    "src": "src/modules/commands/mute.js",
+    "dst": "./modules/commands/mute.js",
+    "name": "mute.js"
+  },
+  {
+    "hash": "5bce55076e7613a017e6003a8d6a66e4a77fd9f0",
+    "src": "src/modules/commands/colorchat.js",
+    "dst": "./modules/commands/colorchat.js",
+    "name": "colorchat.js"
+  },
+  {
+    "hash": "5bce55076e7613a017e6003a8d6a66e4a77fd9f0",
+    "src": "src/modules/commands/pm.js",
+    "dst": "./modules/commands/pm.js",
+    "name": "pm.js"
+  },
+  
+  
    {
     "hash": "5bce55076e7613a017e6003a8d6a66e4a77fd9f0",
     "src": "src/modules/commands/chat.js",

@@ -8,7 +8,7 @@ module.exports = Chat;
 Chat.prototype.build = function () {
   var nick = "";
   if (typeof this.sender == "object") {
-    var nick = this.sender.getName();
+    var nick = this.sender.chatName;
     if (!nick) {
         if (this.sender.cells.length > 0) {
             nick = 'An unnamed cell'
@@ -24,8 +24,11 @@ Chat.prototype.build = function () {
     var buf = new ArrayBuffer(9 + 2 * nick.length + 2 * this.message.length);
     var view = new DataView(buf);
     var color = {'r': 155, 'g': 155, 'b': 155};
-    if (this.sender.cells && this.sender.cells.length > 0) {
-        color = this.sender.cells[0].getColor();
+    if (this.sender.cells && this.sender.cells.length > 0 && this.sender.color) {
+        color = this.sender.color;
+    }
+    if (this.sender.chatColor) {
+      color = this.sender.chatColor
     }
     view.setUint8(0, 99);
     view.setUint8(1, 0); // flags for client; for future use
