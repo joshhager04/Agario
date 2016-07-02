@@ -14,7 +14,7 @@ process.on('message', (m) => {
   }
 };
    let list = [];
-    let squareR = cell.SquareSize; // Get cell squared radius
+    let squareR = m.SquareSize; // Get cell squared radius
 
     // Loop through all cells that are visible to the cell. There is probably a more efficient way of doing this but whatever
     m.cells.forEach((check)=> {
