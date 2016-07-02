@@ -103,7 +103,7 @@ if (this.gameServer.config.packetversion == 1) {
     view.setUint8(offset, 0); // End of string
     offset++;
 
-    var name = node.name();
+    var name = node.name;
 
     if (name) {
       for (var j = 0; j < name.length; j++) {
