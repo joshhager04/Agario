@@ -788,27 +788,13 @@ beforeq(player) {
       if (!cell) {
         return;
       }
-setTimeout(function() {
       let client = cell.owner;
       cell.calcMove(client.mouse.x, client.mouse.y, this);
 
       // Check if cells nearby
-      let list = this.getCellsInRange(cell);
-      list.forEach((check)=> {
-        if (check.cellType === 0 && (client != check.owner) && (cell.mass < check.mass * this.config.sizeMult) && this.config.playerRecombineTime !== 0) { //extra check to make sure popsplit works by retslac
-          check.inRange = false;
-          return;
-        }
-
-        // Consume effect
-        check.onConsume(cell, this);
-
-        // Remove cell
-        check.setKiller(cell);
-        this.removeNode(check);
-        
-      });
-    }.bind(this),Math.floor(cell.owner.updateBuffer / 2))
+      client.childService.getCellsInRange(cell,this);
+      
+  
     });
 
 
