@@ -8,13 +8,13 @@ process.on('message', (m) => {
   var dx = check.position.x - objectPosition.x;
   var dy = check.position.y - objectPosition.y;
   if (Cell.recom == 0) {
-    return (dx * dx + dy * dy + ((100 * check.mass) >> 0) <= objectSquareSize);
+    return (dx * dx + dy * dy + check.SquareSize <= objectSquareSize);
   } else {
     return (dx * dx + dy * dy <= objectSquareSize);
   }
 };
    let list = [];
-    let squareR = cell.getSquareSize(); // Get cell squared radius
+    let squareR = cell.SquareSize; // Get cell squared radius
 
     // Loop through all cells that are visible to the cell. There is probably a more efficient way of doing this but whatever
     m.cells.forEach((check)=> {
