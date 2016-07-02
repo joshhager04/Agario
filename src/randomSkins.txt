@@ -88,17 +88,17 @@ scarecrow
 spy
 // Easter skins
 chocoegg
-carrot
-statue
+carrot 
+statue 
 rooster
 rabbit
-// St.patrick day skins
+// St.Patrick's day skins
 hat
 boot
 goltpot
-rainbow 
+rainbow
 leprechaun
-// Friday thirteen skins
+// Friday 13 skins
 thirteen
 crow
 blackcar
@@ -107,14 +107,14 @@ mask
 chihuahua
 cactus
 sombrero
-chupacabra - 4900
+chupacabra
 // Alien skins
 greenman
 blob
 invader
 spacehunter
 // Soccer skins
-soccerball
+soccer ball
 keeper
 soccerboot
 striker
