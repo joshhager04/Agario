@@ -1,5 +1,7 @@
 'use strict';
+var UpdateNodes = require('../packet/UpdateNodes');
 var heart;
+
 heart = setTimeout(function() {
       process.exit();
     },5000);
@@ -11,6 +13,14 @@ process.on('message', (m) => {
     },5000);
     return;
   }
+  if (m.action == "updatenodes") {
+var un = new UpdateNodes(m.destroyQueue,m.nodes,m.nonVisibleNodes, m.scrambleX, m.scrambleY, m.gameServer);   
+    var send = {
+processID: m.processID,
+action: m.action,
+buf = un.build();
+}
+  } else {
   
   var collisionCheck2 = function (objectSquareSize, objectPosition,check) {
   // IF (O1O2 + r <= R) THEN collided. (O1O2: distance b/w 2 centers of cells)
@@ -99,7 +109,7 @@ list: list,
 }
    process.send(send);
   
-  
+  }
   
 });
 
