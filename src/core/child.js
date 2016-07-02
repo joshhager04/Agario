@@ -19,7 +19,10 @@ var un = new UpdateNodes(m.destroyQueue,m.nodes,m.nonVisibleNodes, m.scrambleX, 
 processID: m.processID,
 action: m.action,
 buf = un.build();
+
 }
+process.send(send);
+return;
   } else {
   
   var collisionCheck2 = function (objectSquareSize, objectPosition,check) {
