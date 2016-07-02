@@ -75,6 +75,7 @@ this.idData[id] = cell;
     config: gameServer.config,
     mass: cell.mass,
     id: cell.getId(),
+    haveTeams: gameServer.gameMode.haveTeams,
     position: cell.position,
     mass: cell.mass,
     SquareSize: cell.getSquareSize(),
