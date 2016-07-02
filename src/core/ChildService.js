@@ -14,7 +14,8 @@ const fs = require("fs");
 const child = require('child_process');
 
 module.exports = class ChildService {
-  constructor() {
+  constructor(gameServer) {
+    this.gameServer = gameServer;
 this.child = child.fork('core/child.js');
 this.count = 1;
 this.onmsg();
