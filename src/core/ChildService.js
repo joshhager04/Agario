@@ -62,7 +62,7 @@ calcViewBox(player) {
 
 
 };
-updateNodes(destroyQueue, nodes, nonVisibleNodes, scrambleX, scrambleY, gameServer,player) {
+updateNodes(destroyQueue, nodess, nonVisibleNodes, scrambleX, scrambleY, gameServer,player) {
 var id = this.getnextid();
 this.idData[id] = player;
 
@@ -70,13 +70,59 @@ this.idData[id] = player;
     cells: [],
     processID: id,
     action: "getcellsinrange",
-    destroyQueue: destroyQueue
-    nodes: nodes
-    nonVisibleNodes: nonVisibleNodes
+    destroyQueue: [],
+    nodes: [],
+    nonVisibleNodes: [],
     scrambleX: scrambleX
     scrambleY: scrambleY
-    gameServer:
+    gameServer: {
+     config: gameServer.config,
+      
+    },
   };
+  nonVisibleNodes.forEach((node)=>{
+    if (!node) return;
+    var a = {
+    id: node.getId(),
+    position: node.position,
+    mass: node.mass,
+    type: check.cellType,
+    color: check.color,
+    name: check.name,
+    premium: check.getPremium,
+    spiked: check.spiked,
+    }
+    result.nonVisibleNodes.push(a);
+  });
+ nodess.forEach((node)=>{
+    if (!node) return;
+    var a = {
+    id: node.getId(),
+    position: node.position,
+    mass: node.mass,
+    type: check.cellType,
+    color: check.color,
+    name: check.name,
+    premium: check.getPremium,
+    spiked: check.spiked,
+    }
+    result.nodes.push(a);
+  });
+  destroyQueue.forEach((node)=>{
+    if (!node) return;
+    var a = {
+    id: node.getId(),
+    position: node.position,
+    mass: node.mass,
+    type: check.cellType,
+    color: check.color,
+    name: check.name,
+    premium: check.getPremium,
+    spiked: check.spiked,
+    }
+    result.destroyQueue.push(a);
+  });
+  this.child.send(result);
 }
 getCellsInRange(cell,gameServer) {
 var id = this.getnextid();
