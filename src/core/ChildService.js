@@ -23,9 +23,10 @@ killall() {
   this.calcViewBox.kill();
   
 }
-getCellsInRange(cell) {
+getCellsInRange(cell,gameServer) {
   var result = {
-    cells: [];
+    cells: [],
+    config: gameServer.config;
     owner: {
       id: cell.owner.pID,
       recombineinstant: cell.owner.recombineinstant,
