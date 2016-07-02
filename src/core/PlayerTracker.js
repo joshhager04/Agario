@@ -16,7 +16,6 @@ The AJS Dev Team.
 var Packet = require('../packet/index');
 const utilities = require('./utilities.js');
 var OP = require('./op.js');
-const ChildService = require('./ChildService.js');
 // this creates circular decencies
 //var GameServer = require('../GameServer.js');
 var fs = require("fs");
@@ -26,12 +25,12 @@ var fs = require("fs");
 //module.exports = PlayerTracker;
 
 module.exports = class PlayerTracker {
-  constructor(gameServer, socket, owner) {
+  constructor(gameServer, socket, owner,childService) {
     this.pID = -1;
     this.ft = false;
     this.disconnect = -1; // Disconnection
     this.name = "";
-    this.childService = new ChildService();
+    this.childService = childService;
     this.gameServer = gameServer;
     this.updateBuffer = Math.floor(Math.random() * 500) + 1;
     this.chatAllowed = true;
@@ -236,7 +235,7 @@ module.exports = class PlayerTracker {
 
     if (this.gameServer.config.mousefilter == 1 && this.gameServer.mfre == true) { // Mouse filter code when gameserver detects duplicates
       if (this.vt > 20) {
-        this.childService.heartbeat();
+      
         this.vt = 0;
         var re = 0;
         for (var i in this.gameServer.clients) {
