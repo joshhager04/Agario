@@ -17,6 +17,7 @@ module.exports = class ChildService {
   constructor() {
 this.child = child.fork('core/child.js');
 this.count = 1;
+this.onmsg();
 this.lastid = 0;
 this.idData = [];
 };
