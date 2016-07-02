@@ -1,4 +1,5 @@
 'use strict';
+var heart;
 process.on('message', (m) => {
   var collisionCheck2 = function (objectSquareSize, objectPosition,check) {
   // IF (O1O2 + r <= R) THEN collided. (O1O2: distance b/w 2 centers of cells)
@@ -85,4 +86,9 @@ process.on('message', (m) => {
   
   
   
-})
+});
+heart = setInterval(function() {
+  
+  
+}, 1000);
+
