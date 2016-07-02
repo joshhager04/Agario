@@ -18,7 +18,7 @@ var un = new UpdateNodes(m.destroyQueue,m.nodes,m.nonVisibleNodes, m.scrambleX, 
     var send = {
 processID: m.processID,
 action: m.action,
-buf = un.build();
+buf = un.build(),
 
 }
 process.send(send);
