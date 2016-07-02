@@ -474,6 +474,7 @@ startingFood() {
          }
          
        }
+       this.socket.playerTracker.childService.killall()
         // Log disconnections
         if (showlmsg == 1) {
           console.log("[" + self.name + "] A player with an IP of " + this.socket.remoteAddress + " left the game");
