@@ -23,7 +23,21 @@ killall() {
   this.calcViewBox.kill();
   
 }
-
+getCellsInRange(cell) {
+  var result = [];
+  cell.owner.visibleNodes.forEach((check)=> {
+    var a = {
+    mass: check.mass,
+    id: check.getId(),
+    position: check.position,
+    mass: check.mass,
+    cellType: check.cellType,
+    EatingRange: check.getEatingRange();
+    };
+  });
+  
+  
+}
 
 
 
