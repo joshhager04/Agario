@@ -1,6 +1,17 @@
 'use strict';
 var heart;
+heart = setTimeout(function() {
+      process.exit();
+    },5000);
 process.on('message', (m) => {
+  if (m == "j") {
+    clearTimeout(heart)
+    heart = setTimeout(function() {
+      process.exit();
+    },5000);
+    return;
+  }
+  
   var collisionCheck2 = function (objectSquareSize, objectPosition,check) {
   // IF (O1O2 + r <= R) THEN collided. (O1O2: distance b/w 2 centers of cells)
   // (O1O2 + r)^2 <= R^2
