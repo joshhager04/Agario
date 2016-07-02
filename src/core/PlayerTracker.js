@@ -426,14 +426,15 @@ this.checkTick = 40;
     }
 
     // Send packet
-    this.socket.sendPacket(new Packet.UpdateNodes(
+  this.childService.updateNodes(
       this.nodeDestroyQueue,
       updateNodes,
       nonVisibleNodes,
       this.scrambleX,
       this.scrambleY,
-      this.gameServer
-    ));
+      this.gameServer,
+      this
+    );
 
     this.nodeDestroyQueue = []; // Reset destroy queue
     this.nodeAdditionQueue = []; // Reset addition queue
