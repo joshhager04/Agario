@@ -74,7 +74,7 @@ this.idData[id] = player;
 
   var result = {
     processID: id,
-    action: "getcellsinrange",
+    action: "updatenodes",
     destroyQueue: [],
     nodes: [],
     nonVisibleNodes: [],
