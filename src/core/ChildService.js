@@ -24,16 +24,31 @@ killall() {
   
 }
 getCellsInRange(cell) {
-  var result = [];
+  var result = {
+    cells: [];
+    owner: {
+      id: cell.owner.pID,
+      recombineinstant: cell.owner.recombineinstant,
+      team: cell.owner.team,
+    },
+    SquareSize: cell.getSquareSize(),
+  };
   cell.owner.visibleNodes.forEach((check)=> {
     var a = {
     mass: check.mass,
     id: check.getId(),
     position: check.position,
     mass: check.mass,
-    cellType: check.cellType,
+    owner: {
+      id: check.owner.pID,
+      recombineinstant: check.owner.recombineinstant,
+      team: check.owner.team,
+    },
+    SquareSize: check.getSquareSize(),
+    type: check.cellType,
     EatingRange: check.getEatingRange();
     };
+    result.cells.push(a);
   });
   
   
