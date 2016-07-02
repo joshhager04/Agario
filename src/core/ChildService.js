@@ -17,7 +17,7 @@ module.exports = class ChildService {
   constructor(gameServer) {
     this.gameServer = gameServer;
 this.child = child.fork('core/child.js');
-this.count = 1;
+this.count = 0;
 this.onmsg();
 this.lastid = 0;
 this.idData = [];
@@ -27,6 +27,32 @@ killall() {
   //this.calcViewBox.kill();
   
 }
+getNearestVirus(gameServer,cell) {
+  var id = this.getnextid();
+  this.idData[id] = cell;
+  
+  var tosend = {
+    processID: id,
+    action: "getnearestv",
+    cell: {
+      id: cell.getId(),
+    position: cell.position,
+    quadrant: cell.quadrant,
+      
+    },
+    nodes: [];
+  }
+  gameServer.getWorld().getNodes('virus').forEach((node)=>{
+   var a = {
+    id: node.getId(),
+    position: node.position,
+    quadrant: node.quadrant,
+   }
+   tosend.nodes.push(a);
+  });
+  
+  this.child.send(tosend);
+}
 getnextid() {
 return this.lastid ++;
 }
@@ -35,11 +61,20 @@ heartbeat() {
 }
 onmsg() {
 this.child.on('message' ,(m)=>{
+  if (m.action == "getnearestv") {
+    if (m.data) {
+      var vnode = this.gameServer.getWorld().getNodes('virus').get(m.data)
+      if (vnode) vnode.feed(this.idData[m.processID], this.gameServer);
+    }
+    this.idData.slice(m.processID,1);
+    
+  } else 
   if (m.action == "updatenodes") {
     var player = this.idData[m.processID];
     player.socket.sendPacket(m.buf,true);
+    this.idData.slice(m.processID,1);
     return;
-  } 
+  } else
 if (m.action == "getcellsinrange") {
   var cell = this.idData[m.processID];
     m.list.forEach((che)=> {
@@ -60,7 +95,7 @@ if (!check) return;
         gameServer.removeNode(check);
         
       });
-this.idData[m.processID] = null;
+this.idData.slice(m.processID,1);
     }
   });
 }
