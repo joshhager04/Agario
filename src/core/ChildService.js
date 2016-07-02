@@ -96,7 +96,7 @@ this.idData[id] = player;
     type: node.cellType,
     color: node.color,
     name: node.getName(),
-    premium: node.getPremium,
+    premium: node.getPremium(),
     spiked: node.spiked,
     }
     result.nonVisibleNodes.push(a);
@@ -112,7 +112,7 @@ this.idData[id] = player;
     type: node.cellType,
     color: node.color,
     name: node.getName(),
-    premium: node.getPremium,
+    premium: node.getPremium(),
     spiked: node.spiked,
     }
     result.nodes.push(a);
@@ -128,7 +128,7 @@ this.idData[id] = player;
     color: node.color,
     size: node.getSize(),
     name: node.getName(),
-    premium: node.getPremium,
+    premium: node.getPremium(),
     spiked: node.spiked,
     }
     result.destroyQueue.push(a);
