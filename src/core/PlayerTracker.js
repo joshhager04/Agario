@@ -25,12 +25,11 @@ var fs = require("fs");
 //module.exports = PlayerTracker;
 
 module.exports = class PlayerTracker {
-  constructor(gameServer, socket, owner,childService) {
+  constructor(gameServer, socket, owner) {
     this.pID = -1;
     this.ft = false;
     this.disconnect = -1; // Disconnection
     this.name = "";
-    this.childService = childService;
     this.gameServer = gameServer;
     this.updateBuffer = Math.floor(Math.random() * 500) + 1;
     this.chatAllowed = true;
@@ -235,7 +234,6 @@ module.exports = class PlayerTracker {
 
     if (this.gameServer.config.mousefilter == 1 && this.gameServer.mfre == true) { // Mouse filter code when gameserver detects duplicates
       if (this.vt > 20) {
-      
         this.vt = 0;
         var re = 0;
         for (var i in this.gameServer.clients) {
@@ -426,15 +424,14 @@ this.checkTick = 40;
     }
 
     // Send packet
-  this.childService.updateNodes(
+    this.socket.sendPacket(new Packet.UpdateNodes(
       this.nodeDestroyQueue,
       updateNodes,
       nonVisibleNodes,
       this.scrambleX,
       this.scrambleY,
-      this.gameServer,
-      this
-    );
+      this.gameServer
+    ));
 
     this.nodeDestroyQueue = []; // Reset destroy queue
     this.nodeAdditionQueue = []; // Reset addition queue
