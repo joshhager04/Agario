@@ -52,14 +52,9 @@ EjectedMass.prototype.onAutoMove = function (gameServer) {
   }
   }
 
-  let virusNodes = gameServer.getVirusNodes();
+ if (this.owner.childService.feedNearestVirus()) return true;
 
-    // Check for viruses
-    var v = gameServer.getNearestVirus(this);
-    if (v) { // Feeds the virus if it exists
-      v.feed(this, gameServer);
-      return true;
-    }
+   
   
 };
 
