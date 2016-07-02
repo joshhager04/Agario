@@ -22,9 +22,9 @@ UpdateNodes.prototype.build = function () {
     /////        nodesLength = nodesLength + 20 + (node.getName().length * 2);
     /////
     if (this.gameServer.config.packetversion == 1) {
-    nodesLength = nodesLength + 17 + (node.getName().length * 2) + node.getPremium().length;
+    nodesLength = nodesLength + 17 + (node.name.length * 2) + node.premium.length;
     } else {
-      nodesLength = nodesLength + 21 + (node.getName().length * 2) + node.getPremium().length;
+      nodesLength = nodesLength + 21 + (node.name.length * 2) + node.premium.length;
     }
     /////
   }
@@ -64,7 +64,7 @@ if (this.gameServer.config.packetversion == 1) {
     view.setUint32(offset, node.nodeId, true); // Node ID
     view.setUint16(offset + 4, node.position.x + this.scrambleX, true); // X position
     view.setUint16(offset + 6, node.position.y + this.scrambleY, true); // Y position
-    view.setUint16(offset + 8, node.getSize(), true); // Mass formula: Radius (size) = (mass * mass) / 100
+    view.setUint16(offset + 8, node.size, true); // Mass formula: Radius (size) = (mass * mass) / 100
     view.setUint8(offset + 10, node.color.r, true); // Color (R)
     view.setUint8(offset + 11, node.color.g, true); // Color (G)
     view.setUint8(offset + 12, node.color.b, true); // Color (B)
@@ -90,7 +90,7 @@ if (this.gameServer.config.packetversion == 1) {
 
     /////
 }
-      var skin = node.getPremium();
+      var skin = node.premium;
     if (skin) {
       for (var j = 0; j < skin.length; j++) {
         var c = skin.charCodeAt(j);
@@ -103,7 +103,7 @@ if (this.gameServer.config.packetversion == 1) {
     view.setUint8(offset, 0); // End of string
     offset++;
 
-    var name = node.getName();
+    var name = node.name();
 
     if (name) {
       for (var j = 0; j < name.length; j++) {
