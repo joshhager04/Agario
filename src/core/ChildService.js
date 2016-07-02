@@ -38,9 +38,8 @@ feedNearestVirus(gameServer,cell) {
       id: cell.getId(),
     position: cell.position,
     quadrant: cell.quadrant,
-      
     },
-    nodes: [];
+    nodes: [],
   }
   gameServer.getWorld().getNodes('virus').forEach((node)=>{
    var a = {
