@@ -26,7 +26,7 @@ killall() {
 getCellsInRange(cell,gameServer) {
   var result = {
     cells: [],
-    config: gameServer.config;
+    config: gameServer.config,
     owner: {
       id: cell.owner.pID,
       recombineinstant: cell.owner.recombineinstant,
