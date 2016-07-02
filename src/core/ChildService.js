@@ -17,7 +17,7 @@ module.exports = class ChildService {
   constructor() {
 this.getCellsInRange = child.fork('core/getCellsInRange.js');
 this.calcViewBox = child.fork('core/calcViewBox.js');
-}
+};
 killall() {
   this.getCellsInRange.kill();
   this.calcViewBox.kill();
