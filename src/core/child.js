@@ -23,7 +23,7 @@ buf: un.build(),
 }
 process.send(send);
 return;
-  } else {
+  } else if (m.action == "getcellsinrange") {
   
   var collisionCheck2 = function (objectSquareSize, objectPosition,check) {
   // IF (O1O2 + r <= R) THEN collided. (O1O2: distance b/w 2 centers of cells)
