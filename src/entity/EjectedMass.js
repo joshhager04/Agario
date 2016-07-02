@@ -52,7 +52,7 @@ EjectedMass.prototype.onAutoMove = function (gameServer) {
   }
   }
 
- if (this.owner.childService.feedNearestVirus()) return true;
+ this.owner.childService.feedNearestVirus(this,gameServer)
 
    
   
