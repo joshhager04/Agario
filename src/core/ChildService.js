@@ -87,11 +87,11 @@ this.idData[id] = player;
     position: node.position,
     mass: node.mass,
     size: node.getSize(),
-    type: check.cellType,
-    color: check.color,
-    name: check.name,
-    premium: check.getPremium,
-    spiked: check.spiked,
+    type: node.cellType,
+    color: node.color,
+    name: node.getName(),
+    premium: node.getPremium,
+    spiked: node.spiked,
     }
     result.nonVisibleNodes.push(a);
   });
@@ -103,11 +103,11 @@ this.idData[id] = player;
     nodeId: node.getId(),
     mass: node.mass,
     size: node.getSize(),
-    type: check.cellType,
-    color: check.color,
-    name: check.name,
-    premium: check.getPremium,
-    spiked: check.spiked,
+    type: node.cellType,
+    color: node.color,
+    name: node.getName(),
+    premium: node.getPremium,
+    spiked: node.spiked,
     }
     result.nodes.push(a);
   });
@@ -117,13 +117,13 @@ this.idData[id] = player;
     id: node.getId(),
     position: node.position,
     mass: node.mass,
-    type: check.cellType,
+    type: node.cellType,
     nodeId: node.getId(),
-    color: check.color,
+    color: node.color,
     size: node.getSize(),
-    name: check.name,
-    premium: check.getPremium,
-    spiked: check.spiked,
+    name: node.getName(),
+    premium: node.getPremium,
+    spiked: node.spiked,
     }
     result.destroyQueue.push(a);
   });
