@@ -67,7 +67,6 @@ var id = this.getnextid();
 this.idData[id] = player;
 
   var result = {
-    cells: [],
     processID: id,
     action: "getcellsinrange",
     destroyQueue: [],
@@ -84,6 +83,7 @@ this.idData[id] = player;
     if (!node) return;
     var a = {
     id: node.getId(),
+    nodeId: node.getId(),
     position: node.position,
     mass: node.mass,
     type: check.cellType,
@@ -99,6 +99,7 @@ this.idData[id] = player;
     var a = {
     id: node.getId(),
     position: node.position,
+    nodeId: node.getId(),
     mass: node.mass,
     type: check.cellType,
     color: check.color,
@@ -115,6 +116,7 @@ this.idData[id] = player;
     position: node.position,
     mass: node.mass,
     type: check.cellType,
+    nodeId: node.getId(),
     color: check.color,
     name: check.name,
     premium: check.getPremium,
