@@ -72,8 +72,8 @@ this.idData[id] = player;
     destroyQueue: [],
     nodes: [],
     nonVisibleNodes: [],
-    scrambleX: scrambleX
-    scrambleY: scrambleY
+    scrambleX: scrambleX,
+    scrambleY: scrambleY,
     gameServer: {
      config: gameServer.config,
       
@@ -86,6 +86,7 @@ this.idData[id] = player;
     nodeId: node.getId(),
     position: node.position,
     mass: node.mass,
+    size: node.getSize(),
     type: check.cellType,
     color: check.color,
     name: check.name,
@@ -101,6 +102,7 @@ this.idData[id] = player;
     position: node.position,
     nodeId: node.getId(),
     mass: node.mass,
+    size: node.getSize(),
     type: check.cellType,
     color: check.color,
     name: check.name,
@@ -118,6 +120,7 @@ this.idData[id] = player;
     type: check.cellType,
     nodeId: node.getId(),
     color: check.color,
+    size: node.getSize(),
     name: check.name,
     premium: check.getPremium,
     spiked: check.spiked,
