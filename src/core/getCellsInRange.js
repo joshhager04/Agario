@@ -8,7 +8,7 @@ process.on('message', (m) => {
 
   var dx = check.position.x - objectPosition.x;
   var dy = check.position.y - objectPosition.y;
-  if (Cell.recom == 0) {
+  if (m.config.playerRecombineTime == 0) {
     return (dx * dx + dy * dy + check.SquareSize <= objectSquareSize);
   } else {
     return (dx * dx + dy * dy <= objectSquareSize);
