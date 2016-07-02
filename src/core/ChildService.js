@@ -16,6 +16,7 @@ const child = require('child_process');
 module.exports = class ChildService {
   constructor() {
 this.getcells = child.fork('core/getCellsInRange.js');
+this.count = 1;
 };
 killall() {
   this.getcells.kill();
