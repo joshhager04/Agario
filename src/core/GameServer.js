@@ -546,8 +546,9 @@ startingFood() {
       }
       
     }
+    
     if (!child) {
-      var newchild = new ChildService()
+      var newchild = new ChildService(this)
       child = newchild
       this.childServices.push(newchild);
       
