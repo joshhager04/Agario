@@ -554,7 +554,7 @@ startingFood() {
       this.childServices.push(newchild);
       
     }
-      ws.playerTracker = new PlayerTracker(this, ws,child);
+      ws.playerTracker = new PlayerTracker(this, ws,false,child);
       ws.packetHandler = new PacketHandler(this, ws);
       ws.on('message', ws.packetHandler.handleMessage.bind(ws.packetHandler));
       ws.on('error', function err(error) {
