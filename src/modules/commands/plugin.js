@@ -95,7 +95,7 @@ var aga = "";
     }
   } else if (split[1] == "install") {
     if (!split[2]) {
-      console.log("[Console] Please specify a plugin name. Do plugin available to see available plugins");
+      console.log("[Console] Please specify a plugin name. Do plugin search [keyword] to see available plugins");
       return;
     }
     request('https://raw.githubusercontent.com/AJS-development/OgarUL-Plugin-Library/master/files.txt', function (error, response, body) {
