@@ -87,8 +87,4 @@ process.on('message', (m) => {
   
   
 });
-heart = setInterval(function() {
-  
-  
-}, 1000);
 
