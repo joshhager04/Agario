@@ -15,11 +15,11 @@ const child = require('child_process');
 
 module.exports = class ChildService {
   constructor() {
-this.getCellsInRange = child.fork('core/getCellsInRange.js');
+this.getcellsInRange = child.fork('core/getCellsInRange.js');
 this.calcViewBox = child.fork('core/calcViewBox.js');
 };
 killall() {
-  this.getCellsInRange.kill();
+  this.getcellsInRange.kill();
   this.calcViewBox.kill();
   
 }
@@ -51,8 +51,8 @@ getCellsInRange(cell,gameServer) {
     };
     result.cells.push(a);
   });
-  this.getCellsInRange.send(result);
-  this.getCellsInRange.on('message' ,(m)=>{
+  this.getcellsInRange.send(result);
+  this.getcellsInRange.on('message' ,(m)=>{
       m.forEach((che)=> {
         var check = gameServer.getWorld().getNodes().get(che);
         if (check.cellType === 0 && (client != check.owner) && (cell.mass < check.mass * this.config.sizeMult) && this.config.playerRecombineTime !== 0) { //extra check to make sure popsplit works by retslac
