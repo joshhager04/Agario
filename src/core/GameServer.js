@@ -536,24 +536,7 @@ startingFood() {
       ws.remoteAddress = ws._socket.remoteAddress;
       ws.remotePort = ws._socket.remotePort;
       this.log.onConnect(ws.remoteAddress); // Log connections
-      var child = false;
-    for (var i in this.childServices) {
-      if (!this.childServices[i]) continue;
-      if (this.childServices[i].count < 10) {
-        this.childServices[i].count ++;
-        child = this.childServices[i];
-        
-        
-      }
-      
-    }
-    
-    if (!child) {
-      var newchild = new ChildService(this)
-      child = newchild
-      this.childServices.push(newchild);
-      
-    }
+     var child = this.getChild()
       ws.playerTracker = new PlayerTracker(this, ws,false,child);
       ws.packetHandler = new PacketHandler(this, ws);
       ws.on('message', ws.packetHandler.handleMessage.bind(ws.packetHandler));
@@ -574,7 +557,27 @@ startingFood() {
 
     this.statServer.start();
   }
-
+  getChild() {
+     var child = false;
+    for (var i in this.childServices) {
+      if (!this.childServices[i]) continue;
+      if (this.childServices[i].count < 10) {
+        this.childServices[i].count ++;
+        child = this.childServices[i];
+        
+        
+      }
+      
+    }
+    
+    if (!child) {
+      var newchild = new ChildService(this)
+      child = newchild
+      this.childServices.push(newchild);
+      
+    }
+    return child;
+  }
   update(dt) {
 
   }
