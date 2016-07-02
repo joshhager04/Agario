@@ -1,4 +1,4 @@
-
+'use strict';
 process.on('message', (m) => {
   var collisionCheck2 = function (objectSquareSize, objectPosition,check) {
   // IF (O1O2 + r <= R) THEN collided. (O1O2: distance b/w 2 centers of cells)
@@ -53,7 +53,7 @@ process.on('message', (m) => {
           }
           // Can't eat team members
           if (m.haveTeams) {
-            if (!check.owner && (check.owner !== m.owner) && (check.owner.team === m.owner.team) {
+            if (!check.owner && (check.owner !== m.owner) && (check.owner.team === m.owner.team)) {
               return;
             }
           }
