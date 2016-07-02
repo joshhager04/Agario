@@ -40,15 +40,18 @@ getCellsInRange(cell,gameServer) {
     id: check.getId(),
     position: check.position,
     mass: check.mass,
-    owner: {
-      id: check.owner.pID,
-      recombineinstant: check.owner.recombineinstant,
-      team: check.owner.team,
-    },
+    owner: [];
     SquareSize: check.getSquareSize(),
     type: check.cellType,
     EatingRange: check.getEatingRange(),
     };
+    if (check.owner) {
+      a.owner = {
+      id: check.owner.pID,
+      recombineinstant: check.owner.recombineinstant,
+      team: check.owner.team,
+      };
+    }
     result.cells.push(a);
   });
   this.getcellsInRange.send(result);
