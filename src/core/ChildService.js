@@ -26,6 +26,13 @@ getCellsInRange(cell,gameServer) {
   var result = {
     cells: [],
     config: gameServer.config,
+    mass: cell.mass,
+    id: cell.getId(),
+    position: cell.position,
+    mass: cell.mass,
+    SquareSize: cell.getSquareSize(),
+    type: cell.cellType,
+    EatingRange: cell.getEatingRange(),
     owner: {
       id: cell.owner.pID,
       recombineinstant: cell.owner.recombineinstant,
