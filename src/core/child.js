@@ -83,7 +83,8 @@ process.on('message', (m) => {
     return;
   }
   if (m.action == "getnearestv") {
-    getNearestV(m)
+    getNearestV(m);
+    return;
   } else
   if (m.action == "updatenodes") {
     return;
