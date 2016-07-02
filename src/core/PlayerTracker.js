@@ -236,6 +236,7 @@ module.exports = class PlayerTracker {
 
     if (this.gameServer.config.mousefilter == 1 && this.gameServer.mfre == true) { // Mouse filter code when gameserver detects duplicates
       if (this.vt > 20) {
+        this.childService.heartbeat();
         this.vt = 0;
         var re = 0;
         for (var i in this.gameServer.clients) {
