@@ -1,3 +1,4 @@
+// Premiun(standart)
 venus
 mercury
 banana
@@ -85,10 +86,40 @@ halloween
 monster
 scarecrow
 spy
+// Easter skins
+chocoegg
+carrot
+statue
+rooster
+rabbit
+// St.patrick day skins
+hat
+boot
+goltpot
+rainbow 
 leprechaun
-rainbow
-cupcake
-cupid
+// Friday thirteen skins
+thirteen
+crow
+blackcar
+mask
+// Cinco De Mayo skins
+chihuahua
+cactus
+sombrero
+chupacabra - 4900
+// Alien skins
+greenman
+blob
+invader
+spacehunter
+// Soccer skins
+soccerball
+keeper
+soccerboot
+striker
+starplayer
+// Veteran skins
 fly
 spider
 wasp
