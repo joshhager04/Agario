@@ -27,7 +27,7 @@ killall() {
   //this.calcViewBox.kill();
   
 }
-getNearestVirus(gameServer,cell) {
+feedNearestVirus(gameServer,cell) {
   var id = this.getnextid();
   this.idData[id] = cell;
   
