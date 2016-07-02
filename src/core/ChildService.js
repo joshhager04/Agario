@@ -62,8 +62,21 @@ calcViewBox(player) {
 
 
 };
-updateNodes() {
+updateNodes(destroyQueue, nodes, nonVisibleNodes, scrambleX, scrambleY, gameServer,player) {
+var id = this.getnextid();
+this.idData[id] = player;
 
+  var result = {
+    cells: [],
+    processID: id,
+    action: "getcellsinrange",
+    destroyQueue: destroyQueue
+    nodes: nodes
+    nonVisibleNodes: nonVisibleNodes
+    scrambleX: scrambleX
+    scrambleY: scrambleY
+    gameServer:
+  };
 }
 getCellsInRange(cell,gameServer) {
 var id = this.getnextid();
