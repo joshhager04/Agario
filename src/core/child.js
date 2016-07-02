@@ -92,8 +92,12 @@ process.on('message', (m) => {
       // Something is about to eat this cell; no need to check for other collisions with it
       check.inRange = true;
     });
-
-   process.send(list);
+var send = {
+processID: m.processID,
+action: m.action,
+list: list,
+}
+   process.send(send);
   
   
   
