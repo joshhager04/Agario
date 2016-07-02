@@ -1,89 +1,94 @@
 'use strict';
-var heart;
-process.on('message', (m) => {
-  var collisionCheck2 = function (objectSquareSize, objectPosition,check) {
-  // IF (O1O2 + r <= R) THEN collided. (O1O2: distance b/w 2 centers of cells)
-  // (O1O2 + r)^2 <= R^2
-  // approximately, remove 2*O1O2*r because it requires sqrt(): O1O2^2 + r^2 <= R^2
+/*
+Proverbs 20:18:
+   Bread obtained by falsehood is sweet to a man, But afterward his mouth will be filled with gravel.
+We worked really hard for this project. Although we dont care if you enhance it and publish, we would care
+if you copy it and claim our work as your own. Although it might feel good, to take the credit, you would ultimatly
+regret it. But please feel free to change the files and publish putting your name up as well as ours.
+We will also not get into legalities. but please dont take advantage that we dont use
+legalities. Instead, treat us with respect like we treat you. 
+Sincerely
+The AJS Dev Team.
+*/
+const fs = require("fs");
+const child = require('child_process');
 
-  var dx = check.position.x - objectPosition.x;
-  var dy = check.position.y - objectPosition.y;
-  if (m.config.playerRecombineTime == 0) {
-    return (dx * dx + dy * dy + check.SquareSize <= objectSquareSize);
-  } else {
-    return (dx * dx + dy * dy <= objectSquareSize);
-  }
+module.exports = class ChildService {
+  constructor() {
+this.getcells = child.fork('core/getCellsInRange.js');
 };
-   let list = [];
-    let squareR = m.SquareSize; // Get cell squared radius
+killall() {
+  this.getcells.kill();
+  //this.calcViewBox.kill();
+  
+}
+heartbeat() {
+  this.getcells.send("j")
+}
+getCellsInRange(cell,gameServer) {
+  var result = {
+    cells: [],
+    config: gameServer.config,
+    mass: cell.mass,
+    id: cell.getId(),
+    position: cell.position,
+    mass: cell.mass,
+    SquareSize: cell.getSquareSize(),
+    type: cell.cellType,
+    EatingRange: cell.getEatingRange(),
+    owner: {
+      id: cell.owner.pID,
+      recombineinstant: cell.owner.recombineinstant,
+      team: cell.owner.team,
+    },
+    SquareSize: cell.getSquareSize(),
+  };
+  cell.owner.visibleNodes.forEach((check)=> {
+if (!check) return;
+    var a = {
+    mass: check.mass,
+    id: check.getId(),
+    position: check.position,
+    mass: check.mass,
+    owner: [],
+    SquareSize: check.getSquareSize(),
+    type: check.cellType,
+    EatingRange: check.getEatingRange(),
+    };
+    if (check.owner) {
+      a.owner = {
+      id: check.owner.pID,
+      recombineinstant: check.owner.recombineinstant,
+      team: check.owner.team,
+      };
+    }
+    result.cells.push(a);
+  });
+  
+this.getcells.send(result);
+  this.getcells.on('message' ,(m)=>{
+      m.forEach((che)=> {
 
-    // Loop through all cells that are visible to the cell. There is probably a more efficient way of doing this but whatever
-    m.cells.forEach((check)=> {
-      // exist?
-      // if something already collided with this cell, don't check for other collisions
-      // Can't eat itself
-      if (!check || check.inRange || m.id === check.id) return;
-
-      // Can't eat cells that have collision turned off
-      if ((m.owner.id === check.owner.id) && (m.ignoreCollision)) return;
-
-      // AABB Collision
-      if (!collisionCheck2(squareR, m.position,check)) return;
-
-      // Cell type check - Cell must be bigger than this number times the mass of the cell being eaten
-      let multiplier = m.config.sizeMult;
-
-      switch (check.type) {
-        case 1: // Food cell
-          list.push(check.id);
-          check.inRange = true; // skip future collision checks for this food
+        var check = gameServer.getWorld().getNodes().get(che);
+if (!check) return;
+        if (check.cellType === 0 && (client != check.owner) && (cell.mass < check.mass * this.config.sizeMult) && this.config.playerRecombineTime !== 0) { //extra check to make sure popsplit works by retslac
+          check.inRange = false;
           return;
-        case 2: // Virus
-          multiplier = m.config.VsizeMult;
-          break;
-        case 5: // Beacon
-          // This cell cannot be destroyed
-          return;
-        case 0: // Players
-          // Can't eat self if it's not time to recombine yet
-          if (check.owner.id === m.owner.id) {
-            if ((!m.shouldRecombine || !check.shouldRecombine) && !m.owner.recombineinstant) {
-              return;
-            }
-            multiplier = 1.00;
-          }
-          // Can't eat team members
-          if (m.haveTeams) {
-            if (!check.owner && (check.owner !== m.owner) && (check.owner.team === m.owner.team)) {
-              return;
-            }
-          }
-          break;
+        }
+
+        // Consume effect
+        check.onConsume(cell, gameServer);
+
+        // Remove cell
+        check.setKiller(cell);
+        gameServer.removeNode(check);
         
-      }
-
-      // Make sure the cell is big enough to be eaten.
-      if ((check.mass * multiplier) > m.mass) return;
-
-      // Eating range
-      let xs = Math.pow(check.position.x - m.position.x, 2);
-      let ys = Math.pow(check.position.y - m.position.y, 2);
-      let dist = Math.sqrt(xs + ys);
-
-      let eatingRange = m.size - check.eatingRange; // Eating range = radius of eating cell + 40% of the radius of the cell being eaten
-
-      // Not in eating range
-      if (dist > eatingRange) return;
-
-      // Add to list of cells nearby
-      list.push(check.id);
-
-      // Something is about to eat this cell; no need to check for other collisions with it
-      check.inRange = true;
-    });
-
-   process.send(list);
+      });
+    
+  });
   
-  
-  
-});
+}
+
+
+
+}
