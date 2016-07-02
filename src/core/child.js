@@ -1,7 +1,74 @@
 'use strict';
 var UpdateNodes = require('../packet/UpdateNodes');
 var heart;
+var getNearestV = function(cell,nodes) {
+  // More like getNearbyVirus
+  var virus = null;
+  var r = 100; // Checking radius
 
+  var topY = cell.position.y - r;
+  var bottomY = cell.position.y + r;
+
+  var leftX = cell.position.x - r;
+  var rightX = cell.position.x + r;
+  // Loop through all viruses on the map. There is probably a more efficient way of doing this but whatever
+  var send = function(data) {
+     var result = {
+    action: m.action,
+    processID: m.processID,
+    data: data,
+  }
+  process.send(result);
+  return;
+  }
+  var collisionCheck = function(bottomY, topY, rightX, leftX,check) {
+      // Collision checking
+  if (check.position.y > bottomY) {
+    return false;
+  }
+
+  if (check.position.y < topY) {
+    return false;
+  }
+
+  if (check.position.x > rightX) {
+    return false;
+  }
+
+  if (check.position.x < leftX) {
+    return false;
+  }
+
+  return true;
+    
+  }
+  nodes.every((check)=>{
+   
+if (check.quadrant != cell.quadrant || !check) {
+ send(true);
+ return;
+}
+    
+
+    if (collisionCheck(bottomY, topY, rightX, leftX,check)) {
+       send(true);
+ return;
+    }
+
+    // Add to list of cells nearby
+    virus = check;
+  send(false);
+ return;
+     // stop checking when a virus found
+  });
+  var result = {
+    action: m.action,
+    processID: m.processID,
+    data: data,
+  }
+  send(virus.id);
+  return;
+}
 heart = setTimeout(function() {
       process.exit();
     },5000);
@@ -13,6 +80,9 @@ process.on('message', (m) => {
     },5000);
     return;
   }
+  if (m.action == "getnearestv") {
+    
+  } else
   if (m.action == "updatenodes") {
     return;
 var un = new UpdateNodes(m.destroyQueue,m.nodes,m.nonVisibleNodes, m.scrambleX, m.scrambleY, m.gameServer);   
