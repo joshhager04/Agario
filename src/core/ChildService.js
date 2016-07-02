@@ -34,6 +34,11 @@ heartbeat() {
 }
 onmsg() {
 this.child.on('message' ,(m)=>{
+  if (m.action == "updatenodes") {
+    var player = this.idData[m.processID];
+    player.socket.sendPacket(m.buf,true);
+    return;
+  } 
 if (m.action == "getcellsinrange") {
   var cell = this.idData[m.processID];
     m.list.forEach((che)=> {
