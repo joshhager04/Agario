@@ -40,7 +40,7 @@ getCellsInRange(cell,gameServer) {
     id: check.getId(),
     position: check.position,
     mass: check.mass,
-    owner: [];
+    owner: [],
     SquareSize: check.getSquareSize(),
     type: check.cellType,
     EatingRange: check.getEatingRange(),
