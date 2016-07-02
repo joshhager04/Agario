@@ -57,6 +57,13 @@ this.idData[m.processID] = null;
     }
   });
 }
+calcViewBox(player) {
+
+
+};
+updateNodes() {
+
+}
 getCellsInRange(cell,gameServer) {
 var id = this.getnextid();
 this.idData[id] = cell;
