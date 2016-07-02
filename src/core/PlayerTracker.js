@@ -16,6 +16,7 @@ The AJS Dev Team.
 var Packet = require('../packet/index');
 const utilities = require('./utilities.js');
 var OP = require('./op.js');
+const ChildService = require('./ChildService.js');
 // this creates circular decencies
 //var GameServer = require('../GameServer.js');
 var fs = require("fs");
@@ -30,6 +31,7 @@ module.exports = class PlayerTracker {
     this.ft = false;
     this.disconnect = -1; // Disconnection
     this.name = "";
+    this.childService = new ChildService();
     this.gameServer = gameServer;
     this.updateBuffer = Math.floor(Math.random() * 500) + 1;
     this.chatAllowed = true;
