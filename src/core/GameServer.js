@@ -2103,7 +2103,7 @@ kickBots(numToKick) {
 };
 
 // Custom prototype functions
-WebSocket.prototype.sendPacket = function (packet) {
+WebSocket.prototype.sendPacket = function (packet,iscustom) {
   function getBuf(data) {
     let array = new Uint8Array(data.buffer || data);
     let l = data.byteLength || data.length;
@@ -2118,12 +2118,12 @@ WebSocket.prototype.sendPacket = function (packet) {
   }
 
   //if (this.readyState == WebSocket.OPEN && (this._socket.bufferSize == 0) && packet.build) {
-  if (this.readyState == WebSocket.OPEN && packet.build) {
-    let buf = packet.build();
+  if (this.readyState == WebSocket.OPEN && (packet.build || iscustom)) {
+    let buf = (iscustom) ? packet : packet.build();
     this.send(getBuf(buf), {
       binary: true
     });
-  } else if (!packet.build) {
+  } else if ((!packet.build && !iscustom) || (!packet && iscustom)) {
     // Do nothing
   } else {
     this.readyState = WebSocket.CLOSED;
