@@ -1,7 +1,9 @@
 'use strict';
 var UpdateNodes = require('../packet/UpdateNodes');
 var heart;
-var getNearestV = function(cell,nodes) {
+var getNearestV = function(m) {
+  var cell = m.cell;
+  var nodes = m.nodes;
   // More like getNearbyVirus
   var virus = null;
   var r = 100; // Checking radius
@@ -81,7 +83,7 @@ process.on('message', (m) => {
     return;
   }
   if (m.action == "getnearestv") {
-    
+    getNearestV(m)
   } else
   if (m.action == "updatenodes") {
     return;
