@@ -146,6 +146,17 @@ if (this.gameServer.config.packetversion == 1) {
     view.setUint32(offset, node.nodeId, true);
     offset += 4;
   }
+ function getBuf(data) {
+    let array = new Uint8Array(data.buffer || data);
+    let l = data.byteLength || data.length;
+    let o = data.byteOffset || 0;
+    let buffer = new Buffer(l);
 
-  return buf;
+    for (let i = 0; i < l; i++) {
+      buffer[i] = array[o + i];
+    }
+
+    return buffer;
+  }
+  return getBuf(buf);
 };
