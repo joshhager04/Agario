@@ -87,11 +87,11 @@ if (!check) return;
         }
 
         // Consume effect
-        check.onConsume(cell, gameServer);
+        check.onConsume(cell, this.gameServer);
 
         // Remove cell
         check.setKiller(cell);
-        gameServer.removeNode(check);
+        this.gameServer.removeNode(check);
         
       });
 this.idData.slice(m.processID,1);
