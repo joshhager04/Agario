@@ -438,7 +438,8 @@ this.childService.updateNodes(
       nonVisibleNodes,
       this.scrambleX,
       this.scrambleY,
-      this.gameServer
+      this.gameServer,
+      this
     );
 
     this.nodeDestroyQueue = []; // Reset destroy queue
