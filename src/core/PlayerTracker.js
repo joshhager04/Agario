@@ -86,6 +86,7 @@ module.exports = class PlayerTracker {
     this.tickViewBox = 0;
 
     this.team = 0;
+this.aver = [];
     this.spectate = false;
     this.freeRoam = false; // Free-roam mode enables player to move in spectate mode
     this.massDecayMult = 1; // Anti-teaming multiplier
@@ -154,6 +155,7 @@ updatePos() {
 if (!this.lastposup) {
       this.lastposup = this.gameServer.time;
       this.posuptime = this.gameServer.time - this.lastposup;
+this.aver[this.gameServer.time] = this.posuptime
     }
 }
   setName(name) {
