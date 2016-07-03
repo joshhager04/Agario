@@ -17,11 +17,12 @@ var PlayerTracker = require('../core/PlayerTracker.js');
 
 module.exports = class BotPlayer extends PlayerTracker {
 
-  constructor(gameServer, socket) {
-    super(gameServer, socket);
+  constructor(gameServer, socket,owner,childService) {
+    super(gameServer, socket,owner,childService);
     //PlayerTracker.apply(this, Array.prototype.slice.call(arguments));
     this.color = gameServer.getRandomColor();
     // AI only
+    this.childService = childService;
     this.gameState = 0;
     this.path = [];
 
