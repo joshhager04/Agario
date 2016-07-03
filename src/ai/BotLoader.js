@@ -83,7 +83,8 @@ BotLoader.prototype.loadNames = function () {
 
 BotLoader.prototype.addBot = function (arg) {
   let s = new FakeSocket(this.gameServer);
-  s.playerTracker = new BotPlayer(this.gameServer, s, false, this.gameServer.getChild());
+  var f = new FakeChild(this.gameServer);
+  s.playerTracker = new BotPlayer(this.gameServer, s, false, f);
   s.packetHandler = new PacketHandler(this.gameServer, s);
   // Add to client list
   for (var i in this.gameServer.plugins) {
