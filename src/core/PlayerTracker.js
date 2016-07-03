@@ -150,7 +150,12 @@ module.exports = class PlayerTracker {
     }
     return biggest;
   };
-
+updatePos() {
+if (!this.lastposup) {
+      this.lastposup = this.gameServer.time;
+      this.posuptime = this.gameServer.time - this.lastposup;
+    }
+}
   setName(name) {
     this.name = name;
 
@@ -371,7 +376,7 @@ this.checkTick = 40;
       }
     }
 
-    // Get visible nodes every 400 ms
+    // Get visible nodes every 200 - 400ms
     var nonVisibleNodes = []; // Nodes that are not visible
     if (this.tickViewBox <= 0) {
       var newVisible = this.calcViewBox();
@@ -400,7 +405,7 @@ this.checkTick = 40;
 
         this.visibleNodes = newVisible;
         // Reset Ticks
-        this.tickViewBox = 2;
+        this.tickViewBox = 1;
       }
     } else {
       this.tickViewBox--;
