@@ -44,8 +44,8 @@ UpdateNodes.prototype.build = function () {
     }
 
     var killer = 0;
-    if (node.getKiller()) {
-      killer = node.getKiller().nodeId;
+    if (node.killer) {
+      killer = node.killer;
     }
 
     view.setUint32(offset, killer, true); // Killer ID
