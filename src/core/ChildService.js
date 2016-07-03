@@ -158,7 +158,7 @@ this.idData[id] = player;
     position: node.position,
     mass: node.mass,
     type: node.cellType,
-    killer: node.getKiller().nodeId,
+    killer: (node.getKiller()) ? node.getKiller().nodeId : false,
     nodeId: node.getId(),
     color: node.color,
     size: node.getSize(),
