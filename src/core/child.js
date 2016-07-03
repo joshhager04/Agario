@@ -1,8 +1,19 @@
 'use strict';
 var UpdateNodes = require('../packet/UpdateNodes');
 var heart;
-var getNearestV = function(m) {
-  var cell = m.cell;
+heart = setTimeout(function() {
+      process.exit();
+    },5000);
+process.on('message', (m) => {
+  if (m == "j") {
+    clearTimeout(heart)
+    heart = setTimeout(function() {
+      process.exit();
+    },5000);
+    return;
+  }
+  if (m.action == "getnearestv") {
+     var cell = m.cell;
   var nodes = m.nodes;
   // More like getNearbyVirus
   var virus = null;
@@ -47,44 +58,28 @@ var getNearestV = function(m) {
   nodes.every((check)=>{
    
 if (check.quadrant != cell.quadrant || !check) {
- send(true);
- return;
+ return true
 }
     
 
     if (collisionCheck(bottomY, topY, rightX, leftX,check)) {
-       send(true);
- return;
+       return true;
     }
 
     // Add to list of cells nearby
-    virus = check;
-  send(false);
- return;
+    virus = check.id;
+  return false;
      // stop checking when a virus found
   });
   var result = {
     action: m.action,
     processID: m.processID,
-    data: data,
+    data: virus,
   }
-  send(virus.id);
+  send(result);
   return;
-}
-heart = setTimeout(function() {
-      process.exit();
-    },5000);
-process.on('message', (m) => {
-  if (m == "j") {
-    clearTimeout(heart)
-    heart = setTimeout(function() {
-      process.exit();
-    },5000);
-    return;
-  }
-  if (m.action == "getnearestv") {
-    getNearestV(m);
-    return;
+
+    
   } else
   if (m.action == "updatenodes") {
     return;
