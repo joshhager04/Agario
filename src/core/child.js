@@ -36,15 +36,7 @@ process.on('message', (m) => {
   var leftX = cell.position.x - r;
   var rightX = cell.position.x + r;
   // Loop through all viruses on the map. There is probably a more efficient way of doing this but whatever
-  var send = function(data) {
-     var result = {
-    action: m.action,
-    processID: m.processID,
-    data: data,
-  }
-  process.send(result);
-  return;
-  }
+  
   var collisionCheck = function(bottomY, topY, rightX, leftX,check) {
       // Collision checking
   if (check.position.y > bottomY) {
@@ -93,13 +85,11 @@ if (check.quadrant != cell.quadrant || !check) {
     
   } else
   if (m.action == "updatenodes") {
-    return;
 var un = new UpdateNodes(m.destroyQueue,m.nodes,m.nonVisibleNodes, m.scrambleX, m.scrambleY, m.gameServer);   
     var send = {
 processID: m.processID,
 action: m.action,
 buf: un.build(),
-
 }
 process.send(send);
 return;
