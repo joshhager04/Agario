@@ -2136,8 +2136,9 @@ WebSocket.prototype.sendPacket = function (packet,iscustom) {
 
   //if (this.readyState == WebSocket.OPEN && (this._socket.bufferSize == 0) && packet.build) {
   if (this.readyState == WebSocket.OPEN && (packet.build || iscustom)) {
-    let buf = (iscustom) ? packet : packet.build();
-    this.send(getBuf(buf), {
+    let buf = (iscustom) ? packet : getBuf(packet.build());
+    
+    this.send(buf, {
       binary: true
     });
   } else if ((!packet.build && !iscustom) || (!packet && iscustom)) {
