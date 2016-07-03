@@ -28,6 +28,7 @@ module.exports = class PlayerTracker {
   constructor(gameServer, socket, owner,childService) {
     this.pID = -1;
     this.ft = false;
+    this.average = false;
     this.childService = childService;
     this.disconnect = -1; // Disconnection
     this.name = "";
@@ -71,6 +72,7 @@ module.exports = class PlayerTracker {
     this.chatname = "";
     this.reservedNames = [];
     this.minioncontrol = false;
+    this.lastposup = 0;
     this.premium = '';
     this.nodeDestroyQueue = [];
     this.visibleNodes = [];
@@ -153,11 +155,19 @@ this.aver = [];
     return biggest;
   };
 updatePos() {
-if (!this.lastposup) {
-      this.lastposup = this.gameServer.time;
-      this.posuptime = this.gameServer.time - this.lastposup;
-this.aver[this.gameServer.time] = this.posuptime
-    }
+if (this.aver.length == 100) {
+var a = 0;
+for (var i in this.aver) a += this.aver;
+var b = a/this.aver.length + 1;
+this.average = b;
+} else if (this.aver.length > 100) return; 
+      
+      this.posuptime = this.gameServer.time;
+
+
+this.aver.push(this.posuptime-this.lastposup);
+
+    this.lastposup = this.posuptime;
 }
   setName(name) {
     this.name = name;
@@ -408,7 +418,13 @@ this.checkTick = 40;
 
         this.visibleNodes = newVisible;
         // Reset Ticks
+        if (this.average) {
+if (this.average < 45) this.tickViewBox = 1; else this.tickViewBox = 2;
+
+
+} else {
         this.tickViewBox = 1;
+}
       }
     } else {
       this.tickViewBox--;
