@@ -25,9 +25,10 @@ var fs = require("fs");
 //module.exports = PlayerTracker;
 
 module.exports = class PlayerTracker {
-  constructor(gameServer, socket, owner) {
+  constructor(gameServer, socket, owner,childService) {
     this.pID = -1;
     this.ft = false;
+    this.childService = childService;
     this.disconnect = -1; // Disconnection
     this.name = "";
     this.gameServer = gameServer;
