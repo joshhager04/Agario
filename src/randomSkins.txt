@@ -1,4 +1,4 @@
-// Premiun(standart)
+// Premiun (standard)
 venus
 mercury
 banana
