@@ -16,11 +16,11 @@ The AJS Dev Team.
 var PlayerTracker = require('../core/PlayerTracker');
 
 module.exports = class MinionPlayer extends PlayerTracker {
-  constructor(gameServer, socket, owner) {
-    super(gameServer, socket);
+  constructor(gameServer, socket, owner,childService) {
+    super(gameServer, socket,childService);
     // PlayerTracker.apply(this, Array.prototype.slice.call(arguments));
     this.color = gameServer.getRandomColor();
-
+    this.childService = childService;
     // AI only
     this.gameState = 0;
     this.path = [];
