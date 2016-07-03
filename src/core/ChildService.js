@@ -17,7 +17,7 @@ module.exports = class ChildService {
   constructor(gameServer) {
     this.gameServer = gameServer;
 this.child = child.fork('core/child.js');
-this.count = 0;
+this.count = 1;
 this.onmsg();
 this.lastid = 0;
 this.idData = [];
