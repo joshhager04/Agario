@@ -147,12 +147,12 @@ if (this.gameServer.config.packetversion == 1) {
     offset += 4;
   }
 function getBuf(data) {
-     let array = new Uint8Array(data.buffer || data);
-     let l = data.byteLength || data.length;
-     let o = data.byteOffset || 0;
-     let buffer = new Buffer(l);
+     var array = new Uint8Array(data.buffer || data);
+     var l = data.byteLength || data.length;
+     var o = data.byteOffset || 0;
+     var buffer = new Buffer(l);
  
-     for (let i = 0; i < l; i++) {
+     for (var i = 0; i < l; i++) {
        buffer[i] = array[o + i];
      }
   
