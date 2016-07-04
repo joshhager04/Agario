@@ -14,6 +14,7 @@ The AJS Dev Team.
 */
 // Project imports
 var BotPlayer = require('./MinionPlayer');
+var FakeChild = require('./FakeChild')
 var FakeSocket = require('./minionSocket');
 var PacketHandler = require('../core/PacketHandler');
 function MinionLoader(gameServer) {
@@ -49,8 +50,8 @@ MinionLoader.prototype.loadNames = function () {
 
 MinionLoader.prototype.addBot = function (owner, name, arg) {
   var fakeSocket = new FakeSocket(this.gameServer);
-  
-  fakeSocket.playerTracker = new BotPlayer(this.gameServer, fakeSocket, owner,this.gameServer.getChild());
+  var a = new FakeChild(this.gameServer);
+  fakeSocket.playerTracker = new BotPlayer(this.gameServer, fakeSocket, owner,a);
   fakeSocket.packetHandler = new PacketHandler(this.gameServer, fakeSocket);
 
 for (var i in this.gameServer.plugins) {
