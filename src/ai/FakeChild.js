@@ -36,11 +36,12 @@ heartbeat() {
 
 getCellsInRange(cell,gameServer) {
   let client = cell.owner;
-      cell.calcMove(client.mouse.x, client.mouse.y, gameServer);
-
+     
+if (!cell) return;
       // Check if cells nearby
       let list = gameServer.getCellsInRange(cell);
       list.forEach((check)=> {
+if (!check) return;
         if (check.cellType === 0 && (client != check.owner) && (cell.mass < check.mass * gameServer.config.sizeMult) && gameServer.config.playerRecombineTime !== 0) { //extra check to make sure popsplit works by retslac
           check.inRange = false;
           return;
