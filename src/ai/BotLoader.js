@@ -16,6 +16,7 @@ The AJS Dev Team.
 // Project imports
 var BotPlayer = require('./BotPlayer');
 var FakeSocket = require('./FakeSocket');
+var FakeChild = require('./FakeChild');
 var PacketHandler = require('../core/PacketHandler');
 var fs = require("fs"); // Import the util library
 
