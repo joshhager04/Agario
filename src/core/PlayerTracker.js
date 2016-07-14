@@ -408,7 +408,7 @@ this.checkTick = 40;
           // Add nodes to client's screen if client has not seen it already
           for (var i = 0; i < newVisible.length; i++) {
             var index = this.visibleNodes.indexOf(newVisible[i]);
-            if (index == -1 && (newVisible[i].getVis() || newVisible[i].owner.id == this.pID) && (!this.blind || (newVisible[i].owner.id == this.pID || newVisible[i].cellType != 0))) {
+            if (index == -1 && (newVisible[i].vis || newVisible[i].owner.id == this.pID) && (!this.blind || (newVisible[i].owner.id == this.pID || newVisible[i].cellType != 0))) {
 
               updateNodes.push(newVisible[i]);
             }
@@ -441,7 +441,7 @@ if (this.average < 45) this.tickViewBox = 1; else this.tickViewBox = 2;
     // Update moving nodes
     for (var i = 0; i < this.visibleNodes.length; i++) {
       var node = this.visibleNodes[i];
-      if (node.sendUpdate() && (node.vis || node.owner.id == this.pID) && (!this.blind || (node.owner.id == this.pID || node.cellType != 0))) {
+      if (node.sendUpdate && (node.vis || node.owner.id == this.pID) && (!this.blind || (node.owner.id == this.pID || node.cellType != 0))) {
         // Sends an update if cell is moving
         updateNodes.push(node);
       }
