@@ -45,7 +45,8 @@ module.exports = class WorldModel {
     this.ejectedNodes = new SortedMap();
   }
 setSimpleNode(id,node) {
-  this.simpleNodes.set(id,{
+  
+  var simple = {
      id: node.getId(),
     nodeId: node.getId(),
     position: node.position,
@@ -65,8 +66,9 @@ setSimpleNode(id,node) {
       team: node.owner.team} : false,
      SquareSize: node.getSquareSize(),
      
-  });
-  
+  };
+  node.simple = simple;
+  this.simpleNodes.set(id,simple);
 };
   setNode(id, node, type) {
     this.nodes.set(id, node);
