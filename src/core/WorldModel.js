@@ -173,6 +173,7 @@ clearAll() {
     this.playerNodes.delete(id);
     this.ejectedNodes.delete(id);
     this.virusNodes.delete(id);
+    this.simpleNodes.delete(id);
   }
 
   removeMovingNode(id) {
