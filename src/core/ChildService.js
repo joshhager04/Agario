@@ -81,7 +81,7 @@ if (m.action == "getcellsinrange") {
 
         var check = this.gameServer.getWorld().getNodes().get(che);
 if (!check) return;
-        if (check.cellType === 0 && (client != check.owner) && (cell.mass < check.mass * this.gameServer.config.sizeMult) && this.gameServer.config.playerRecombineTime !== 0) { //extra check to make sure popsplit works by retslac
+        if (check.cellType === 0 && (client != check.owner) && (cell.mass < check.mass * this.config.sizeMult) && this.config.playerRecombineTime !== 0) { //extra check to make sure popsplit works by retslac
           check.inRange = false;
           return;
         }
@@ -109,9 +109,9 @@ this.idData[id] = player;
   var result = {
     processID: id,
     action: "updatenodes",
-    destroyQueue: destroyQueue,
-    nodes: nodess,
-    nonVisibleNodes: nonVisibleNodes,
+    destroyQueue: [],
+    nodes: [],
+    nonVisibleNodes: [],
     scrambleX: scrambleX,
     scrambleY: scrambleY,
     gameServer: {
@@ -119,14 +119,62 @@ this.idData[id] = player;
       
     },
   };
-  
+  nonVisibleNodes.forEach((node)=>{
+    if (!node) return;
+    var a = {
+    id: node.getId(),
+    nodeId: node.getId(),
+    position: node.position,
+    mass: node.mass,
+    size: node.getSize(),
+    type: node.cellType,
+    color: node.color,
+    name: node.getName(),
+    premium: node.getPremium(),
+    spiked: node.spiked,
+    }
+    result.nonVisibleNodes.push(a);
+  });
+ nodess.forEach((node)=>{
+    if (!node) return;
+    var a = {
+    id: node.getId(),
+    position: node.position,
+    nodeId: node.getId(),
+    mass: node.mass,
+    size: node.getSize(),
+    type: node.cellType,
+    color: node.color,
+    name: node.getName(),
+    premium: node.getPremium(),
+    spiked: node.spiked,
+    }
+    result.nodes.push(a);
+  });
+  destroyQueue.forEach((node)=>{
+    if (!node) return;
+    var a = {
+    id: node.getId(),
+    position: node.position,
+    mass: node.mass,
+    type: node.cellType,
+    killer: (node.getKiller()) ? node.getKiller().nodeId : false,
+    nodeId: node.getId(),
+    color: node.color,
+    size: node.getSize(),
+    name: node.getName(),
+    premium: node.getPremium(),
+    spiked: node.spiked,
+    }
+    result.destroyQueue.push(a);
+  });
   this.child.send(result);
 }
 getCellsInRange(cell,gameServer) {
 var id = this.getnextid();
 this.idData[id] = cell;
   var result = {
-    cells: cell.owner.visibleNodes,
+    cells: [],
     processID: id,
     action: "getcellsinrange",
     config: gameServer.config,
@@ -145,7 +193,27 @@ this.idData[id] = cell;
     },
     SquareSize: cell.getSquareSize(),
   };
- 
+  cell.owner.visibleNodes.forEach((check)=> {
+if (!check) return;
+    var a = {
+    mass: check.mass,
+    id: check.getId(),
+    position: check.position,
+    mass: check.mass,
+    owner: [],
+    SquareSize: check.getSquareSize(),
+    type: check.cellType,
+    EatingRange: check.getEatingRange(),
+    };
+    if (check.owner) {
+      a.owner = {
+      id: check.owner.pID,
+      recombineinstant: check.owner.recombineinstant,
+      team: check.owner.team,
+      };
+    }
+    result.cells.push(a);
+  });
   
 this.child.send(result);
   
