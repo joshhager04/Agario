@@ -109,9 +109,9 @@ this.idData[id] = player;
   var result = {
     processID: id,
     action: "updatenodes",
-    destroyQueue: [],
-    nodes: [],
-    nonVisibleNodes: [],
+    destroyQueue: destroyQueue,
+    nodes: nodes,
+    nonVisibleNodes: nonVisibleNodes,
     scrambleX: scrambleX,
     scrambleY: scrambleY,
     gameServer: {
@@ -119,55 +119,7 @@ this.idData[id] = player;
       
     },
   };
-  nonVisibleNodes.forEach((node)=>{
-    if (!node) return;
-    var a = {
-    id: node.getId(),
-    nodeId: node.getId(),
-    position: node.position,
-    mass: node.mass,
-    size: node.getSize(),
-    type: node.cellType,
-    color: node.color,
-    name: node.getName(),
-    premium: node.getPremium(),
-    spiked: node.spiked,
-    }
-    result.nonVisibleNodes.push(a);
-  });
- nodess.forEach((node)=>{
-    if (!node) return;
-    var a = {
-    id: node.getId(),
-    position: node.position,
-    nodeId: node.getId(),
-    mass: node.mass,
-    size: node.getSize(),
-    type: node.cellType,
-    color: node.color,
-    name: node.getName(),
-    premium: node.getPremium(),
-    spiked: node.spiked,
-    }
-    result.nodes.push(a);
-  });
-  destroyQueue.forEach((node)=>{
-    if (!node) return;
-    var a = {
-    id: node.getId(),
-    position: node.position,
-    mass: node.mass,
-    type: node.cellType,
-    killer: (node.getKiller()) ? node.getKiller().nodeId : false,
-    nodeId: node.getId(),
-    color: node.color,
-    size: node.getSize(),
-    name: node.getName(),
-    premium: node.getPremium(),
-    spiked: node.spiked,
-    }
-    result.destroyQueue.push(a);
-  });
+  
   this.child.send(result);
 }
 getCellsInRange(cell,gameServer) {
