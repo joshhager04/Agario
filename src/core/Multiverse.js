@@ -224,7 +224,7 @@ server.gameServer.reloadDataPacket();
           console.log("[Tutorial] Want more that 1 server? you can create multiple servers using different ports using the multiverse command")
         } else
         if (count == 10) {
-          console.log("[Tutorial] Do you know that Ogar Unlimited's function is basically unlimited? You can also add plugins!")
+          console.log("[Tutorial] Do you know that Ogar Unlimited is unlimited? You can add plugins! Later do plugin featured to see featured plugins")
         } else
         if (count == 11) {
           console.log("[Tutorial] Do you also know that you can use skins? Do <skiname>yourname in the nickname box for that skin");
