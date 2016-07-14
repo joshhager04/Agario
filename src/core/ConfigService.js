@@ -30,6 +30,7 @@ module.exports = class ConfigService {
         clientRMacro: 0,
         clientDarkBG: 1,
         clientChat: 2,
+        maxChild: 10,
         clientSkins: 2,
         clientGrid: 2,
         clientAcid: 1,
