@@ -200,7 +200,7 @@ gameServer.pluginLoader.load();
           var desc = [];
           for (var i in ava) {
             var s = ava[i].split("|");
-            if (!s[3]) continue;
+            if (s[3] != "featured") continue;
             names[i] = s[0];
             desc[i] = s[1];
             url[i] = s[2];
