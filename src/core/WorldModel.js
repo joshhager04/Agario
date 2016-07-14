@@ -107,6 +107,9 @@ setSimpleNode(id,node) {
       case 'node':
         nodes = this.nodes;
         break;
+      case 'simple':
+        nodes = this.simpleNodes;
+        break;
       case 'moving':
         nodes = this.movingNodes;
         break;
