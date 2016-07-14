@@ -1619,6 +1619,11 @@ onWVerify(client) {
   };
 
   updateClients() {
+    this.getWorld().getNodes().forEach((node)=>{
+      node.watch = node.simple.watch;
+      if (node.simple.watch) this.world.setSimpleNode(node.getId(),node);
+      
+    });
     this.getClients().forEach((client)=> {
       if (!client || !client.playerTracker) return;
       var buffer = client.playerTracker.updateBuffer;
