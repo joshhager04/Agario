@@ -36,11 +36,12 @@ module.exports = class WorldModel {
       3: [],
       4: [],
     };
-   
+   this.simpleNodes = new SortedMap();
+   this.simpleVirusNodes = new SortedMap();
     this.movingNodes = new SortedMap();
-    this.playerNodes = SortedMap();
-    this.virusNodes = SortedMap();
-    this.rainbowNodes = SortedMap();
+    this.playerNodes = new SortedMap();
+    this.virusNodes = new SortedMap();
+    this.rainbowNodes = new SortedMap();
     this.ejectedNodes = new SortedMap();
   }
 
