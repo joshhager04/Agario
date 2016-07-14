@@ -55,6 +55,8 @@ setSimpleNode(id,node) {
     color: node.color,
     name: node.getName(),
     premium: node.getPremium(),
+    watch: node.watch,
+    
     spiked: node.spiked,
     killer: (node.getKiller()) ? node.getKiller().nodeId : false,
     EatingRange: node.getEatingRange(),
