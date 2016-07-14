@@ -631,7 +631,8 @@ startingFood() {
       // client.nodeAdditionQueue is only used by human players, not bots
       // for bots it just gets collected forever, using ever-increasing amounts of memory
       if ('_socket' in client.socket && !client.isBot && node.visibleCheck(client.viewBox, client.centerPos)) {
-        client.nodeAdditionQueue.push(node);
+        client.nodeAdditionQueue.push(node.simple);
+        
       }
     }
   }
@@ -650,7 +651,7 @@ startingFood() {
   removeNode(node) {
     if (!node) return;
         node.onRemove(this);
-    this.world.removeNode(node.getId());
+   this.world.removeNode(node.getId());
     // Special on-remove actions
 this.world.removeQuadMap(undefined,node.getId());
 
@@ -664,7 +665,7 @@ this.world.removeQuadMap(undefined,node.getId());
       }
 
       // Remove from client
-      client.nodeDestroyQueue.push(node);
+      client.nodeDestroyQueue.push(node.simple);
     }
   }
 
