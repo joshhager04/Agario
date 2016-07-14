@@ -110,7 +110,7 @@ this.idData[id] = player;
     processID: id,
     action: "updatenodes",
     destroyQueue: destroyQueue,
-    nodes: nodes,
+    nodes: nodess,
     nonVisibleNodes: nonVisibleNodes,
     scrambleX: scrambleX,
     scrambleY: scrambleY,
