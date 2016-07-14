@@ -182,6 +182,7 @@ this.name = name;
     this.pfmsg = 0;
     this.opc = [];
     this.oppname = [];
+    this.maxChildCount = 10;
     this.opname = [];
     this.motherUpdateInterval = 5;
     this.oldtopscores = {
@@ -559,18 +560,22 @@ startingFood() {
   }
   getChild() {
      var child = false;
+     var max = 0;
+     if (this.childServices.length >= this.config.maxChild) this.maxChildCount ++;
     for (var i in this.childServices) {
       if (!this.childServices[i]) continue;
-      if (this.childServices[i].count < 10) {
+      if (this.childServices[i].count < this.maxChildCount) {
         this.childServices[i].count ++;
         child = this.childServices[i];
         
         
       }
-      
+      if (this.childServices[i].count > max) max = this.childServices[i].count;
     }
-    
+    if (max < this.maxChildCount && max >= 10) this.maxChildCount = max;
     if (!child) {
+      
+      
       var newchild = new ChildService(this)
       child = newchild
       this.childServices.push(newchild);
@@ -1701,7 +1706,7 @@ onWVerify(client) {
         if (!this.childServices[i]) continue;
         if (this.childServices[i].count <= 0) {
           this.childServices[i].killall()
-          this.childServices[i] = false;
+          this.childServices.slice(i,1);
         } else {
           this.childServices[i].heartbeat();
           
