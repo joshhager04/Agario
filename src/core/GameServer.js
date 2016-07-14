@@ -470,7 +470,7 @@ startingFood() {
       let self = this;
 
       function close(error) {
-        this.pluginImp("ondisconnect",this.socket.playerTracker,error);
+        self.pluginImp("ondisconnect",this.socket.playerTracker,error);
         self.ipcounts[this.socket.remoteAddress]--;
        var names = this.socket.playerTracker.reservedNamesMap;
        for (var i in names) {
