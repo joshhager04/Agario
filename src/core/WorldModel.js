@@ -44,9 +44,31 @@ module.exports = class WorldModel {
     this.rainbowNodes = new SortedMap();
     this.ejectedNodes = new SortedMap();
   }
-
+setSimpleNode(id,node) {
+  this.simpleNodes.set(id,{
+     id: node.getId(),
+    nodeId: node.getId(),
+    position: node.position,
+    mass: node.mass,
+    size: node.getSize(),
+    type: node.cellType,
+    color: node.color,
+    name: node.getName(),
+    premium: node.getPremium(),
+    spiked: node.spiked,
+    killer: (node.getKiller()) ? node.getKiller().nodeId : false,
+    EatingRange: node.getEatingRange(),
+    owner: (node.owner) ? { id: node.owner.pID,
+      recombineinstant: node.owner.recombineinstant,
+      team: node.owner.team} : false,
+     SquareSize: node.getSquareSize(),
+     
+  });
+  
+};
   setNode(id, node, type) {
     this.nodes.set(id, node);
+    this.setSimpleNode(id,node);
     switch (type) {
       case "player":
         this.playerNodes.set(id, node);
