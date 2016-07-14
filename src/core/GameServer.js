@@ -1620,8 +1620,7 @@ onWVerify(client) {
 
   updateClients() {
     this.getWorld().getNodes().forEach((node)=>{
-      node.watch = node.simple.watch;
-      if (node.simple.watch) this.world.setSimpleNode(node.getId(),node);
+      this.world.setSimpleNode(node.getId(),node);
       
     });
     this.getClients().forEach((client)=> {
