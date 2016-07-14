@@ -73,7 +73,7 @@ setSimpleNode(id,node) {
 };
   setNode(id, node, type) {
     this.nodes.set(id, node);
-    this.setSimpleNode(id,node);
+   // this.setSimpleNode(id,node);
     switch (type) {
       case "player":
         this.playerNodes.set(id, node);
@@ -176,7 +176,7 @@ clearAll() {
     this.playerNodes.delete(id);
     this.ejectedNodes.delete(id);
     this.virusNodes.delete(id);
-    this.simpleNodes.delete(id);
+//    this.simpleNodes.delete(id);
   }
 
   removeMovingNode(id) {
