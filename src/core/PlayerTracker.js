@@ -392,7 +392,7 @@ this.checkTick = 40;
     // Get visible nodes every 200 - 400ms
     var nonVisibleNodes = []; // Nodes that are not visible
     if (this.tickViewBox <= 0) {
-      var newVisible = this.calcSimpleViewBox();
+      var newVisible = this.calcViewBox();
       if (newVisible && newVisible.length) {
         try { // Add a try block in any case
 
@@ -408,7 +408,7 @@ this.checkTick = 40;
           // Add nodes to client's screen if client has not seen it already
           for (var i = 0; i < newVisible.length; i++) {
             var index = this.visibleNodes.indexOf(newVisible[i]);
-            if (index == -1 && (newVisible[i].vis || newVisible[i].owner.id == this.pID) && (!this.blind || (newVisible[i].owner.id == this.pID || newVisible[i].cellType != 0))) {
+            if (index == -1 && (newVisible[i].getVis() || newVisible[i].owner == this) && (!this.blind || (newVisible[i].owner == this || newVisible[i].cellType != 0))) {
 
               updateNodes.push(newVisible[i]);
             }
@@ -431,7 +431,7 @@ if (this.average < 45) this.tickViewBox = 1; else this.tickViewBox = 2;
       // Add nodes to screen
       for (var i = 0; i < this.nodeAdditionQueue.length; i++) {
         var node = this.nodeAdditionQueue[i];
-        if ((!this.blind || (node.owner.id == this.pID || node.cellType != 0)) && (node.vis || node.owner.id == this.pID)) {
+        if ((!this.blind || (node.owner == this || node.cellType != 0)) && (node.getVis() || node.owner == this)) {
           this.visibleNodes.push(node);
           updateNodes.push(node);
         }
@@ -441,7 +441,7 @@ if (this.average < 45) this.tickViewBox = 1; else this.tickViewBox = 2;
     // Update moving nodes
     for (var i = 0; i < this.visibleNodes.length; i++) {
       var node = this.visibleNodes[i];
-      if (node.sendUpdate && (node.vis || node.owner.id == this.pID) && (!this.blind || (node.owner.id == this.pID || node.cellType != 0))) {
+      if (node.sendUpdate() && (node.getVis() || node.owner == this) && (!this.blind || (node.owner == this || node.cellType != 0))) {
         // Sends an update if cell is moving
         updateNodes.push(node);
       }
@@ -597,67 +597,6 @@ getQuadrant(gameServer) { // Players quads are different and also factor in thei
     return false;
   }
 };
-calcSimpleViewBox() {
-    if (this.spectate) {
-      // Spectate mode
-      return this.getSpectateNodes();
-    }
-
-    // Main function
-    this.updateSightRange();
-    this.updateCenter();
-
-    // Box
-    this.viewBox.topY = this.centerPos.y - this.sightRangeY;
-    this.viewBox.bottomY = this.centerPos.y + this.sightRangeY;
-    this.viewBox.leftX = this.centerPos.x - this.sightRangeX;
-    this.viewBox.rightX = this.centerPos.x + this.sightRangeX;
-    this.viewBox.width = this.sightRangeX;
-    this.viewBox.height = this.sightRangeY;
-    var visibleCheck = function (box, centerPos,check) {
-  // Checks if this cell is visible to the player
-  var collisionCheck = function(bottomY, topY, rightX, leftX,check) {
-      // Collision checking
-  if (check.position.y > bottomY) {
-    return false;
-  }
-
-  if (check.position.y < topY) {
-    return false;
-  }
-
-  if (check.position.x > rightX) {
-    return false;
-  }
-
-  if (check.position.x < leftX) {
-    return false;
-  }
-
-  return true;
-    
-  }
-  return collisionCheck(box.bottomY, box.topY, box.rightX, box.leftX,check);
-};
-  
-
-    var newVisible = [];
-var quad = this.getQuadrant(this.gameServer);
-    this.gameServer.getWorld().getNodes('simple').forEach((node)=> {
-      if (!node) return;
-if (quad && quad != node.quadrant) return; // if players quad is different, skip.
-      if (visibleCheck(this.viewBox, this.centerPos,node)) {
-        // Cell is in range of viewBox
- if ((!node.watch || node.watch == -1) && !this.isBot) node.watch = this.pID;
-        newVisible.push(node);
-      } else {
-if ((node.watch == this.pID || node.watch == -1) && !this.isBot) node.watch = false;
-
-}
-    });
-
-    return newVisible;
-  };
   calcViewBox() {
     if (this.spectate) {
       // Spectate mode
