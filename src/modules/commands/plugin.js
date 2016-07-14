@@ -95,7 +95,7 @@ var aga = "";
     }
   } else if (split[1] == "install") {
     if (!split[2]) {
-      console.log("[Console] Please specify a plugin name. Do plugin available to see available plugins");
+      console.log("[Console] Please specify a plugin name. Do plugin featured or plugin search to see plugins");
       return;
     }
     request('https://raw.githubusercontent.com/AJS-development/OgarUL-Plugin-Library/master/files.txt', function (error, response, body) {
@@ -118,7 +118,7 @@ var ok = false;
             }
           }
         if (!ok) {
-          console.log("[Console] That plugin does not exist. Do plugin available to see available plugins and plugin search to search plugins!");
+          console.log("[Console] That plugin does not exist. Do plugin featured to see featured plugins and plugin search to search plugins!");
       return;
         }
           
@@ -220,7 +220,7 @@ gameServer.pluginLoader.load();
    });
     
   } else if (split[1] == "available") {
-    console.log("[NOTE] Plugin available is depreciated, Use plugin search instead");
+    console.log("[NOTE] Plugin available is depreciated, Use plugin search or featured instead");
   return;
   } else if (split[1] == "add") {
     if (!sudo) {
@@ -310,7 +310,7 @@ gameServer.pluginLoader.load();
     
     
   } else {
-    console.log("[Console] Please specify a command. Available commands: list,search, reload, delete, add, available, install, update")
+    console.log("[Console] Please specify a command. Available commands: list,search, reload, delete, add, featured, install, update")
   }
 
 
