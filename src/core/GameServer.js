@@ -367,11 +367,13 @@ startingFood() {
     }.bind(this));
 
     function connectionEstablished(ws) {
+      if (this.pluginImp("onconnect",ws)) {ws.close();return;};
       let clients = this.getClients();
       if (clients.length >= this.config.serverMaxConnections) { // Server full
         ws.close();
         return;
       }
+      
       if (this.config.clientclone != 1) {
         // ----- Client authenticity check code -----
         // !!!!! WARNING !!!!!
@@ -468,6 +470,7 @@ startingFood() {
       let self = this;
 
       function close(error) {
+        this.pluginImp("ondisconnect",this.socket.playerTracker,error);
         self.ipcounts[this.socket.remoteAddress]--;
        var names = this.socket.playerTracker.reservedNamesMap;
        for (var i in names) {
@@ -896,6 +899,14 @@ beforeq(player) {
       
     })
     
+  }
+  pluginImp(name,a,b,c,d,e,f,g) {
+     for (var i in this.plugins) {
+        if (this.plugins[i][name] && this.plugins[i].name && this.plugins[i].author && this.plugins[i].version) {
+          if (!this.plugins[i][name](a,b,c,d,e,f,g)) return true;
+        }
+      }
+    return false;
   }
   beforespawn(player,pos,mass) {
     
