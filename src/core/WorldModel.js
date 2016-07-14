@@ -57,6 +57,7 @@ setSimpleNode(id,node) {
     name: node.getName(),
     premium: node.getPremium(),
     watch: node.watch,
+    sendUpdate: node.sendUpdate(),
     vis: node.getVis(),
     spiked: node.spiked,
     killer: (node.getKiller()) ? node.getKiller().nodeId : false,
