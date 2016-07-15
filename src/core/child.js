@@ -79,7 +79,7 @@ if (check.quadrant != cell.quadrant || !check) {
     processID: m.processID,
     data: virus,
   }
-  send(result);
+  process.send(result);
   return;
 
     
