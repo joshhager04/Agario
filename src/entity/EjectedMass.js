@@ -53,8 +53,8 @@ EjectedMass.prototype.onAutoMove = function (gameServer) {
     return true;
   }
   }
-if (this.owner) {
- this.owner.childService.feedNearestVirus(gameServer,this)
+if (this.parent) {
+ this.parent.childService.feedNearestVirus(gameServer,this)
 } else {
 var v = gameServer.getNearestVirus(this);
     if (v) { // Feeds the virus if it exists
