@@ -12,7 +12,7 @@ The AJS Dev Team.
 */
 const fs = require("fs");
 const child = require('child_process');
-
+const fastmap = require('collections/fast-map');
 module.exports = class ChildService {
   constructor(gameServer) {
     this.gameServer = gameServer;
@@ -20,7 +20,7 @@ this.child = child.fork('core/child.js');
 this.count = 1;
 this.onmsg();
 this.lastid = 0;
-this.idData = [];
+this.idData = new fastmap();
 };
 killall() {
   this.child.kill();
@@ -29,7 +29,7 @@ killall() {
 }
 feedNearestVirus(gameServer,cell) {
   var id = this.getnextid();
-  this.idData[id] = cell;
+  this.idData.set(id,cell);
   
   var tosend = {
     processID: id,
@@ -61,23 +61,24 @@ heartbeat() {
   this.child.send("j")
 }
 onmsg() {
+  var iddata = this.idData.get(m.processID);
 this.child.on('message' ,(m)=>{
   if (m.action == "getnearestv") {
     if (m.data) {
       var vnode = this.gameServer.getWorld().getNodes('virus').get(m.data)
-      if (vnode) vnode.feed(this.idData[m.processID], this.gameServer);
+      if (vnode) vnode.feed(iddata, this.gameServer);
     }
-    this.idData.slice(m.processID,1);
+    
     
   } else 
   if (m.action == "updatenodes") {
-    var player = this.idData[m.processID];
+    var player = iddata
     player.socket.sendPacket(m.buf,true);
-    this.idData.slice(m.processID,1);
+    
     return;
   } else
 if (m.action == "getcellsinrange") {
-  var cell = this.idData[m.processID];
+  var cell = iddata
   var client = cell.owner;
     m.list.forEach((che)=> {
 
@@ -96,8 +97,8 @@ if (!check) return;
         this.gameServer.removeNode(check);
         
       });
-this.idData.slice(m.processID,1);
     }
+    this.idData.delete(m.processID);
   });
 }
 calcViewBox(player) {
@@ -106,7 +107,7 @@ calcViewBox(player) {
 };
 updateNodes(destroyQueue, nodess, nonVisibleNodes, scrambleX, scrambleY, gameServer,player) {
 var id = this.getnextid();
-this.idData[id] = player;
+this.idData.set(id,player);
 
   var result = {
     processID: id,
@@ -126,7 +127,7 @@ this.idData[id] = player;
 }
 getCellsInRange(cell,gameServer) {
 var id = this.getnextid();
-this.idData[id] = cell;
+this.idData.set(id,cell);
 var ncell = [];
 cell.owner.visibleNodes.forEach((node)=>{ncell.push(node.getSimple())})
   var result = {
