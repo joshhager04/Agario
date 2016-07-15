@@ -14,6 +14,7 @@ The AJS Dev Team.
 
 */
 var Packet = require('../packet/index');
+const FastMap = require('collections/fast-map');
 const utilities = require('./utilities.js');
 var OP = require('./op.js');
 // this creates circular decencies
@@ -68,14 +69,14 @@ module.exports = class PlayerTracker {
     this.owner = owner;
     this.oldname = "";
     this.norecombine = false;
-    this.nodeAdditionQueue = [];
+    this.nodeAdditionQueue = new FastMap();
     this.chatname = "";
     this.reservedNames = [];
     this.minioncontrol = false;
     this.lastposup = 0;
     this.premium = '';
-    this.nodeDestroyQueue = [];
-    this.visibleNodes = [];
+    this.nodeDestroyQueue = new FastMap();
+    this.visibleNodes = new FastMap();
     this.vfail = 0;
     this.cells = [];
     this.score = 0; // Needed for leaderboard
@@ -377,6 +378,8 @@ this.checkTick = 40;
       this.mergeOverrideDuration = 0;
     }
     // Remove nodes from visible nodes if possible
+    this.nodeDestroyQueue.keys().forEach((key)=>{if(!this.visibleNodes.delete(key))this.nodeDestroyQueue.delete(key)});
+    /*
     var d = 0;
     while (d < this.nodeDestroyQueue.length) {
       var index = this.visibleNodes.indexOf(this.nodeDestroyQueue[d]);
@@ -388,7 +391,7 @@ this.checkTick = 40;
         this.nodeDestroyQueue.splice(d, 1);
       }
     }
-
+*/
     // Get visible nodes every 200 - 400ms
     var nonVisibleNodes = []; // Nodes that are not visible
     if (this.tickViewBox <= 0) {
@@ -429,6 +432,13 @@ if (this.average < 45) this.tickViewBox = 1; else this.tickViewBox = 2;
     } else {
       this.tickViewBox--;
       // Add nodes to screen
+      this.nodeAdditionQueue.forEach((node)=>{
+        if ((!this.blind || (node.owner.id == this.pID || node.cellType != 0)) && (node.vis || node.owner.id == this.pID)) {
+          this.visibleNodes.set(node.getId(),node);
+          updateNodes.push(node);
+        }
+      })
+      /*
       for (var i = 0; i < this.nodeAdditionQueue.length; i++) {
         var node = this.nodeAdditionQueue[i];
         if ((!this.blind || (node.owner.id == this.pID || node.cellType != 0)) && (node.vis || node.owner.id == this.pID)) {
@@ -437,16 +447,23 @@ if (this.average < 45) this.tickViewBox = 1; else this.tickViewBox = 2;
         }
       }
     }
-
+*/
     // Update moving nodes
-    for (var i = 0; i < this.visibleNodes.length; i++) {
+  this.visibleNodes.forEach((node)=>{
+       if (node.sendUpdate && (node.vis || node.owner.id == this.pID) && (!this.blind || (node.owner.id == this.pID || node.cellType != 0))) {
+        // Sends an update if cell is moving
+        updateNodes.push(node);
+       }
+    
+  })
+  /*
       var node = this.visibleNodes[i];
       if (node.sendUpdate && (node.vis || node.owner.id == this.pID) && (!this.blind || (node.owner.id == this.pID || node.cellType != 0))) {
         // Sends an update if cell is moving
         updateNodes.push(node);
       }
     }
-
+*/
     // Send packet
 this.childService.updateNodes(
       this.nodeDestroyQueue,
@@ -458,8 +475,8 @@ this.childService.updateNodes(
       this
     );
 
-    this.nodeDestroyQueue = []; // Reset destroy queue
-    this.nodeAdditionQueue = []; // Reset addition queue
+    this.nodeDestroyQueue.clear() // Reset destroy queue
+    this.nodeAdditionQueue.clear() // Reset addition queue
 
     // Update leaderboard
     if (this.tickLeaderboard <= 0) {
