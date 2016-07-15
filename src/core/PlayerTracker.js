@@ -13,6 +13,7 @@ Sincerely
 The AJS Dev Team.
 
 */
+const fastmap = require('collections/fast-map')
 var Packet = require('../packet/index');
 const utilities = require('./utilities.js');
 var OP = require('./op.js');
@@ -367,7 +368,7 @@ this.checkTick = 40;
     }
 
     var updateNodes = []; // Nodes that need to be updated via packet
-
+var simpleupdaten = [];
     if (this.mergeOverrideDuration < 150 && this.recombineinstant) {
       this.mergeOverrideDuration++;
     } else if (this.recombineinstant) {
@@ -378,10 +379,12 @@ this.checkTick = 40;
     }
     // Remove nodes from visible nodes if possible
     var d = 0;
+    var newdestroy = [];
     while (d < this.nodeDestroyQueue.length) {
       var index = this.visibleNodes.indexOf(this.nodeDestroyQueue[d]);
       if (index > -1) {
         this.visibleNodes.splice(index, 1);
+        newdestroy.push(this.nodeDestroyQueue[d].getSimple());
         d++; // Increment
       } else {
         // Node was never visible anyways
@@ -401,7 +404,7 @@ this.checkTick = 40;
             var index = newVisible.indexOf(this.visibleNodes[i]);
             if (index == -1) {
               // Not seen by the client anymore
-              nonVisibleNodes.push(this.visibleNodes[i]);
+              nonVisibleNodes.push(this.visibleNodes[i].getSimple());
             }
           }
 
@@ -409,7 +412,7 @@ this.checkTick = 40;
           for (var i = 0; i < newVisible.length; i++) {
             var index = this.visibleNodes.indexOf(newVisible[i]);
             if (index == -1 && (newVisible[i].getVis() || newVisible[i].owner == this) && (!this.blind || (newVisible[i].owner == this || newVisible[i].cellType != 0))) {
-
+ simpleupdaten.push(newVisible[i].getSimple())
               updateNodes.push(newVisible[i]);
             }
           }
@@ -433,6 +436,7 @@ if (this.average < 45) this.tickViewBox = 1; else this.tickViewBox = 2;
         var node = this.nodeAdditionQueue[i];
         if ((!this.blind || (node.owner == this || node.cellType != 0)) && (node.getVis() || node.owner == this)) {
           this.visibleNodes.push(node);
+          simpleupdaten.push(node.getSimple())
           updateNodes.push(node);
         }
       }
@@ -443,14 +447,15 @@ if (this.average < 45) this.tickViewBox = 1; else this.tickViewBox = 2;
       var node = this.visibleNodes[i];
       if (node.sendUpdate() && (node.getVis() || node.owner == this) && (!this.blind || (node.owner == this || node.cellType != 0))) {
         // Sends an update if cell is moving
+        simpleupdaten.push(node.getSimple())
         updateNodes.push(node);
       }
     }
 
     // Send packet
 this.childService.updateNodes(
-      this.nodeDestroyQueue,
-      updateNodes,
+      newdestroy,
+     simpleupdaten,
       nonVisibleNodes,
       this.scrambleX,
       this.scrambleY,
