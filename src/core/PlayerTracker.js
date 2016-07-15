@@ -14,7 +14,6 @@ The AJS Dev Team.
 
 */
 var Packet = require('../packet/index');
-const FastMap = require('collections/fast-map');
 const utilities = require('./utilities.js');
 var OP = require('./op.js');
 // this creates circular decencies
@@ -69,14 +68,14 @@ module.exports = class PlayerTracker {
     this.owner = owner;
     this.oldname = "";
     this.norecombine = false;
-    this.nodeAdditionQueue = new FastMap();
+    this.nodeAdditionQueue = [];
     this.chatname = "";
     this.reservedNames = [];
     this.minioncontrol = false;
     this.lastposup = 0;
     this.premium = '';
-    this.nodeDestroyQueue = new FastMap();
-    this.visibleNodes = new FastMap();
+    this.nodeDestroyQueue = [];
+    this.visibleNodes = [];
     this.vfail = 0;
     this.cells = [];
     this.score = 0; // Needed for leaderboard
@@ -378,8 +377,6 @@ this.checkTick = 40;
       this.mergeOverrideDuration = 0;
     }
     // Remove nodes from visible nodes if possible
-    this.nodeDestroyQueue.keys().forEach((key)=>{if(!this.visibleNodes.delete(key))this.nodeDestroyQueue.delete(key)});
-    /*
     var d = 0;
     while (d < this.nodeDestroyQueue.length) {
       var index = this.visibleNodes.indexOf(this.nodeDestroyQueue[d]);
@@ -391,11 +388,11 @@ this.checkTick = 40;
         this.nodeDestroyQueue.splice(d, 1);
       }
     }
-*/
+
     // Get visible nodes every 200 - 400ms
     var nonVisibleNodes = []; // Nodes that are not visible
     if (this.tickViewBox <= 0) {
-      var newVisible = this.calcSimpleViewBox();
+      var newVisible = this.calcViewBox();
       if (newVisible && newVisible.length) {
         try { // Add a try block in any case
 
@@ -411,7 +408,7 @@ this.checkTick = 40;
           // Add nodes to client's screen if client has not seen it already
           for (var i = 0; i < newVisible.length; i++) {
             var index = this.visibleNodes.indexOf(newVisible[i]);
-            if (index == -1 && (newVisible[i].vis || newVisible[i].owner.id == this.pID) && (!this.blind || (newVisible[i].owner.id == this.pID || newVisible[i].cellType != 0))) {
+            if (index == -1 && (newVisible[i].getVis() || newVisible[i].owner == this) && (!this.blind || (newVisible[i].owner == this || newVisible[i].cellType != 0))) {
 
               updateNodes.push(newVisible[i]);
             }
@@ -432,38 +429,24 @@ if (this.average < 45) this.tickViewBox = 1; else this.tickViewBox = 2;
     } else {
       this.tickViewBox--;
       // Add nodes to screen
-      this.nodeAdditionQueue.forEach((node)=>{
-        if ((!this.blind || (node.owner.id == this.pID || node.cellType != 0)) && (node.vis || node.owner.id == this.pID)) {
-          this.visibleNodes.set(node.getId(),node);
-          updateNodes.push(node);
-        }
-      })
-      /*
       for (var i = 0; i < this.nodeAdditionQueue.length; i++) {
         var node = this.nodeAdditionQueue[i];
-        if ((!this.blind || (node.owner.id == this.pID || node.cellType != 0)) && (node.vis || node.owner.id == this.pID)) {
+        if ((!this.blind || (node.owner == this || node.cellType != 0)) && (node.getVis() || node.owner == this)) {
           this.visibleNodes.push(node);
           updateNodes.push(node);
         }
       }
     }
-*/
+
     // Update moving nodes
-  this.visibleNodes.forEach((node)=>{
-       if (node.sendUpdate && (node.vis || node.owner.id == this.pID) && (!this.blind || (node.owner.id == this.pID || node.cellType != 0))) {
-        // Sends an update if cell is moving
-        updateNodes.push(node);
-       }
-    
-  })
-  /*
+    for (var i = 0; i < this.visibleNodes.length; i++) {
       var node = this.visibleNodes[i];
-      if (node.sendUpdate && (node.vis || node.owner.id == this.pID) && (!this.blind || (node.owner.id == this.pID || node.cellType != 0))) {
+      if (node.sendUpdate() && (node.getVis() || node.owner == this) && (!this.blind || (node.owner == this || node.cellType != 0))) {
         // Sends an update if cell is moving
         updateNodes.push(node);
       }
     }
-*/
+
     // Send packet
 this.childService.updateNodes(
       this.nodeDestroyQueue,
@@ -475,8 +458,8 @@ this.childService.updateNodes(
       this
     );
 
-    this.nodeDestroyQueue.clear() // Reset destroy queue
-    this.nodeAdditionQueue.clear() // Reset addition queue
+    this.nodeDestroyQueue = []; // Reset destroy queue
+    this.nodeAdditionQueue = []; // Reset addition queue
 
     // Update leaderboard
     if (this.tickLeaderboard <= 0) {
@@ -614,40 +597,6 @@ getQuadrant(gameServer) { // Players quads are different and also factor in thei
     return false;
   }
 };
-calcSimpleViewBox() {
-    if (this.spectate) {
-      // Spectate mode
-      return this.getSpectateNodes();
-    }
-
-    // Main function
-    this.updateSightRange();
-    this.updateCenter();
-
-    // Box
-    this.viewBox.topY = this.centerPos.y - this.sightRangeY;
-    this.viewBox.bottomY = this.centerPos.y + this.sightRangeY;
-    this.viewBox.leftX = this.centerPos.x - this.sightRangeX;
-    this.viewBox.rightX = this.centerPos.x + this.sightRangeX;
-    this.viewBox.width = this.sightRangeX;
-    this.viewBox.height = this.sightRangeY;
-    var newVisible = [];
-var quad = this.getQuadrant(this.gameServer);
-    this.gameServer.getWorld().getNodes().forEach((node)=> {
-      if (!node) return;
-if (quad && quad != node.quadrant) return; // if players quad is different, skip.
-      if (node.visibleCheck(this.viewBox, this.centerPos)) {
-        // Cell is in range of viewBox
- if ((!node.watch || node.watch == -1) && !this.isBot) node.watch = this.pID;
-        newVisible.push(node.getSimple());
-      } else {
-if ((node.watch == this.pID || node.watch == -1) && !this.isBot) node.watch = false;
-
-}
-    });
-
-    return newVisible;
-  };
   calcViewBox() {
     if (this.spectate) {
       // Spectate mode
