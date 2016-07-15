@@ -224,7 +224,7 @@ module.exports = class PlayerTracker {
     }
     return s;
   };
-
+  
   setColor(color) {
     this.color.r = color.r;
     this.color.b = color.b;
@@ -641,7 +641,7 @@ if ((node.watch == this.pID || node.watch == -1) && !this.isBot) node.watch = fa
 
       } else if (this.gameServer.gameMode.specByLeaderboard && specPlayer) {
         // Get spectated player's location and calculate zoom amount
-        var specZoom = specPlayer.playerTracker.getSizes();
+        var specZoom = specPlayer.getSizes();
         specZoom = Math.pow(Math.min(40.5 / specZoom, 1.0), 0.4) * 1.2;
 
         // Apparently doing this.centerPos = specPlayer.centerPos will set based on reference. We don't want this
