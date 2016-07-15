@@ -12,7 +12,7 @@ The AJS Dev Team.
 */
 const fs = require("fs");
 const child = require('child_process');
-const fastmap = require('collections/fast-map');
+const FastMap = require("collections/fast-map");
 module.exports = class ChildService {
   constructor(gameServer) {
     this.gameServer = gameServer;
@@ -20,7 +20,7 @@ this.child = child.fork('core/child.js');
 this.count = 1;
 this.onmsg();
 this.lastid = 0;
-this.idData = new fastmap();
+this.idData = new FastMap();
 };
 killall() {
   this.child.kill();
