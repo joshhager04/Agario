@@ -124,13 +124,13 @@ this.idData[id] = player;
   
   this.child.send(result);
 }
-getCellsInRange(cellss,gameServer) {
+getCellsInRange(cell,gameServer) {
 var id = this.getnextid();
-this.idData[id] = cellss;
-var cell = [];
-cellss.owner.visibleNodes.forEach((node)=>{cell.push(node.getSimple())})
+this.idData[id] = cell;
+var ncell = [];
+cell.owner.visibleNodes.forEach((node)=>{ncell.push(node.getSimple())})
   var result = {
-    cells: cell,
+    cells: ncell,
     processID: id,
     action: "getcellsinrange",
     config: gameServer.config,
