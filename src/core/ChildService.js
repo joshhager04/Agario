@@ -61,8 +61,8 @@ heartbeat() {
   this.child.send("j")
 }
 onmsg() {
-  var iddata = this.idData.get(m.processID);
 this.child.on('message' ,(m)=>{
+  var iddata = this.idData.get(m.processID);
   if (m.action == "getnearestv") {
     if (m.data) {
       var vnode = this.gameServer.getWorld().getNodes('virus').get(m.data)
