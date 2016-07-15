@@ -1446,6 +1446,7 @@ onWVerify(client) {
           ejected.setMoveEngineData(this.config.ejectvspeed, 40, this.config.wDistance);
           ejected.par = client;
         } else {
+          ejected.setParent(client);
           ejected.setMoveEngineData(this.config.ejectSpeed, 40, this.config.wDistance);
         }
 
@@ -1529,6 +1530,7 @@ onWVerify(client) {
             ejected.setMoveEngineData(this.config.ejectvspeed, 40, this.config.wDistance);
 
           } else {
+            ejected.setParent(client);
             ejected.setMoveEngineData(this.config.ejectSpeed, 40, this.config.wDistance);
           }
           if (this.config.ejectvirus == 1) {
