@@ -53,7 +53,9 @@ feedNearestVirus(gameServer,cell) {
   this.child.send(tosend);
 }
 getnextid() {
-return this.lastid ++;
+  var id = this.lastid ++;
+  if (id > 100) this.lastid = 0;
+return id
 }
 heartbeat() {
   this.child.send("j")
@@ -126,7 +128,7 @@ getCellsInRange(cellss,gameServer) {
 var id = this.getnextid();
 this.idData[id] = cellss;
 var cell = [];
-cell.owner.visibleNodes.forEach((node)=>{cell.push(node.getSimple())})
+cellss.owner.visibleNodes.forEach((node)=>{cell.push(node.getSimple())})
   var result = {
     cells: cell,
     processID: id,
