@@ -31,7 +31,32 @@ function Cell(nodeId, owner, position, mass, gameServer) {
 module.exports = Cell;
 
 // Fields not defined by the constructor are considered private and need a getter/setter to access from a different class
+Cell.prototype.getSimple = function() {
+  return {
+     id: this.getId(),
+    nodeId: this.getId(),
+    position: this.position,
+    mass: this.mass,
+    size: this.getSize(),
+    type: this.cellType,
+    color: this.color,
+    name: this.getName(),
+    premium: this.getPremium(),
+    watch: this.watch,
+    sendUpdate: this.sendUpdate(),
+    vis: this.getVis(),
+    spiked: this.spiked,
+    killer: (this.getKiller()) ? this.getKiller().nodeId : false,
+    EatingRange: this.getEatingRange(),
+    owner: (this.owner) ? { id: this.owner.pID,
+      recombineinstant: this.owner.recombineinstant,
+      team: this.owner.team} : false,
+     SquareSize: this.getSquareSize(),
+     
+  };
+ 
 
+}
 Cell.prototype.getId = function () {
   return this.nodeId;
 };
