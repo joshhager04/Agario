@@ -658,7 +658,7 @@ if ((node.watch == this.pID || node.watch == -1) && !this.isBot) node.watch = fa
 
       var dist = utilities.getDist(this.mouse.x, this.mouse.y, this.centerPos.x, this.centerPos.y);
       var angle = this.getAngle(this.mouse.x, this.mouse.y, this.centerPos.x, this.centerPos.y);
-      var speed = Math.min(dist / 10, 190); // Not to break laws of universe by going faster than light speed
+      var speed = Math.min(dist / 10, 120); // Not to break laws of universe by going faster than light speed
 
       this.centerPos.x += speed * Math.sin(angle);
       this.centerPos.y += speed * Math.cos(angle);
@@ -670,7 +670,7 @@ if ((node.watch == this.pID || node.watch == -1) && !this.isBot) node.watch = fa
       // Now that we've updated center pos, get nearby cells
       // We're going to use config's view base times 2.5
 
-      var mult = 2.5; // To simplify multiplier, in case this needs editing later on
+      var mult = 3; // To simplify multiplier, in case this needs editing later on
       this.viewBox.topY = this.centerPos.y - this.gameServer.config.serverViewBaseY * mult;
       this.viewBox.bottomY = this.centerPos.y + this.gameServer.config.serverViewBaseY * mult;
       this.viewBox.leftX = this.centerPos.x - this.gameServer.config.serverViewBaseX * mult;
