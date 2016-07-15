@@ -3,7 +3,7 @@ var Cell = require('./Cell');
 
 function EjectedMass() {
   Cell.apply(this, Array.prototype.slice.call(arguments));
-
+this.parent;
   this.cellType = 3;
   this.size = Math.ceil(Math.sqrt(100 * this.mass));
   this.squareSize = (100 * this.mass) >> 0; // not being decayed -> calculate one time
@@ -11,7 +11,9 @@ function EjectedMass() {
 
 module.exports = EjectedMass;
 EjectedMass.prototype = new Cell();
-
+EjectedMass.prototype.setParent = function(p) {
+  this.parent = p;
+}
 EjectedMass.prototype.getSize = function () {
   return this.size;
 };
