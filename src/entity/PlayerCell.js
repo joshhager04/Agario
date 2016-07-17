@@ -106,7 +106,6 @@ PlayerCell.prototype.calcMove = function(x2, y2, gameServer) {
         continue;
       }
       // Calculations
-      if (config.splitversion == 1) {
         if (dist < collisionDist) { // Collided
           // The moving cell pushes out of the colliding cell
           var mult = 0.8; // Limit from 0.5 to 2, not to have bugs
@@ -149,7 +148,6 @@ PlayerCell.prototype.calcMove = function(x2, y2, gameServer) {
               }
           }
       }
-  }
   var xSave = this.position.x;
   var ySave = this.position.y;
   gameServer.gameMode.onCellMove(x1, y1, this);
