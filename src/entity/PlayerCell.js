@@ -109,7 +109,7 @@ PlayerCell.prototype.calcMove = function(x2, y2, gameServer) {
       if (config.splitversion == 1) {
         if (dist < collisionDist) { // Collided
           // The moving cell pushes out of the colliding cell
-          var mult = 0.8; // Limit from 0.5 to 2, not to have bugs
+          var mult = config.splitMult; // Limit from 0.5 to 2, not to have bugs
           var newDeltaY = y1 - cell.position.y;
           var newDeltaX = x1 - cell.position.x;
           var newAngle = Math.atan2(newDeltaX, newDeltaY);
