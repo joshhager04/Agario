@@ -113,10 +113,18 @@ PlayerCell.prototype.calcMove = function(x2, y2, gameServer) {
         continue;
       }
       // Calculations
-      if (config.splitversion == 1) {
         if (dist < collisionDist) { // Collided
           // The moving cell pushes out of the colliding cell
-          var mult = this.gameServer.config.splitMult; // Limit from 0.5 to 2, not to have bugs
+          var c1Speed = this.getSpeed();
+          var c2Speed = cell.getSpeed();
+      
+          // TODO: need to simplify mult
+          var mult = this.config.splitMult; //pushback, cell squishing, strength of small cells, snappiness, etc.
+          if (config.splitversion == 1) {
+            var mult = c1Speed / c2Speed / 2;
+            if (mult < 0.15) mult = 0.15;
+            if (mult > 0.9) mult = 0.9;
+          }
           var newDeltaY = y1 - cell.position.y;
           var newDeltaX = x1 - cell.position.x;
           var newAngle = Math.atan2(newDeltaX, newDeltaY);
@@ -156,7 +164,6 @@ PlayerCell.prototype.calcMove = function(x2, y2, gameServer) {
               }
           }
       }
-  }
   var xSave = this.position.x;
   var ySave = this.position.y;
   x1 += xd + (this.position.x - xSave);
