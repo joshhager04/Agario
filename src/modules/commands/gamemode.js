@@ -3,7 +3,7 @@ var GameMode = require('../../gamemodes');
 module.exports = function(gameServer, split) {
   if (split[1]) var cn = split[1].toLowerCase();
   else var cn = '';
-  if (cn == "help") {
+  if (cn == "list") {
     console.log("[Console] =================== GAMEMODES ======================");
     console.log("Gamemode 0: FFA");
     console.log("Gamemode 1: Teams");
