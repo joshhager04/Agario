@@ -27,10 +27,10 @@ module.exports = function(gameServer, split) {
           nick = gameServer.largestClient.name;
         } catch (e) {
           // Specating in free-roam mode
-          nick = "in free-roam";
+          nick = "IN FREEROAM";
         }
         nick = (nick == "") ? "An unnamed cell" : nick;
-        data = fillChar("SPECTATING: " + nick, '-', ' | CELLS | SCORE  | POSITION    '.length + gameServer.config.playerMaxNickLength, true);
+        data = fillChar("THIS PLAYER IS SPECTATING: " + nick, '-', ' | CELLS | SCORE  | POSITION    '.length + gameServer.config.playerMaxNickLength, true);
         console.log(" " + id + " | " + ip + " | " + data);
       } else if (client.cells.length > 0) {
         nick = fillChar((client.name == "") ? "An unnamed cell" : client.name, ' ', gameServer.config.playerMaxNickLength);
