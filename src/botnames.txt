@@ -20,7 +20,7 @@
 <chile>chile
 <china>china
 <cia>cia
-<confredate>confederate
+<confederate>confederate
 <croatia>croatia
 <cuba>cuba
 <denmark>denmark
@@ -52,7 +52,7 @@
 <jamaica>jamaica
 <japan>japan
 <kc>kc
-<lativia>latvia
+<latvia>latvia
 <lithuania>lithuania
 <luxembourg>luxembourg
 <maldivas>maldivas
