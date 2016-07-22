@@ -763,7 +763,17 @@ beforeq(player) {
   }
 
   getRandomColor() {
+  if (this.config.playerOldColors == 1) {
+    var index = Math.floor(Math.random() * this.oldcolors.length);
+    var color = this.oldcolors[index];
+    return {
+      r: color.r,
+      b: color.b,
+      g: color.g
+     };
+    } else {
     return utilities.getRandomColor();
+    }
   }
 
   // todo change this out for a vector library
