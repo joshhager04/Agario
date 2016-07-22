@@ -231,14 +231,25 @@ this.name = name;
       {'r': 199, 'g': 0,   'b': 128},
       {'r': 227, 'g': 0,   'b': 64 }
     ];
+    this.oldcolors = [
+      {'r':235, 'g': 75, 'b':  0},
+      {'r':225, 'g':125, 'b':255},
+      {'r':180, 'g':  7, 'b': 20},
+      {'r': 80, 'g':170, 'b':240},
+      {'r':180, 'g': 90, 'b':135},
+      {'r':195, 'g':240, 'b':  0},
+      {'r':150, 'g': 18, 'b':255},
+      {'r': 80, 'g':245, 'b':  0},
+      {'r':165, 'g': 25, 'b':  0},
+      {'r': 80, 'g':145, 'b':  0},
+      {'r': 80, 'g':170, 'b':240},
+      {'r': 55, 'g': 92, 'b':255},
+    ];
     // @formatter:on
   }
 
   // init should only ever be called once.
-  init() {
-  
-
-  }
+  init() {}
   log(a) {
     if (this.isMaster) console.log(a);
     
@@ -763,7 +774,17 @@ beforeq(player) {
   }
 
   getRandomColor() {
+  if (this.config.playerOldColors == 1) {
+    var index = Math.floor(Math.random() * this.oldcolors.length);
+    var color = this.oldcolors[index];
+    return {
+      r: color.r,
+      b: color.b,
+      g: color.g
+     };
+    } else {
     return utilities.getRandomColor();
+    }
   }
 
   // todo change this out for a vector library

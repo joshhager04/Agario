@@ -1,7 +1,7 @@
 urlexample :http//:someurl
 ingameexample %spy
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-Bots skins
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Bots skins
 2ch.hk :http://i.stack.imgur.com/f2eBw.png
 4chan :http://i.stack.imgur.com/bg6QO.png
 8 :http://lh3.googleusercontent.com/-OcKOCW8oNDE/Vao91SJ4YYI/AAAAAAACJuk/Q6PNd9yKz38/s0/8-hd.pnghttp://i.stack.imgur.com/s360B.png
@@ -23,7 +23,7 @@ cambodia :http://agarioskins.com/img/skin/cambodia.png
 canada :http://agarioskins.com/img/skin/canada.png
 chile :http://agarioskins.com/img/skin/chile.png
 china :http://agarioskins.com/img/skin/china.png
-cia :http://agarioskins.com/img/skin/cia.png
+cia :http://agarioskins.com/img/skin/cia.pnghttp://agarioskins.com/img/skin/confederate.png
 confederate :http://agarioskins.com/img/skin/confederate.png
 croatia :http://agarioskins.com/img/skin/croatia.png
 cuba :http://agarioskins.com/img/skin/cuba.pnghttp://agarioskins.com/img/skin/denmark.png
@@ -110,8 +110,8 @@ ussr :http://agarioskins.com/img/skin/ussr.png
 vinesauce :http://agarioskins.com/img/skin/vinesauce.png
 wojak :http://vignette2.wikia.nocookie.net/agario/images/4/4d/Wojak.png/revision/latest?cb=20150625140550
 yaranaika :http://vignette4.wikia.nocookie.net/agario/images/2/20/Yaranaika.png/revision/latest?cb=20150701214900&path-prefix=pt-br
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-Other skins
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Other skins
 darkspy :http://i.imgur.com/OZdYBGu.png
 maxrage :http://i.imgur.com/oAOUyY0.gif
 troll :http://openclipart.org/image/2400px/svg_to_png/130795/Trollface.png
