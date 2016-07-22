@@ -2,6 +2,7 @@ urlexample :http//:someurl
 ingameexample %spy
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Bots skins
+origin :http://www.agarioguide.com/wp-content/uploads/2015/05/origin.png
 2ch.hk :http://i.stack.imgur.com/f2eBw.png
 4chan :http://i.stack.imgur.com/bg6QO.png
 8 :http://lh3.googleusercontent.com/-OcKOCW8oNDE/Vao91SJ4YYI/AAAAAAACJuk/Q6PNd9yKz38/s0/8-hd.pnghttp://i.stack.imgur.com/s360B.png
