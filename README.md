@@ -15,12 +15,12 @@ A fully functional open source Agar.io server implementation, written in Node.js
 3. Once downloaded
     * CD to the extracted zip folder, or clone to **Ogar-unlimited** folder.
 4. Install Modules
-    * Run command using cmd, or terminal **npm install**, wait until done, or run InstallDependecies.bat file in the **src** folder.
+    * Run command using cmd, or terminal **npm install**, wait until done. Otherwise,
+    * Run Install Dependencies (Windows).bat file in the **src** folder.
 5. Launch Ogar Unlimited
     * CD to the **src** folder inside **Ogar-unlimited** and run the start.bat/sh file or use command (**node index**).
-6. You're all done. Continue reading for more info
-
-**NOTE: FOR THOSE WHO CAN'T USE THE INSTALL DEPENDENCIES SCRIPT, YOU MUST DO NPM INSTALL AFTER YOU CD INTO THE SRC FOLDER**
+    * Just run **Start.bat** inside **src** folder (Windows only)
+6. You're all done. Now, you can play it by using `play.ogarul.tk`. Continue reading for more info
 
 ###### Troubleshooting, FAQ and Tutorial
 [Troubleshooting Guide](https://github.com/AJS-development/Ogar-unlimited/issues/1335)
@@ -87,7 +87,7 @@ Multiverse is for having multiple servers in one console. The command for multiv
 - `multiverse select [name]` - Selects which server that you want to control
 
 ### Easy Verify
-For those of you who have trouble with minions and such, this feature is for you. Currently, there is no program that can get through all of ogar unlimited's filters and features, but in some future, someone might be able to crack the other anti bot measures. So we created an easy verify system, a currently foolproof system that filters out bots. To turn on, turn verify to 1 in config. Then when a player spawns, he is frozen at a spot and is given a 3 digit code. Then that player presses w to kill himself and types in the code in the nickname box. Afterword, when pressing play again, it shows a success message. Press w again to play.
+For those of you who have trouble with minions and such, this feature is for you. Currently, there is no program that can get through all of ogar unlimited's filters and features, but in some future, someone might be able to crack the other anti bot measures. So we created an easy verify system, a currently foolproof system that filters out the bots. To turn on, turn `verify` to 1 in advConfig.ini . Then when a player spawns, he is frozen at a spot and is given a 3 digit code. Then that player presses "W" to kill himself and types in the code in the nickname box. Afterwards, when pressing "Play" again, it shows a success message. Press "W" again to play.
 
 ### Minions
 In order to use minions, you can spawn them by typing `minion [yourid] [amount] [minionname]` in console. The way that client controls the minion between agar.io and play.ogarul.tk are different. To control your minions:
@@ -107,7 +107,7 @@ Space | Split the minion (while in "minion" mode)
 W | Makes minion to eject some mass (while in "minion" mode)
 You can disable minions by typing `minion [id]` in console, or do `minion destroy` and it will remove all minions in your server.
 
-### OP(2.4.5) - Guide
+### OP
 OP is use for having fun in your server like trolling, increases your mass, playing virus, etc. You can make yourself OP by doing `op [yourid]` in console. To toggle between modes, you need to press Q in order to use OP's features. The C's will appears next to your name. If you press Q again, it will add another C until you have 4 C's. If you press Q once again, it will go back to normal state. What these does is:
 
 C's(in order) | When pressing "W" | When pressing "Space"
@@ -120,36 +120,32 @@ No C's | Normal feed | Normal split
 
 * Note: Names (CC's) don't work when player's name is blank and it doesn't work on Leap gamemodes and/or while using minions. Also, you can configure this in config.ini 
 
-## Veteran skins and custom skins (guide)
-*(For play.ogarul.tk only)* Click "Want skin list?" located at the bottom. Then you can choose the skin that you wanted. After that, type your name besides the `<skinname>`. (eg: `<nuclear>Bomb` would give you a "nuclear" skin and your name "Bomb")
+## Skin list and custom skins
+**Play.ogarul.tk**
+- Click "Want skin list?" located at the bottom. Then you can choose the skin that you wanted. After that, type your name next to the `<skinname>`. (eg: `<nuclear>Bomb` would give you a "nuclear" skin and your name would be "Bomb")
 
-*(For agar.io)*
-To use veteran skins, do <skinname> and then your name. For example `<spy> lol` will give you "spy" skin with name of "lol". You can also use a custom skin from a website by using `[website]name` *(you need to use a url shortener though)*
+**Agar.io**
+- To use agar.io skins, do `<skinname>` and then your name. For example `<spy> lol` will give you "spy" skin with name of "lol". You can also use a custom skin from a website by using `[website]name` *(you need to use a url shortener though)*
 
-You can use custom skins by putting them in customskins.txt
-The format is `[shortcut] [skin]` for the skin field, to use a URL skin, you do `:http://url` DO NOT FORGET TO GET RID OF THE S IF IT IS HTTPS OR FORGET TO PUT A : BEFORE.To use an agario skin, use `%skinname`To use that skin in game simply do `<skinsshortuct>` and then your name,
+You can use custom skins by putting them in customskins.txt. The format should be `[skin_shorcut] :http//image_url` for using skin image from URL, or use `[skin_shortcut] :%skinname` for using agar.io skin instead. To use URL skin, use `:http//url_image`. **NOTE: Use only "http"(not "https"). Also, don't forget to put `:` before "http")**
 
-You can see a more detailed guide on the [wiki] (https://github.com/AJS-development/Ogar-unlimited/wiki/Skins-and-skin-shortcuts)
+You can see more detailed guide on the [wiki](https://github.com/AJS-development/Ogar-unlimited/wiki/Skins-and-skin-shortcuts)
 
 ## Obtaining and Using
+As Ogar Unlimited is written in Node.js, you must have Node.js and its modules installed to use it ~~(unless you are using the Windows binary)~~. You can usually download Node using your distribution's package manager (for *nix-like systems), or from [the Node website](http://nodejs.org). To install the modules that is required, open up your system command line (cmd for windows, terminal for mac) and simply type "npm install". To see a detailed guide go to the [Installation guide] (https://github.com/AJS-development/Ogar-unlimited/wiki/Installation) in the wiki.
 
-As Ogar Unlimited is written in Node.js, you must have Node.js and its "ws", and "request" module installed to use it (unless you are using the Windows binary). You can usually download Node using your distribution's package manager (for *nix-like systems), or from [the Node website](http://nodejs.org). To install the "ws" and "request" module that is required, open up your system command line (cmd for windows, terminal for mac) and type "npm install ws" and do "npm install request". To see a detailed guide go to the [Installation guide] (https://github.com/AJS-development/Ogar-unlimited/wiki/Installation) in the wiki
+~~(Binarys are also available in Releases)~~ OUTDATED
 
-(You can install and use Ogar unlimited on windows very quickly. First click `Installdependancies.bat` in src. Then wait (it takes a while), then click `Start.bat` and you're off! The next time you start the server, you only have to click `Start.bat`)
-
-~~ (Binarys are also available in Releases)~~ OUTDATED
-
-Currently, Ogar listens on the following addresses and ports:
+Currently, OgarUL listens on the following addresses and ports:
 * *:88 - for the stats server (I would use it to track servers)
 * *:443 - for the game server
 
-Please note that on some systems, you may have to run the process as root or otherwise elevate your privileges to allow the process to listen on the needed ports. **If you are getting an EADDRINUSE error, it means that the port required to run Ogar UL is being used. Usually, Skype is the culprit. To solve this, either close out skype, or change the serverPort value in settings/advconfig.ini to a different port. You will have to change your connection ip to "127.0.0.1:PORT"**
+Please note that on some systems, you may have to run the process as root or otherwise elevate your privileges to allow the process to listen on the needed ports. **If you are getting an EADDRINUSE error, it means that the port required to run Ogar UL is being used. Usually, Skype is the culprit. To solve this, either close out skype, or change the serverPort value in settings/advconfig.ini to a different port. You will have to change your ip connection to "127.0.0.1:PORT"**
 
 Once the game server is running, you can connect (locally) by typing `play.ogarul.tk/?ip=127.0.0.1:443` into your browser's address bar.
 
 ## Configuring Ogar UL
-To control how your server is run, Edit files in `src/settings/`
-
+To control how your server is running, you can edit your settings to your own liking in `src/settings/`. If you don't want your config gets overwritten by updates, you can copy the configs and paste it into `config.ini`
 
 ## Custom Game modes
 Ogar UL has support for custom game modes. To switch between game modes, change the value of "serverGamemode" in the configurations file to the selected game mode id and restart the server. The current supported game modes are:
@@ -164,20 +160,20 @@ Id   | Name                         | Additional Description
 5    | UnlimitPVP                   | Where you can split indefinitely and rejoin instantly - 1v1 game (created by me)
 6    | UnlimitFFA                   | Same as above (Unlimited PVP) except in FFA (created by me)
 7    | Shrinking FFA                | Shrinks the game(map size) as time passes
-8    | Experimental v2              | An improved Experimental mode (created by )
+8    | Experimental v2              | An improved Experimental mode
 10   | Tournament                   | Normal FFA, but with no respawn and time limit
-11   | Hunger Games                 | Adapted from a movie called "Hunger Games"
-12   | Zombie Mode                  | 
+11   | Hunger Games                 | Adapted from a movie called "The Hunger Games"
+12   | Zombie Mode                  | Infection-like mode
 13   | Team Z                       | Teaming in Zombie Mode
 14   | Team X                       | Teaming in Experimental
-15   | NoCollision Teams            | Same as Teams mode but with no collision between teammates
-16   | NoCollision TeamZ            | Same as Team Z mode but with no collision between teammates
-17   | NoCollision TeamX            | Same as Team X mode but with no collision between teammates
+15   | NoCollision Teams            | Same as Teams mode but no collision between teammates
+16   | NoCollision TeamZ            | Same as Team Z mode but no collision between teammates
+17   | NoCollision TeamX            | Same as Team X mode but no collision between teammates
 18   | Leap                         | Where you leap instead of split, made by Ogarplus
-20   | Rainbow FFA                  | Hint: Use "Acid Mode" in the settings in the custom client
+20   | Rainbow FFA                  | Hint: Use "Acid Mode" in the custom client's settings
 22   | BlackHole                    | Normal FFA but with one big black hole
 ## Chat Commands
-The available in-game chat commands
+The available in-game chat commands.
 
 
  Command                      | Usage
@@ -286,4 +282,4 @@ Just make a pull request or make your own copy
 12. tutorial system
 13. quadrants
 
-#####anything else, if you improved it, you dont have to give us credit, or else if you just copied, you must give us credit
+##### Anything else, if you improved it, you dont have to give us credit, or else if you just copied, you must give us credit
