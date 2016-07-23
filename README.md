@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/AJS-development/Ogar-unlimited.svg?branch=master)](https://travis-ci.org/AJS-development/Ogar-unlimited) [![Join the chat at https://gitter.im/AJS-development/Ogar-unlimited](https://badges.gitter.im/AJS-development/Ogar-unlimited.svg)](https://gitter.im/AJS-development/Ogar-unlimited?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)  [![GitHub issues](https://img.shields.io/github/issues/AJS-development/Ogar-unlimited.svg)](https://github.com/AJS-development/Ogar-unlimited/issues)  [![GitHub forks](https://img.shields.io/github/forks/AJS-development/Ogar-unlimited.svg)](https://github.com/AJS-development/Ogar-unlimited/network)  [![GitHub stars](https://img.shields.io/github/stars/AJS-development/Ogar-unlimited.svg)](https://github.com/AJS-development/Ogar-unlimited/stargazers)  [![Plugin](https://img.shields.io/badge/Official%20Plugin%20Library-OgarUL--Plugin--Library-green.svg)](https://github.com/AJS-development/OgarUL-Plugin-Library)  [![MS](https://img.shields.io/badge/Client-AJS--dev-green.svg)](https://github.com/AJS-development/OgarUL-Client) [![Plugin](https://img.shields.io/badge/Forums-OgarUl-green.svg)](http://forum.ogarul.tk) [![Plugin](https://img.shields.io/badge/Stats-OgarUl-green.svg)](http://stats.ogarul.tk)  [![MS](https://img.shields.io/badge/Client-AJS--dev-green.svg)](http://play.ogarul.tk) 
 [![Demo] (https://img.shields.io/badge/Demo-Heroku-green.svg)] (https://github.com/AJS-development/Ogar-unlimited/wiki/Demos)
 
-A fully functional open source Agar.io server implementation, written in Node.js by AJS development team. Ogar Unlimited is designed to be used with the latest Agar.io client and also our own client(play.ogarul.tk). It is basically what it says in the title, Ogar, except its functionality is unlimited!
+A fully functional open source Agar.io server implementation, written in Node.js by AJS development team. Ogar Unlimited is designed to be used with the latest Agar.io client and also our own official client, [*play.ogarul.tk*](http://play.ogarul.tk/). It is basically what it says in the title, Ogar, except its functionality is unlimited!
 
 ###### Installation Guide (short)
 1. Download and install Node
@@ -20,48 +20,43 @@ A fully functional open source Agar.io server implementation, written in Node.js
     * CD to the **src** folder inside **Ogar-unlimited** and run the start.bat/sh file or use command (**node index**).
 6. You're all done. Continue reading for more info
 
-**NOTE: FOR THOSE WHO CANT USE THE INSTALL DEPENDANCIES SCRIPT, YOU MUST DO NPM INSTALL AFTER YOU CD INTO THE SRC FOLDER**
+**NOTE: FOR THOSE WHO CANT USE THE INSTALL DEPENDENCIES SCRIPT, YOU MUST DO NPM INSTALL AFTER YOU CD INTO THE SRC FOLDER**
 
-###### Troubleshooting
-https://github.com/AJS-development/Ogar-unlimited/issues/1335
+###### Troubleshooting and FAQs
+[Troubleshooting Guide](https://github.com/AJS-development/Ogar-unlimited/issues/1335)
 
-### Highlight features in this modified copy
- 1. PMSG command, to periodically send a message (no need for admin to be online to explain rules)
- 2. OP , to do stuff in game WITHOUT a illegal clone client, see below
- 3. MSG, FMSG commands
- 4. Max IP Connections
- 5. Troll command ;)
- 6. More GameModes
- 7. Ban, Unban, Ban List (with revolutionary ban technique, no lag, no DDoS attacks)
- 8. Autoban option (see config.ini or advconfig.ini)
- 9. More control (config.ini and advconfig.ini)
- 10. and other features such as merge or nojoin or kick/killrange
- 11. Better physics (ejected mass and split and virus)
- 12. Colortext command (Changes console output color and style)
- 13. Live Console (see gameserver.ini, where a live console appears) NOTE: this is way different that Ogarserv's Console
- 14. Restart. Make it restart automatically or restart manually, Only works if use windows start script
- 15. skins, to use custom skins, do <skinname> and then your name. for example `<spy> lol` will give you spy skin with name of lol use `[website]` to use a custom skin from a website (you need to use a url shortener though)
- 16. Customskins (see [custom skins](https://github.com/AJS-development/Ogar-unlimited#custom-skins-guide))
- 17. Minions
- 18. Banlist file
- 19. Opbyip
- 20. Database free high score keeper
- 21. `pcmd` command to do periodic commands
- 22. `range` command for bulk commands
- 23. Easy verify system (anti bot measure) (config.ini or advconfig.ini)
- 24. Mousefilter (anti bot measure)
- 25. Plugins. Add gamemodes and commands easily! (See [example plugin](https://github.com/AJS-development/OgarUL-Plugin-Library/tree/master/example-plugin) and [template plugin](https://github.com/AJS-development/OgarUL-Plugin-Library/tree/master/Template-Plugin))
- 26. Uniban (a pre-made banlist of already known bad IPs)
- 27. Garbage collection (prevent memory leaks)
- 28. Chat *(play.ogarul.tk) only*
- 29. Multi server support (see [multiverse](https://github.com/AJS-development/Ogar-unlimited#multiverse)) *(play.ogarul.tk) only*
- 30. Bots that team
- 31. Client configs *(play.ogarul.tk) only*
- 32. Language support (currently spanish)
- 33. Tutorials
- 34. Quadrants
- 35. Chat commands *(play.ogarul.tk) only*
- 
+[FAQ](https://github.com/AJS-development/Ogar-unlimited/issues/1336)
+
+### Highlight features in Ogar Unlimited
+ 1. More commands! (eg. `pmsg`, `merge`, `freeze`) (see [here](https://github.com/AJS-development/Ogar-unlimited#console-commands) for more info)
+ 2. OP (Makes player OP, see [here](https://github.com/AJS-development/Ogar-unlimited#op245---guide) for more info)
+ 3. More game modes! (see [here](https://github.com/AJS-development/Ogar-unlimited#custom-game-modes) for more info)
+ 4. Ban, Unban, Ban List (with revolutionary ban technique, no lag, no DDoS attacks)
+ 5. Autoban option (see config.ini or advConfig.ini)
+ 6. Better physics (ejected mass, split, autosplit, virus, etc.)
+ 7. Colortext command (changes console output color and style)
+ 8. Live console (see advConfig.ini, where a live console appears) *NOTE: This is way different that Ogarserv's Console*
+ 9. Restart (make it restart automatically or restart manually) *NOTE: Only works if use windows start script*
+ 10. Skins, to use custom skins, do <skinname> and then your name. for example `<spy> lol` will give you spy skin with name of lol use `[website]` to use a custom skin from a website (you need to use a url shortener though) <------- Needs to seperate this!
+ 11. Custom skins (see [custom skins](https://github.com/AJS-development/Ogar-unlimited#custom-skins-guide))
+ 12. Minions (see [here](https://github.com/AJS-development/Ogar-unlimited#minions) for more info)
+ 13. Banlist file
+ 14. Opbyip
+ 15. Database free high score keeper
+ 16. Easy verify system (anti bot measure, see config.ini or advconfig.ini)
+ 17. Mousefilter (anti bot measure, see config.ini or advconfig.ini)
+ 18. Plugins (add gamemodes and commands easily! see [here](https://github.com/AJS-development/Ogar-unlimited/wiki/Plugin-API-Tutorial) for how to make your own plugin!)
+ 19. Uniban (a pre-made banlist of already known bad IPs)
+ 20. Garbage collection (prevent memory leaks)
+ 21. Chat *(play.ogarul.tk only)*
+ 22. Multi server support (see [multiverse](https://github.com/AJS-development/Ogar-unlimited#multiverse)) *(play.ogarul.tk only)*
+ 23. Teaming bots (still in development)
+ 24. Client configs (see clientConfig.ini) *(play.ogarul.tk only)*
+ 25. Language support (currently English and Spanish)
+ 26. Tutorials (runs only once in console)
+ 27. Quadrants (improves performance and reduce lag)
+ 28. Chat commands *(play.ogarul.tk only)*
+
 ### Note:
 Please note that this is updated very frequently and you should check for updates every week. I added an update system but It needs to be initialized by you (because I don't think it is the right thing to do, updating without your consent). Also you may copy this and modify it just please give some credit to the hard working dev team, that is all I care. Another note is that I am sometimes terrible in my grammar (I still cannot spell potato out loud). If there is an issue, please notify me. If there is something you want in this, just make a pull request.
 
