@@ -20,15 +20,17 @@ A fully functional open source Agar.io server implementation, written in Node.js
     * CD to the **src** folder inside **Ogar-unlimited** and run the start.bat/sh file or use command (**node index**).
 6. You're all done. Continue reading for more info
 
-**NOTE: FOR THOSE WHO CANT USE THE INSTALL DEPENDENCIES SCRIPT, YOU MUST DO NPM INSTALL AFTER YOU CD INTO THE SRC FOLDER**
+**NOTE: FOR THOSE WHO CAN'T USE THE INSTALL DEPENDENCIES SCRIPT, YOU MUST DO NPM INSTALL AFTER YOU CD INTO THE SRC FOLDER**
 
-###### Troubleshooting and FAQs
+###### Troubleshooting, FAQ and Tutorial
 [Troubleshooting Guide](https://github.com/AJS-development/Ogar-unlimited/issues/1335)
 
 [FAQ](https://github.com/AJS-development/Ogar-unlimited/issues/1336)
 
+[How To Tutorial](https://github.com/AJS-development/Ogar-unlimited/issues/729)
+
 ### Highlight features in Ogar Unlimited
- 1. More commands! (eg. `pmsg`, `merge`, `freeze`) (see [here](https://github.com/AJS-development/Ogar-unlimited#console-commands) for more info)
+ 1. More commands! (eg. `pmsg`, `merge`, `freeze`; see [here](https://github.com/AJS-development/Ogar-unlimited#console-commands) for more info)
  2. OP (Makes player OP, see [here](https://github.com/AJS-development/Ogar-unlimited#op245---guide) for more info)
  3. More game modes! (see [here](https://github.com/AJS-development/Ogar-unlimited#custom-game-modes) for more info)
  4. Ban, Unban, Ban List (with revolutionary ban technique, no lag, no DDoS attacks)
@@ -37,11 +39,10 @@ A fully functional open source Agar.io server implementation, written in Node.js
  7. Colortext command (changes console output color and style)
  8. Live console (see advConfig.ini, where a live console appears) *NOTE: This is way different that Ogarserv's Console*
  9. Restart (make it restart automatically or restart manually) *NOTE: Only works if use windows start script*
- 10. Skins, to use custom skins, do <skinname> and then your name. for example `<spy> lol` will give you spy skin with name of lol use `[website]` to use a custom skin from a website (you need to use a url shortener though) <------- Needs to seperate this!
- 11. Custom skins (see [custom skins](https://github.com/AJS-development/Ogar-unlimited#custom-skins-guide))
+ 11. Veteran skins and custom skins (see [here](https://github.com/AJS-development/Ogar-unlimited#veteran-skins-and-custom-skins-guide) for more info)
  12. Minions (see [here](https://github.com/AJS-development/Ogar-unlimited#minions) for more info)
  13. Banlist file
- 14. Opbyip
+ 14. "Opbyip" (Makes player always OP using player's IP)
  15. Database free high score keeper
  16. Easy verify system (anti bot measure, see config.ini or advconfig.ini)
  17. Mousefilter (anti bot measure, see config.ini or advconfig.ini)
@@ -50,8 +51,8 @@ A fully functional open source Agar.io server implementation, written in Node.js
  20. Garbage collection (prevent memory leaks)
  21. Chat *(play.ogarul.tk only)*
  22. Multi server support (see [multiverse](https://github.com/AJS-development/Ogar-unlimited#multiverse)) *(play.ogarul.tk only)*
- 23. Teaming bots (still in development)
- 24. Client configs (see clientConfig.ini) *(play.ogarul.tk only)*
+ 23. Teaming bots (for testing purposes)
+ 24. Client's configuration (see clientConfig.ini) *(play.ogarul.tk only)*
  25. Language support (currently English and Spanish)
  26. Tutorials (runs only once in console)
  27. Quadrants (improves performance and reduce lag)
@@ -61,44 +62,72 @@ A fully functional open source Agar.io server implementation, written in Node.js
 Please note that this is updated very frequently and you should check for updates every week. I added an update system but It needs to be initialized by you (because I don't think it is the right thing to do, updating without your consent). Also you may copy this and modify it just please give some credit to the hard working dev team, that is all I care. Another note is that I am sometimes terrible in my grammar (I still cannot spell potato out loud). If there is an issue, please notify me. If there is something you want in this, just make a pull request.
 
 ### DO NOT BUY OGAR UL!
-If you've purchased a copy of Ogar UL, you just got scammed. It is open source which means it is FREE. yes FREE! So if you paid any money, well, too bad.
+If you've purchased a copy of Ogar UL, you just got scammed. It is open source which means it is FREE. Yes, FREE! So if you paid any money, well, too bad.
 
-### DO not get from other sources
-If you got ogarUL from anywhere besides github, DELETE IT IMMEDIATLY!!! Those might be bundled with viruses and other things. Remember you are running this probably from `sudo`. Get the github one here: https://github.com/AJS-development/Ogar-unlimited
+### Do not get from other sources
+If you got OgarUL from anywhere besides github, DELETE IT IMMEDIATLY!!! Those might be bundled with viruses and other things. Remember, you are running this probably from `sudo`. Get it from github only!!! : https://github.com/AJS-development/Ogar-unlimited
 
+### How can I get plugins? Is there any official library?
+Yes, we have our own official library. It's only right here: https://github.com/AJS-development/OgarUL-Plugin-Library
 
-### How do I install plugins from the official library?
-the official library is here: https://github.com/AJS-development/OgarUL-Plugin-Library
-
-
-To install any plugins from the library, first do `plugin available` and remember the name of the plugin you want. then do `plugin install [name]` and you are set!
+~~To install any plugins from the library, first do `plugin available` and remember the name of the plugin you want.~~
+[DEPRECATED] Use `plugin search [terms]` instead and then do `plugin install [name]`. The `name` arg is the name from the search terms.
 
 ### How do I use other plugins?
+To use a plugin, simply download the folder and drag it into the plugins folder in "src" or use the `plugin add` command. To use the plugin add command, the plugin must have a "files.txt" file. Then click on that file, click raw, and then copy the url. Then do `plugin add [url] [pluginname]` and it will even reload automatically for you. Thats it! Example, doing `plugin add https://raw.githubusercontent.com/AJS-development/OgarUL-Plugin-Library/master/devtools-plugin/files.txt devtools` will add a plugin called devtools to your plugins.
 
-To use a plugin, simply download the folder and drag it into the plugins folder in src or use the plugin add command. To use the plugin add command, the plugin must have a files.txt file. then click on that file, click raw, and then copy the url. Then do `plugin add [url] [pluginname]` and it will even reload automatically for you. Thats it! example, doing `plugin add https://raw.githubusercontent.com/AJS-development/OgarUL-Plugin-Library/master/devtools-plugin/files.txt devtools` will add a plugin called devtools to your plugins.
-
-### How do I create a plugin? Is there Documentation?
-
+### How do I create a plugin? Is there any documentation?
 This is the fun part, creating your own plugins. There is an example plugin you should look at and there is a template plugin. To get started, you can look at the plugin API documentation [here](https://github.com/AJS-development/Ogar-unlimited/wiki/Plugin-API-Tutorial).
 
 ### Multiverse
-Multiverse is for having multiple servers in one console. This is how you use it. The command for multiverse is `multiverse [command] [arg]`. Available commands are `list`,`create`,`remove`, and `select`. The list is used by doing `multiverse list` and it will list servers and their ports. It will also tell you f that is the master or is selected. The create command creates a server. The args are `multiverse create [name] [port] [gamemode] [title]`. Make sure that the port is not repeated in other servers. The title arg is optional and spaces are allowed, it is what is displayed in the client. Note that only the master has a statsport and sends multiverse data. To remove a server, do `multiverse remove [name]`. To then control the server using console commands, you have to select it. Do `multiverse select [name]` to select a server and start controlling it.
-
+Multiverse is for having multiple servers in one console. The command for multiverse is `multiverse [command] [arg]`. Available commands are:
+- `multiverse create [name] [port] [gamemode] [title(optional)]` - Creates a server (the title arg is optional and spaces are allowed, which is to display it in the client aka play.ogarul.tk. Note that only the main server has a statsport and sends multiverse data.)
+- `multiverse list` - Listing all servers and their ports (also tells which server is a main server)
+- `multiverse remove [name]` - Remove a server
+- `multiverse select [name]` - Selects which server that you want to control
 
 ### Easy Verify
 For those of you who have trouble with minions and such, this feature is for you. Currently, there is no program that can get through all of ogar unlimited's filters and features, but in some future, someone might be able to crack the other anti bot measures. So we created an easy verify system, a currently foolproof system that filters out bots. To turn on, turn verify to 1 in config. Then when a player spawns, he is frozen at a spot and is given a 3 digit code. Then that player presses w to kill himself and types in the code in the nickname box. Afterword, when pressing play again, it shows a success message. Press w again to play.
 
 ### Minions
-You use minions by doing `minion [yourid] [amount] [minionname]`. Then, they will start following your mouse. You can control those minions by useing E and R keys. E for split. R for feed. If that doesnt work because of you client, turn useER to 0 in config.ini. then in game, q key. If you press it, a B will appear next to your name. then controls will be normal except now ejecting and splitting will happen on your minions not you. you can re-enter normal control mode by pressing q again. You can disable minions by doing `minion [id]` in console for just you or do `minion destroy` and it will remove all minions.
+In order to use minions, you can spawn them by typing `minion [yourid] [amount] [minionname]` in console. The way that client controls the minion between agar.io and play.ogarul.tk are different. To control your minions:
 
-### OP(2.4.5) - Guide,
-You use OP by first setting who has op by doing op [id] in console. Then, that player can use the op features in game by pressing q. Then a c will appear next to your name. If you press w in this state, it gives you 100 more mass. If you press space in this state, you will be able to rejoin instantly. You will find out that if you press q again, two c's will appear next to your name. if you press w in this state, you shoot viruses. If you press space in this state, you shoot tiny things (almost invisible) that if someone eats, their mass is reduced by 100. Then, if you press q again,3 c's will appear.press w with 3c's, you shoot a virus, but whoever who eats it will be trolled :). If you press space with 3 c's the person who eats the virus will explode.If you  press q again, 4 cs will appear and if you press w, you will shoot a virus tha kills people and space, it shoots a kick virus. You can then exit op by pressing q again after doing an action or by pressing Q until the three c's will dissappear (so that you can normally split and shoot mass).
+#### play.ogarul.tk
+Input | Description
+----|----
+E | Split the minion
+R | Makes minion to eject some mass
+T | Freeze the minion
 
-* Note: names (CC's) dont work when player name is blank and it doesnt work on Virus and Leap gamemodes
+#### agar.io (change `useER = 0` in config.ini)
+Input | Description
+----|----
+Q | Toggles control mode between you and your minion (a letter "B" will appear next to your name, indicates that you are in "minion" mode)
+Space | Split the minion (while in "minion" mode)
+W | Makes minion to eject some mass (while in "minion" mode)
+You can disable minions by typing `minion [id]` in console, or do `minion destroy` and it will remove all minions in your server.
 
-## Custom skins (guide)
+### OP(2.4.5) - Guide
+OP is use for having fun in your server like trolling, increases your mass, playing virus, etc. You can make yourself OP by doing `op [yourid]` in console. To toggle between modes, you need to press Q in order to use OP's features. The C's will appears next to your name. If you press Q again, it will add another C until you have 4 C's. If you press Q once again, it will go back to normal state. What these does is:
+
+C's(in order) | When pressing "W" | When pressing "Space"
+----|----|----
+C | Gives you 100 more mass | Able to merge instantly (for short of time)
+CC | Shoots virus | Shoots tiny "things" (almost invisible) that if someone eats it, their mass reduced by 100
+CCC | Shoots "troll" virus | Shoots "exploding" virus
+CCCC | Shoots "one-hit-kill" virus | Shoots "gtfo-from-my-server" virus
+No C's | Normal feed | Normal split
+
+* Note: Names (CC's) don't work when player's name is blank and it doesn't work on Leap gamemodes and/or while using minions. Also, you can configure this in config.ini 
+
+## Veteran skins and custom skins (guide)
+*(For play.ogarul.tk only)* Click "Want skin list?" located at the bottom. Then you can choose the skin that you wanted. After that, type your name besides the `<skinname>`. (eg: `<nuclear>Bomb` would give you a "nuclear" skin and your name "Bomb")
+
+*(For agar.io)*
+To use veteran skins, do <skinname> and then your name. For example `<spy> lol` will give you "spy" skin with name of "lol". You can also use a custom skin from a website by using `[website]name` *(you need to use a url shortener though)*
+
 You can use custom skins by putting them in customskins.txt
-the format is `[shortcut] [skin]` for the skin field, to use a URL skin, you do `:http://url` DO NOT FORGET TO GET REID OF THE S IF IT IS HTTPS OR FORGET TO PUT A : BEFORE.To use an agario skin, use `%skinname`To use that skin in game simply do `<skinsshortuct>` and then your name,
+The format is `[shortcut] [skin]` for the skin field, to use a URL skin, you do `:http://url` DO NOT FORGET TO GET RID OF THE S IF IT IS HTTPS OR FORGET TO PUT A : BEFORE.To use an agario skin, use `%skinname`To use that skin in game simply do `<skinsshortuct>` and then your name,
 
 You can see a more detailed guide on the [wiki] (https://github.com/AJS-development/Ogar-unlimited/wiki/Skins-and-skin-shortcuts)
 
@@ -170,7 +199,7 @@ help                          | Shows list of commands
 ophelp                        | Shows how to use op
 quickrestart                  | Quickly restart your server. (**Does not restart, nor reduce memory**)
 multiverse [command] [args]   | Manage multiple servers in 1 OgarUl instance. See multiverse
-plugin [command]              | Manage plugins (reload,list,delete,add,available,install,update,search)
+plugin [command]              | Manage plugins (reload,list,delete,add,install,update,search)
 chat [command] [args]         | Chat from console. (all, pm) (Usage: **chat all [msg]**)
 chatbat [id]                  | Ban people user id from chatting.
 announce                      | Starts the high score announce feature.
