@@ -8,23 +8,23 @@ module.exports = function(gameServer, split) {
     console.log("Gamemode 0: FFA");
     console.log("Gamemode 1: Teams");
     console.log("Gamemode 2: Experimental");
-    console.log("Gamemode 3: TFFA");
+    console.log("Gamemode 3: TimedFFA");
     console.log("Gamemode 4: VirusOff");
     console.log("Gamemode 5: UnlimitPVP");
     console.log("Gamemode 6: UnlimitFFA");
-    console.log("Gamemode 7: SFFA");
+    console.log("Gamemode 7: ShrinkingFFA");
     console.log("Gamemode 8: Experimental v2");
-    console.log("Gamemode 9: AFFA");
+    console.log("Gamemode 9: AnonymousFFA");
     console.log("Gamemode 10: Tournament");
     console.log("Gamemode 11: Hunger Games");
     console.log("Gamemode 12: Zombie");
-    console.log("Gamemode 14: TeamX");
+    console.log("Gamemode 14: Experimental Team");
     console.log("Gamemode 15: NoCollisionTeams");
     console.log("Gamemode 18: Leap");
     console.log("Gamemode 20: Rainbow");
     console.log("Gamemode 21: Debug");
     console.log("Gamemode 22: Blackhole");
-    console.log("Gamemode 23: NoCollisionTeamX");
+    console.log("Gamemode 23: NoCollisionExperimentalTeam");
     console.log("[Console] ====================================================");
   } else {
     try {
