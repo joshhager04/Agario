@@ -4,11 +4,11 @@
 [![Build Status](https://travis-ci.org/AJS-development/Ogar-unlimited.svg?branch=master)](https://travis-ci.org/AJS-development/Ogar-unlimited) [![Join the chat at https://gitter.im/AJS-development/Ogar-unlimited](https://badges.gitter.im/AJS-development/Ogar-unlimited.svg)](https://gitter.im/AJS-development/Ogar-unlimited?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)  [![GitHub issues](https://img.shields.io/github/issues/AJS-development/Ogar-unlimited.svg)](https://github.com/AJS-development/Ogar-unlimited/issues)  [![GitHub forks](https://img.shields.io/github/forks/AJS-development/Ogar-unlimited.svg)](https://github.com/AJS-development/Ogar-unlimited/network)  [![GitHub stars](https://img.shields.io/github/stars/AJS-development/Ogar-unlimited.svg)](https://github.com/AJS-development/Ogar-unlimited/stargazers)  [![Plugin](https://img.shields.io/badge/Official%20Plugin%20Library-OgarUL--Plugin--Library-green.svg)](https://github.com/AJS-development/OgarUL-Plugin-Library)  [![MS](https://img.shields.io/badge/Client-AJS--dev-green.svg)](https://github.com/AJS-development/OgarUL-Client) [![Plugin](https://img.shields.io/badge/Forums-OgarUl-green.svg)](http://forum.ogarul.tk) [![Plugin](https://img.shields.io/badge/Stats-OgarUl-green.svg)](http://stats.ogarul.tk)  [![MS](https://img.shields.io/badge/Client-AJS--dev-green.svg)](http://play.ogarul.tk) 
 [![Demo] (https://img.shields.io/badge/Demo-Heroku-green.svg)] (https://github.com/AJS-development/Ogar-unlimited/wiki/Demos)
 
-A fully functional open source Agar.io server implementation, written in Node.js by the big ajs development team. Ogar Unlimited is designed to be used with the latest Agar.io client. It is basically what it says in the title, Ogar, except its functionality is unlimited!
+A fully functional open source Agar.io server implementation, written in Node.js by AJS development team. Ogar Unlimited is designed to be used with the latest Agar.io client and also our own client(play.ogarul.tk). It is basically what it says in the title, Ogar, except its functionality is unlimited!
 
 ###### Installation Guide (short)
 1. Download and install Node
-    * Required version **v5.9.0**
+    * Required version [**v5.9.0**](https://nodejs.org/download/release/v5.9.0/)
 2. Download Ogar Unlimited (Zip or Git)
     * [Download Latest Zip](https://github.com/AJS-development/Ogar-unlimited/archive/master.zip)
     * ``` git clone git@github.com:AJS-development/Ogar-unlimited.git ```
@@ -23,7 +23,7 @@ A fully functional open source Agar.io server implementation, written in Node.js
 **NOTE: FOR THOSE WHO CANT USE THE INSTALL DEPENDANCIES SCRIPT, YOU MUST DO NPM INSTALL AFTER YOU CD INTO THE SRC FOLDER**
 
 ###### Troubleshooting
-https://github.com/AJS-development/Ogar-unlimited/issues/638
+https://github.com/AJS-development/Ogar-unlimited/issues/1335
 
 ### Highlight features in this modified copy
  1. PMSG command, to periodically send a message (no need for admin to be online to explain rules)
@@ -41,26 +41,26 @@ https://github.com/AJS-development/Ogar-unlimited/issues/638
  13. Live Console (see gameserver.ini, where a live console appears) NOTE: this is way different that Ogarserv's Console
  14. Restart. Make it restart automatically or restart manually, Only works if use windows start script
  15. skins, to use custom skins, do <skinname> and then your name. for example `<spy> lol` will give you spy skin with name of lol use `[website]` to use a custom skin from a website (you need to use a url shortener though)
- 16. customskins (see custom skins)
- 17. Minions: you can create minions like agario powerups. press q to enter minion control mode (a b will appear next to your name). w = eject, space = split. press q again to exit
+ 16. Customskins (see [custom skins](https://github.com/AJS-development/Ogar-unlimited#custom-skins-guide))
+ 17. Minions
  18. Banlist file
  19. Opbyip
  20. Database free high score keeper
- 21. pcmd command to do periodic commands
- 22. range command for bulk commands
- 23. easy verify system as anti bot mesure (config.ini or advconfig.ini)
- 24. mousefilter as a anti bot measure
- 25. plugins. Add gamemodes and commands easily! (See example plugin and template plugin)
- 26. uniban. A pre-made banlist of already known bad ips
- 27. garbage collection. prevent memory leak.
- 28. chat
- 29. Multi server support (see multiverse)
+ 21. `pcmd` command to do periodic commands
+ 22. `range` command for bulk commands
+ 23. Easy verify system (anti bot measure) (config.ini or advconfig.ini)
+ 24. Mousefilter (anti bot measure)
+ 25. Plugins. Add gamemodes and commands easily! (See [example plugin](https://github.com/AJS-development/OgarUL-Plugin-Library/tree/master/example-plugin) and [template plugin](https://github.com/AJS-development/OgarUL-Plugin-Library/tree/master/Template-Plugin))
+ 26. Uniban (a pre-made banlist of already known bad IPs)
+ 27. Garbage collection (prevent memory leaks)
+ 28. Chat *(play.ogarul.tk) only*
+ 29. Multi server support (see [multiverse](https://github.com/AJS-development/Ogar-unlimited#multiverse)) *(play.ogarul.tk) only*
  30. Bots that team
- 31. client configs
- 32. language support
- 33. tutorial
- 34. quadrants
- 35. chat commands
+ 31. Client configs *(play.ogarul.tk) only*
+ 32. Language support (currently spanish)
+ 33. Tutorials
+ 34. Quadrants
+ 35. Chat commands *(play.ogarul.tk) only*
  
 ### Note:
 Please note that this is updated very frequently and you should check for updates every week. I added an update system but It needs to be initialized by you (because I don't think it is the right thing to do, updating without your consent). Also you may copy this and modify it just please give some credit to the hard working dev team, that is all I care. Another note is that I am sometimes terrible in my grammar (I still cannot spell potato out loud). If there is an issue, please notify me. If there is something you want in this, just make a pull request.
