@@ -30,33 +30,30 @@ A fully functional open source Agar.io server implementation, written in Node.js
 [How To Tutorial](https://github.com/AJS-development/Ogar-unlimited/issues/729)
 
 ### Highlight features in Ogar Unlimited
- 1. More commands! (eg. `pmsg`, `merge`, `freeze`; see [here](https://github.com/AJS-development/Ogar-unlimited#console-commands) for more info)
+ 1. More useful commands! (eg. `pmsg`, `merge`, `freeze`; see [here](https://github.com/AJS-development/Ogar-unlimited#console-commands) for more info)
  2. OP (Makes player OP, see [here](https://github.com/AJS-development/Ogar-unlimited#op245---guide) for more info)
  3. More game modes! (see [here](https://github.com/AJS-development/Ogar-unlimited#custom-game-modes) for more info)
- 4. Ban, Unban, Ban List (with revolutionary ban technique, no lag, no DDoS attacks)
- 5. Autoban option (see config.ini or advConfig.ini)
- 6. Better physics (ejected mass, split, autosplit, virus, etc.)
- 7. Colortext command (changes console output color and style)
- 8. Live console (see advConfig.ini, where a live console appears) *NOTE: This is way different that Ogarserv's Console*
- 9. Restart (make it restart automatically or restart manually) *NOTE: Only works if use windows start script*
- 11. Veteran skins and custom skins (see [here](https://github.com/AJS-development/Ogar-unlimited#veteran-skins-and-custom-skins-guide) for more info)
- 12. Minions (see [here](https://github.com/AJS-development/Ogar-unlimited#minions) for more info)
- 13. Banlist file
- 14. "Opbyip" (Makes player always OP using player's IP)
- 15. Database free high score keeper
- 16. Easy verify system (anti bot measure, see config.ini or advconfig.ini)
- 17. Mousefilter (anti bot measure, see config.ini or advconfig.ini)
- 18. Plugins (add gamemodes and commands easily! see [here](https://github.com/AJS-development/Ogar-unlimited/wiki/Plugin-API-Tutorial) for how to make your own plugin!)
- 19. Uniban (a pre-made banlist of already known bad IPs)
- 20. Garbage collection (prevent memory leaks)
- 21. Chat *(play.ogarul.tk only)*
- 22. Multi server support (see [multiverse](https://github.com/AJS-development/Ogar-unlimited#multiverse)) *(play.ogarul.tk only)*
- 23. Teaming bots (for testing purposes)
- 24. Client's configuration (see clientConfig.ini) *(play.ogarul.tk only)*
- 25. Language support (currently English and Spanish)
- 26. Tutorials (runs only once in console)
- 27. Quadrants (improves performance and reduce lag)
- 28. Chat commands *(play.ogarul.tk only)*
+ 4. Better physics (ejected mass, split, autosplit, virus, etc.)
+ 5. Skins! (see [here](https://github.com/AJS-development/Ogar-unlimited#veteran-skins-and-custom-skins-guide) for more info)
+ 6. Minions! (see [here](https://github.com/AJS-development/Ogar-unlimited#minions) for more info)
+ 7. Chat *(play.ogarul.tk only)*
+ 8. Plugins (add gamemodes and commands easily! see [here](https://github.com/AJS-development/Ogar-unlimited/wiki/Plugin-API-Tutorial) for how to make your own plugin!)
+ 9. Multi server support (see [multiverse](https://github.com/AJS-development/Ogar-unlimited#multiverse)) *(play.ogarul.tk only)*
+ 10. Teaming bots (for testing purposes)
+ 11. Chat commands *(play.ogarul.tk only)*
+ 12. "Opbyip" (Makes player always OP using player's IP)
+ 13. Tutorials (runs only once in console)
+ 14. Database free high score keeper
+ 15. Colortext command (changes console output color and style)
+ 16. Live console (see advConfig.ini, where a live console appears) *NOTE: This is way different that Ogarserv's Console*
+ 17. Ban, Unban, Ban List and Autoban option (with revolutionary ban technique, no lag, no DDoS attacks)(see config.ini or advConfig.ini)
+ 18. Uniban (a pre-made banlist of already known bad IPs)
+ 19. Easy verify system (anti bot measure, see advconfig.ini)
+ 20. Mousefilter (anti bot measure, see advconfig.ini)
+ 21. Client's configuration (see clientConfig.ini) *(play.ogarul.tk only)*
+ 22. Quadrants (improves performance and reduce lag)
+ 23. Garbage collection (prevent memory leaks)
+ 24. Language support (currently English and Spanish)
 
 ### Note:
 Please note that this is updated very frequently and you should check for updates every week. I added an update system but It needs to be initialized by you (because I don't think it is the right thing to do, updating without your consent). Also you may copy this and modify it just please give some credit to the hard working dev team, that is all I care. Another note is that I am sometimes terrible in my grammar (I still cannot spell potato out loud). If there is an issue, please notify me. If there is something you want in this, just make a pull request.
