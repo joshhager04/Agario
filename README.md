@@ -169,12 +169,12 @@ Id   | Name                         | Additional Description
 15   | NoCollision Teams            | Same as Teams mode but no collision between teammates
 16   | NoCollision TeamZ            | Same as Team Z mode but no collision between teammates
 17   | NoCollision TeamX            | Same as Team X mode but no collision between teammates
-18   | Leap                         | Where you leap instead of split, made by Ogarplus
-20   | Rainbow FFA                  | Hint: Use "Acid Mode" in the custom client's settings
-22   | BlackHole                    | Normal FFA but with one big black hole
+18   | Leap                         | Where you leap instead of split (made by Ogarplus)
+20   | Rainbow FFA                  | Where every entity gets rainbow effect. Hint: Use "Acid Mode" in the custom client's settings
+22   | BlackHole                    | Normal FFA but with one big black hole in the middle of the map.
+
 ## Chat Commands
 The available in-game chat commands.
-
 
  Command                      | Usage
 ------------------------------|-----------------------------------------------------------------------------------------------
@@ -183,86 +183,80 @@ color [r] [b] [g]             | Changes the color of your chatname
 mute                          | Mutes/unmutes chat
 pm [chatname] [msg]           | sends a private message
 
-
-
 ## Console Commands
 The current available console commands are listed here. Command names are not case sensitive, but player names are.
-
 
  Command                      | Usage
 ------------------------------|-----------------------------------------------------------------------------------------------
 help                          | Shows list of commands
 ophelp                        | Shows how to use op
-quickrestart                  | Quickly restart your server. (**Does not restart, nor reduce memory**)
-multiverse [command] [args]   | Manage multiple servers in 1 OgarUl instance. See multiverse
-plugin [command]              | Manage plugins (reload,list,delete,add,install,update,search)
-chat [command] [args]         | Chat from console. (all, pm) (Usage: **chat all [msg]**)
-chatbat [id]                  | Ban people user id from chatting.
+addbot [number]               | Adds [number] of bots to the server. If an amount is not specified, 1 bot will be added.
 announce                      | Starts the high score announce feature.
-verify [command] [id]         | Verifies/Re-verifies a player. (Usage: **verify reverify 1** force 1 to verify again)
-minion [id] [amount] [name]   | Create minions. To turn of (Usage: **minion [id]**), To destroy (Usage: **minion destroy**)
-update  [all,botname,skin]    | Update to current/recent version & replace old with new.
-reset                         | Destroys everything and start from scratch.
-range [start] [end] [command] [flag] | Bulk commands (Usage: **range 1 10 freeze**) freezes players 1-10(id)
-pcmd [delay] [repeattime] [command] [flag] | Periodic commands
-opbyip [add,remove,list,clear,record] [ip] | Allows you to use opbyip features. Op based on ip
-changelog [page]              | Gets changelog from the servers
-explode [id]                  | Explodes a player (Usage: **explode 1**)
-blind [id]                    | Blinds/Unblind a player
-hide [id]                     | Hide/Unhide a player
-split [id] [count]            | Splits a player
-shrink [amount]               | Shrinks the game play space. _Amount is optional_
-enlarge [amount]              | Enlarge the game place space. _Amount is optional_
-freeze [id]                   | Freezes a player
-spawnmass [id] [mass]         | Sets a player spawnmass. Default (0)
-speed [id] [mass]             | Sets a player base speed. Default (0))
-colortext [color]             | Changes console color and style. (blue, green,red,yellow,bold,reset,dim,white, help)
-team [id] [team (r,g,b)]      | Changes a players team. (_You might have to split to see the changes though_)
-resetvirus                    | Turns specials virusus (_From OP's_) into normal ones.
-whitelist [ip]                | Whitelist an ip
-unwhitelist [ip]              | Remove ip from whitelist
-whitelist                     | Lists the whitelist
-clearban                      | Clears ban list
 ban [ip]                      | Bans an IP and sends a Message. Do (**ban record**) to record a ban.
-unban [ip]                    | Unbans an IP
-rainbow [id]                  | Gives a player a rainbow effect
-kickbots [number]             | Kick a specific number of bots. (_Leave blank to kick all_)
-kickbots [number]             | Kill a specific number of bots. (_Leave blank to kill all_)
-restart [minutes]             | Restarts the server after a specific amount of minutes. (_Leave blank for instant restart_)
 banlist                       | Lists banned IP's
-op [id]                       | Makes a player OP using ID instead of there IP
-dop [id]                      | De-Op's a player
-rop                           | Resets OP's
+clearban                      | Clears ban list
+unban [ip]                    | Unbans an IP
+blind [id]                    | Blinds/Unblind a player (player can't see other players)
+board [String 1] [String 2] ...| Replaces the text on the leaderboard with the string text.
+boardreset                    | Resets the leaderboard to display the proper data for the current gamemode
+change [config setting] [value]| Changes a config setting to a value. (Usage: **change serverMaxConnections 32**).Note that some config values (Like serverGamemode) are parsed before the server starts so changing them mid game will have no effect.
+changelog [page]              | Changelog of the latest update. The arg **[page]** is a number of page
+chat [command] [args]         | Chat from console. (all, pm) (Usage: **chat all [msg]**)
+chatban [id]                  | Ban people user id from chatting.
+clear                         | Clears the console output
+color [id] [r] [g] [b]        | Replaces the color of the specified player with this color.
+colortext [color]             | Changes console color and style. (blue, green,red,yellow,bold,reset,dim,white, help)
+enlarge [amount]              | Enlarge the game place space. _Amount is optional_
+exit                          | Closes the server
+explode [id]                  | Explodes a player (Usage: **explode 1**)
+fmsg [message 1] [message 2] [etc...] | Force players to read a message. Changes leaderboard, freeze players, and change their name temporarily
+food [x pos] [y pos] [mass]   | Spawns a food cell at those coordinates. If a mass value is not specified, then the server will default to "foodStartMass" in the config.
+freeze [id]                   | Freezes a player
+gamemode [id]                 | Changes the gamemode of the server. **Warning. _This can cause problems!._**
+hide [id]                     | Hide/Unhide a player (will not seen by other players)
+kickrange/killrange/banrange [start] [end] | Kicks/kills/bans in a range (eg: killrange 1 10 will kill players whos ids are between them)
+kick [id]                     | Kicks a specific player -or- bot from the server
+kickbots [number]             | Kick a specific number of bots. (_Leave blank to kick all_)
+kill [id]/killall             | Kills all cells belonging to a specific player. Do (**killall**) to kill all players.
+mass [id] [mass]              | Sets the mass of all cells belonging to a specified player.
+merge [id]                    | Forces a player to merge
+minion [id] [amount] [name]   | Create minions. To turn off, do **minion [id]**. To destroy, do **minion destroy**.
+msg [message1] [message2] [etc...] | Changes the leaderboard to a message for a short time
+multiverse [command] [args]   | Manage multiple servers in 1 console. See [here](https://github.com/AJS-development/Ogar-unlimited#multiverse) for more info
+name [id] [new name]          | Changes the name of the player with the specified id with [new name]. Skin name can be use aswell.
+nojoin [id]                   | Makes a player unable to join
+op [id]                       | Makes a player OP
+dop [id]                      | De-OP's a player
+rop                           | Resets player's OP
+opbyip [command] [ip]         | OP based on ip. Available commands are:**add, remove, list, clear, record**.
+pause                         | Pauses/Unpauses the game
+pcmd [delay] [repeattime] [command] [flag] | Periodic commands, where **[flag]** is a command's arg.
 pfmsg [delay] [duration] [x to repeat] [msg1] [msg2] [etc...] | Periodically sends a force message (seconds)
 spfmsg                        | Stops pfmsg
+playerlist                    | Shows a list of connected players, their IP, player ID, the amount of cells they have, total mass, and their position.
+plugin [command] [name]       | Manage plugins. (Usage: **reload,list,delete,add,install,update,search**)
 pmsg [delay] [duration] [x to repeat] [msg1] [msg2] [etc...] | Periodically sends a message (seconds)
 spmsg                         | Stops pmsg
+quickrestart                  | Quickly restart your server. (**Does not restart, nor reduce memory**)
+rainbow [id]                  | Gives a player a rainbow effect
+range [start] [end] [command] [flag] | Bulk commands, where **[flag]** is a command's arg. (Usage: **range 1 10 freeze**) freezes players 1-10(id)
+reload                        | Reloads the config file used by the server. However, some configs are not affected. (eg: serverPort, serverGamemode, serverBots, serverStatsPort, serverStatsUpdate, etc.)
+reset                         | Destroys everything and start from scratch.
+resetvirus                    | Turns specials virusus (_From OP's_) into normal ones.
+restart [minutes]             | Restarts the server after a specific amount of minutes. (_Leave blank for instant restart_)
+shrink [amount]               | Shrinks the game play space. _Amount is optional_
+spawnmass [id] [mass]         | Sets a player spawnmass. Default is (0)
+speed [id] [mass]             | Sets a player base speed. Default is (0)
+split [id] [count]            | Splits a player into [count] pieces.
+status                        | Shows the amount of players currently connected, time elapsed, memory usage (memory used/memory allocated), and the current gamemode.
+team [id] [team (r,g,b)]      | Changes a players team. (_You might have to split to see the changes though_)
+tp [id] [x pos] [y pos]       | Teleports the specified player to the specified coordinates.
 troll [id]                    | You'll figure this one out. It's a suprise!.
-fmsg [message 1] [message 2] [etc...] | Forces players to read a message. Changes leaderboard, freeze players, and change their name temporarily
-msg [message1] [message2] [etc...] | Changes the leaderboard to a message for a short time
-kick/killrange/ban [start] [end] | Kicks/kills/bans in a range (eg: killrange 1 10 will kill players whos ids are between them)
-nojoin [id]                    | Makes a player unable to join
-merge [id]                     | Forces a player to merge
-addbot [number]                | Adds [Number] of bots to the server. If an amount is not specified, 1 bot will be added.
-board [String 1] [String 2] ...| Replaces the text on the leaderboard with the string text.
-boardreset                     | Resets the leaderboard to display the proper data for the current gamemode
-change [config setting] [value]| Changes a config setting to a value. (Usage: **change serverMaxConnections 32**).Note that some config values (Like serverGamemode) are parsed before the server starts so changing them mid game will have no effect.
-clear                          | Clears the console output
-color [id] [r] [g] [b]         | Replaces the color of the specified player with this color.
-exit                           | Closes the server
-food [x pos] [y pos] [mass]    | Spawns a food cell at those coordinates. If a mass value is not specified, then the server will default to "foodStartMass" in the config.
-gamemode [id]                  | Changes the gamemode of the server. **Warning. _This can cause problems!._**
-kick [id]                      | Kicks a specific player -or- bot from the server
-kill [id]                      | Kills all cells belonging to a specific player
-mass [id] [mass]               | Sets the mass of all cells belonging to a specified player.
-name [id] [new name]           | Changes the name of the player with the specified id with [New Name].
-playerlist                     | Shows a list of connected players, their IP, player ID, the amount of cells they have, total mass, and their position.
-pause                          | Pauses/Unpauses the game
-reload                         | Reloads the config file used by the server. However, the following values are not affected: serverPort, serverGamemode, serverBots, serverStatsPort, serverStatsUpdate.
-status                         | Shows the amount of players currently connected, time elapsed, memory usage (memory used/memory allocated), and the current gamemode.
-tp [id] [x pos] [y pos]        | Teleports the specified player to the specified coordinates.
-virus [x pos] [y pos] [mass]   | Spawns a virus cell at those coordinates. If a mass value is not specified, then the server will default to "virusStartMass" in the config.
-
+update  [all,botname,skin]    | Update to current/recent version & replace old with new.
+verify [command] [id]         | Verifies/Re-verifies a player. (Usage: **verify reverify 1** force 1 to verify again)
+virus [x pos] [y pos] [mass]  | Spawns a virus cell at those coordinates. If a mass value is not specified, then the server will default to "virusStartMass" in the config.
+whitelist [ip]                | Whitelist an IP. Do (**whitelist**) only for a list of whitelisted IP
+unwhitelist [ip]              | Remove ip from whitelist
 
 ## Contributing
 Just make a pull request or make your own copy
@@ -270,16 +264,16 @@ Just make a pull request or make your own copy
 ## Things that I dont want you to copy (copying it to your own file or fork)
 1. No-Lag antibot measures
 2. OP
-3. minions
-4. smart bot/despawn
-5. easy verify
-6. Periodic things (pmsg, pcmd, etc..)
-7. mousefilter
-8. plugins
-9. Adv Multiverse system
-10. client config system
-11. language support system
-12. tutorial system
-13. quadrants
+3. Minions
+4. Smart bot/despawn
+5. Easy verify
+6. Periodic things *(pmsg, pcmd, etc..)*
+7. Mousefilter
+8. Plugins
+9. Advanced multiverse system
+10. Client config system
+11. Language support system
+12. Tutorial system
+13. Quadrants
 
 ##### Anything else, if you improved it, you dont have to give us credit, or else if you just copied, you must give us credit
