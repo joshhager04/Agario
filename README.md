@@ -6,6 +6,31 @@
 
 A fully functional open source Agar.io server implementation, written in Node.js by AJS development team. Ogar Unlimited *(or in short, OgarUL)* is designed to be used with the latest Agar.io client and also our own official client, [**play.ogarul.tk**](http://play.ogarul.tk/). It is basically what it says in the title, Ogar, except its functionality is unlimited!
 
+##Table of Contents
+- [Installation Guide (short)](https://github.com/AJS-development/Ogar-unlimited#installation-guide-short)
+- [Troubleshooting, FAQ and Tutorial](https://github.com/AJS-development/Ogar-unlimited#troubleshooting-faq-and-tutorial)
+- [Highlight features](https://github.com/AJS-development/Ogar-unlimited#hightlight-features-in-ogar-unlimited)
+- [Note](https://github.com/AJS-development/Ogar-unlimited#note)
+ - [DO NOT BUY OGAR UL!](https://github.com/AJS-development/Ogar-unlimited#do-not-buy-ogar-ul)
+ - [Do not get from other sources](https://github.com/AJS-development/Ogar-unlimited#do-not-get-from-other-sources)
+- [Obtaining and Using](https://github.com/AJS-development/Ogar-unlimited#obtaining-and-using)
+- [Configuring Ogar UL](https://github.com/AJS-development/Ogar-unlimited#configuring-ogar-ul)
+- [Plugins](https://github.com/AJS-development/Ogar-unlimited#plugins)
+ - [How can I get plugins? Is there any official library?](https://github.com/AJS-development/Ogar-unlimited#how-can-i-get-plugins-is-there-any-official-library)
+ - [How do I use other plugins?](https://github.com/AJS-development/Ogar-unlimited#how-do-i-use-other-plugin)
+ - [How do I create a plugin? Is there any documentation?](https://github.com/AJS-development/Ogar-unlimited#https://github.com/AJS-development/Ogar-unlimited#how-do-i-create-a-plugin-is-there-any-documentation)
+- [Multiverse](https://github.com/AJS-development/Ogar-unlimited#multiverse)
+- [Minions](https://github.com/AJS-development/Ogar-unlimited#minions)
+- [Skin list and custom skins](https://github.com/AJS-development/Ogar-unlimited#skin-list-and-custom-skins)
+- [OP features](https://github.com/AJS-development/Ogar-unlimited#op)
+- [Easy Verify (anti bot measure)](https://github.com/AJS-development/Ogar-unlimited#easy-verify-anti-bot-measure)
+- [Custom Game Modes](https://github.com/AJS-development/Ogar-unlimited#custom-game-modes)
+- Commands
+ - [Chat commands](https://github.com/AJS-development/Ogar-unlimited#chat-commands)
+ - [Console commands](https://github.com/AJS-development/Ogar-unlimited#console-commands)
+- [Contributing](https://github.com/AJS-development/Ogar-unlimited#contributing)
+- [Things that I don't want you to copy](https://github.com/AJS-development/Ogar-unlimited#things-that-i-dont-want-you-to-copy-copying-it-to-your-own-file-or-fork)
+
 ###### Installation Guide (short)
 1. Download and install Node
     * Required version [**v5.9.0**](https://nodejs.org/download/release/v5.9.0/)
@@ -46,15 +71,15 @@ A fully functional open source Agar.io server implementation, written in Node.js
  13. Tutorials *(runs only once in console)*
  14. Database free high score keeper
  15. Customizable console output color and style *(by using colortext command)*
- 16. Live console *(see advConfig.ini, where a live console appears)* *NOTE: This is way different that Ogarserv's Console*
- 17. Ban, Unban, Ban List and Autoban option *(with revolutionary ban technique, no lag, no DDoS attacks)(see config.ini or advConfig.ini)*
+ 16. Live console *(see advConfig.ini, where a live console appears) __NOTE: This is way different that Ogarserv's Console__*
+ 17. Ban, Unban, Ban List and Autoban option *(with revolutionary ban technique, no lag, no DDoS attacks)(see advConfig.ini)*
  18. Uniban *(a pre-made banlist of already known bad IPs)*
  19. Easy verify system *(anti bot measure, see advconfig.ini)*
  20. Mousefilter *(anti bot measure, see advconfig.ini)*
  21. Client's configuration *(see clientConfig.ini)* __*(play.ogarul.tk only)*__
- 22. Quadrants (improves performance and reduce lag)
- 23. Garbage collection (prevent memory leaks)
- 24. Language support (currently English and Spanish)
+ 22. Quadrants *(improve performance and reduce lag)*
+ 23. Garbage collection *(prevent memory leaks)*
+ 24. Language support *(currently English and Spanish)*
 
 ### Note:
 Please note that this is updated very frequently and you should check for updates every week. I added an update system but It needs to be initialized by you (because I don't think it is the right thing to do, updating without your consent). Also you may copy this and modify it just please give some credit to the hard working dev team, that is all I care. Another note is that I am sometimes terrible in my grammar (I still cannot spell potato out loud). If there is an issue, please notify me. If there is something you want in this, just make a pull request.
@@ -63,22 +88,24 @@ Please note that this is updated very frequently and you should check for update
 If you've purchased a copy of Ogar UL, **you just got scammed**. It is open source which means it's **FREE**. Yes, **FREE!** So if you paid any money, well, too bad.
 
 ### Do not get from other sources
-If you got OgarUL from anywhere besides github, **DELETE IT IMMEDIATLY!!!** Those might be bundled with **viruses and other things**. Remember, you are running this probably from `sudo`. **Get it from github only!** : https://github.com/AJS-development/Ogar-unlimited
+If you got OgarUL from anywhere besides github, **DELETE IT IMMEDIATLY!!!** Those might be bundled with **viruses and other things**. Remember, you are running this probably from `sudo`. **Get it from github only!**: https://github.com/AJS-development/Ogar-unlimited
 
 ### Obtaining and Using
-As Ogar Unlimited is written in Node.js, you must have Node.js and its modules installed to use it. You can usually download Node using your distribution's package manager _(for *nix-like systems)_, or from [the Node website](http://nodejs.org) *(use version 5.9.0)*. To install the modules that is required, open up your system command line (cmd for windows, terminal for mac), and simply type "**npm install**". If you are on windows, you could simply double click the `Install Dependencies (Windows).bat`. To see a detailed guide, go to the [Installation guide](https://github.com/AJS-development/Ogar-unlimited/wiki/Installation) in the wiki.
+As Ogar Unlimited is written in Node.js, you must have Node.js and its modules installed to use it. You can usually download Node using your distribution's package manager _(for *nix-like systems)_, or from the [**Node website**](http://nodejs.org) *(use version 5.9.0)*. To install the modules that is required, open up your system command line *(cmd for windows, terminal for mac)*, and simply type "**npm install**". If you are on windows, you could simply double click the `Install Dependencies (Windows).bat`. To see a detailed guide, go to the [Installation guide](https://github.com/AJS-development/Ogar-unlimited/wiki/Installation) in the wiki.
 
 Currently, OgarUL listens on the following addresses and ports:
 * *:88 - for the stats server
 * *:443 - for the game server
 
 To start the game, simply double click the `Start.bat` or run "index.js" by typing `node index.js` in the console. Please note that on some systems, you may have to run the process as root or otherwise elevate your privileges to allow the process to listen on the needed ports.
-Once the game server is running, you can connect *(locally)* by typing `play.ogarul.tk/?ip=127.0.0.1:443` or `agar.io/?ip=127.0.0.1:443` into your browser's address bar.
+Once the game server is running, you can connect *(locally)* by typing `play.ogarul.tk/?ip=127.0.0.1:443` into your browser's address bar.
+
+If you want to use agar.io site as your client, use [OgarUL-NoClient](https://github.com/AJS-development/Ogar-unlimited-Noclient) instead. The instruction would be the same as above, except that you need to use `agar.io/?ip=127.0.0.1:443` to play *(locally)*.
 
  **If you are getting an _EADDRINUSE_ error, it means that the port required to run Ogar UL is being used. Usually, Skype is the culprit. To solve this, either close out skype, or change the serverPort value in settings/advconfig.ini to a different port. You will have to change your IP connection to "127.0.0.1:PORT"**
 
-## Configuring Ogar UL
-To control how your server is running, you can edit your settings to your own liking in `src/settings/`. If you don't want your config gets overwritten by the updates, you can copy the configs you want and paste it into `override.ini` *(where configs doesn't matter, either from advConfig.ini or clientConfig.ini)*
+### Configuring Ogar UL
+To control how your server is running, you can edit your settings to your own liking in `src/settings/`. If you don't want your config gets overwritten by the updates, you can copy the configs you want and paste it into `override.ini` *(where configs doesn't matter, either from "config.ini", "advConfig.ini" or "clientConfig.ini")*
 
 ### Plugins
 #### How can I get plugins? Is there any official library?
@@ -90,7 +117,7 @@ To install any plugins from the library, first do `plugin search [name_of_plugin
 To use a plugin, simply download the folder and drag it into the "**plugins**" folder under "**src**" folder or use the `plugin add` command. To use the plugin add command, the plugin must have a "**files.txt**" file. Then click on that file, click raw, and then copy the URL. Then do `plugin add [url] [pluginname]` and it will reload automatically for you. Thats it! Example, doing `plugin add https://raw.githubusercontent.com/AJS-development/OgarUL-Plugin-Library/master/devtools-plugin/files.txt devtools` will add a plugin called "devtools" to your plugins.
 
 #### How do I create a plugin? Is there any documentation?
-This is the fun part, creating your own plugins. There is an example plugin you should look at and there is a template plugin. You can look at the plugin API documentation [here](https://github.com/AJS-development/Ogar-unlimited/wiki/Plugin-API-Tutorial) as your reference.
+This is the fun part, creating your own plugins. There is an example plugin you should look at and there is a template plugin. You can look at [plugin API documentation](https://github.com/AJS-development/Ogar-unlimited/wiki/Plugin-API-Tutorial) for more detail.
 
 ### Multiverse
 Multiverse is for having multiple servers in one console. The command for multiverse is `multiverse [command] [arg]`. Available commands are:
@@ -128,22 +155,22 @@ You can use custom skins by putting them in customskins.txt. The format should b
 You can see more detailed guide on the [wiki](https://github.com/AJS-development/Ogar-unlimited/wiki/Skins-and-skin-shortcuts)
 
 ### OP
-OP is used for having fun in your server like trolling, increases your mass, shoots virus, etc. You can make yourself OP by doing `op [yourid]` in console. To toggle between modes, you need to press "Q" in order to use OP's features. Then, a "C" will appears next to your name. If you press "Q" again, it will add another "C" until you have 4 "C"'s. If you press Q once again, it will go back to normal state. What these does is:
+OP is used for having fun in your server like trolling, increases your mass, shoots virus, etc. You can make yourself OP by typing `op [yourid]` in console. To toggle between modes, you need to press "Q" in order to use OP's features. Then, a "C" will appears next to your name. If you press "Q" again, it will add another "C" until you have 4 "C"'s. If you press Q once again, it will go back to normal state. What these does is:
 
 C's(in order) | When pressing "W"       | When pressing "Space"
 --------------|-------------------------|---------------------
-C             | Gives you 100 more mass | Able to merge instantly *(for short of time)*
-CC            | Shoots virus            | Shoots tiny "things" *(almost invisible)* that if someone eats it, their mass reduced by 100
-CCC           | Shoots "troll" virus    | Shoots "exploding" virus
-CCCC          | Shoots "one-hit-kill" virus | Shoots "kick" virus
-No C's        | Normal feed             | Normal split
+**C**         | Gives you 100 more mass | Able to merge instantly *(for short of time)*
+**CC**        | Shoots virus            | Shoots tiny "things" *(almost invisible)* that if someone eats it, their mass reduced by 100
+**CCC**       | Shoots "troll" virus    | Shoots "exploding" virus
+**CCCC**      | Shoots "one-hit-kill" virus | Shoots "kick" virus
+**No C's**    | Normal feed             | Normal split
 
 __NOTE: Names *(CC's)* don't work when player's name is blank and it doesn't work on Leap gamemodes and/or while using minions. Also, you can configure this in config.ini__
 
 ### Easy Verify (anti bot measure)
 For those of you who have trouble with minions and such, this feature is for you. Currently, there is no program that can get through all of Ogar Unlimited's filters and features. But in some future, someone might be able to crack the other anti bot measures. So we created an easy verify system, a currently foolproof system that filters out the bots. To turn on, turn `verify` to 1 in advConfig.ini . Then when a player spawns, he is frozen at a spot and is given a 3 digit code. Then that player presses "W" to kill himself and types in the code in the nickname box. Afterwards, when pressing "Play" again, it shows a success message. Press "W" again to play.
 
-## Custom Game modes
+## Custom Game Modes
 Ogar UL has support for custom game modes. To switch between game modes, change the value of "serverGamemode" in the configurations file to the selected game mode id and restart the server. The current supported game modes are:
 
 Id   | Name                         | Additional Description
@@ -151,20 +178,20 @@ Id   | Name                         | Additional Description
 0    | Free For All                 | Everyone on there own
 1    | Teams                        | Team and be the best
 2    | Experimental                 | Something cool
-3    | Timed FFA                    | Normal FFA but with time limit (see config.ini for time configuration)
+3    | Timed FFA                    | Normal FFA but with time limit *(see config.ini for time configuration)*
 4    | Virus Off                    | No virus in the map
-5    | UnlimitPVP                   | Where you can split indefinitely and rejoin instantly - 1v1 game (created by me)
-6    | UnlimitFFA                   | Same as above (Unlimited PVP) except in FFA (created by me)
-7    | Shrinking FFA                | Shrinks the game(map size) as time passes
+5    | Unlimited PVP                | Where you can split indefinitely and rejoin instantly - 1v1 game *(created by me)*
+6    | Unlimited FFA                | Same as above *(Unlimited PVP)* except in FFA *(created by me)*
+7    | Shrinking FFA                | Shrinks the game *(map size)* as time passes
 8    | Experimental v2              | An improved Experimental mode
-9    | Anonymous FFA                | Everytime you spawn, your name would be random (anonymously)
+9    | Anonymous FFA                | Everytime you spawn, your name would be random *(anonymously)*
 10   | Tournament                   | Normal FFA, but with no respawn and time limit
-11   | Hunger Games                 | Adapted from a movie called "The Hunger Games"
+11   | Hunger Games                 | Adapted from a movie called *"The Hunger Games"*
 12   | Zombie Mode                  | Infection-like mode
-14   | Team X                       | Teaming in Experimental
+14   | Team Experimental            | Teaming in Experimental
 15   | NoCollision Teams            | Same as Teams mode but no collision between teammates
-17   | NoCollision TeamX            | Same as Team X mode but no collision between teammates
-18   | Leap                         | Where you leap instead of split (made by Ogarplus)
+17   | NoCollision TeamX            | Same as Team Experimental mode but no collision between teammates
+18   | Leap                         | Where you leap instead of split *(made by Ogarplus)*
 20   | Rainbow FFA                  | Where every entity gets rainbow effect. Hint: Use "Acid Mode" in the custom client's settings
 22   | BlackHole                    | Normal FFA but with one big black hole in the middle of the map.
 
@@ -176,7 +203,7 @@ The available in-game chat commands.
 help                          | Shows list of commands
 color [r] [b] [g]             | Changes the color of your chatname
 mute                          | Mutes/unmutes chat
-pm [chatname] [msg]           | sends a private message
+pm [chatname] [msg]           | Sends a private message
 
 ## Console Commands
 The current available console commands are listed here. Command names are not case sensitive, but player names are.
@@ -254,9 +281,11 @@ whitelist [ip]                | Whitelist an IP. Do **whitelist** only for a lis
 unwhitelist [ip]              | Remove ip from whitelist
 
 ## Contributing
-Just make a pull request or make your own fork
+Just make a pull request or make your own fork.
 
-### Things that I don't want you to copy (copying it to your own file or fork)
+### Things that I don't want you to copy *(copying it to your own file or fork)*
+**Anything else, if you improved it, you don't have to give us credit. Or else, if you just copied, you must give us credit**
+
 1. No-Lag antibot measures
 2. OP
 3. Minions
@@ -270,5 +299,3 @@ Just make a pull request or make your own fork
 11. Language support system
 12. Tutorial system
 13. Quadrants
-
-**Anything else, if you improved it, you don't have to give us credit. Or else, if you just copied, you must give us credit**
