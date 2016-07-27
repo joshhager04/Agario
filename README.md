@@ -35,17 +35,17 @@ A fully functional open source Agar.io server implementation, written in Node.js
 1. Download and install Node
     * Required version [**v5.9.0**](https://nodejs.org/download/release/v5.9.0/)
 2. Download Ogar Unlimited (Zip or Git)
-    * [Download Latest Zip](https://github.com/AJS-development/Ogar-unlimited/archive/master.zip), or
+    * [Download Latest Zip](https://github.com/AJS-development/Ogar-unlimited/archive/master.zip)
     * ``` git clone git@github.com:AJS-development/Ogar-unlimited.git ```
 3. Once downloaded
     * Extract the zip folder into somewhere else. Then,
     * CD to the extracted zip folder, or clone to **Ogar-unlimited** folder.
 4. Install Modules
-    * Run command using cmd, or terminal **npm install**, wait until done. Or,
-    * Run Install Dependencies (Windows).bat file in the **src** folder. (*Windows only*)
+    * While in system command line _(cmd or terminal)_, type: `npm install`, wait until done. Or,
+    * Run Install Dependencies (Windows).bat file in the **src** folder. _(Windows only)_
 5. Launch Ogar Unlimited
-    * CD to the **src** folder inside **Ogar-unlimited** and run the start.bat/sh file or use command (**node index**).
-    * Just run **Start.bat** inside **src** folder (*Windows only*)
+    * CD to the **src** folder inside **Ogar-unlimited** and run the start.bat/sh file or use command (**node index.js**). Or,
+    * Just run **Start.bat** inside **src** folder _(Windows only)_
 6. You're all done. Now, you can play it by go to [**play.ogarul.tk**](http://play.ogarul.tk/). Continue reading for more info
 
 ###### Troubleshooting, FAQ and Tutorial
@@ -57,9 +57,9 @@ A fully functional open source Agar.io server implementation, written in Node.js
 
 ### Highlight features in Ogar Unlimited
  1. More useful commands! *(eg. `pmsg`, `merge`, `freeze`; see [here](https://github.com/AJS-development/Ogar-unlimited#console-commands) for more info)*
- 2. OP *(Makes player OP, see [here](https://github.com/AJS-development/Ogar-unlimited#op) for more info)*
+ 2. OP *(a.k.a OverPowered! Makes player OP, see [here](https://github.com/AJS-development/Ogar-unlimited#op) for more info)*
  3. More game modes! *(see [here](https://github.com/AJS-development/Ogar-unlimited#custom-game-modes) for more info)*
- 4. Better physics *(ejected mass, split, autosplit, virus, etc; most of it are configurable)* 
+ 4. Better physics *(ejected mass, split, autosplit, virus, etc; most of it are configurable, see "config.ini" or "advConfig.ini")* 
  5. Skins! *(see [here](https://github.com/AJS-development/Ogar-unlimited#skin-list-and-custom-skins) for more info)*
  6. Minions! *(see [here](https://github.com/AJS-development/Ogar-unlimited#minions) for more info)*
  7. Chat __*(play.ogarul.tk only)*__
@@ -71,15 +71,15 @@ A fully functional open source Agar.io server implementation, written in Node.js
  13. Tutorials *(runs only once in console)*
  14. Database free high score keeper
  15. Customizable console output color and style *(by using colortext command)*
- 16. Live console *(see advConfig.ini, where a live console appears) __NOTE: This is way different that Ogarserv's Console__*
- 17. Ban, Unban, Ban List and Autoban option *(with revolutionary ban technique, no lag, no DDoS attacks)(see advConfig.ini)*
+ 16. Live console *(see "advConfig.ini", where a live console appears) __NOTE: This is way different that Ogarserv's Console__*
+ 17. Ban, Unban, Ban List and Autoban option *(with revolutionary ban technique, no lag, no DDoS attacks)(see "advConfig.ini")*
  18. Uniban *(a pre-made banlist of already known bad IPs)*
- 19. Easy verify system *(anti bot measure, see advconfig.ini)*
- 20. Mousefilter *(anti bot measure, see advconfig.ini)*
- 21. Client's configuration *(see clientConfig.ini)* __*(play.ogarul.tk only)*__
+ 19. Easy verify system *(anti bot measure, see "advconfig.ini")*
+ 20. Mousefilter *(anti bot measure, see "advconfig.ini")*
+ 21. Client's configuration *(see "clientConfig.ini")* __*(play.ogarul.tk only)*__
  22. Quadrants *(improve performance and reduce lag)*
  23. Garbage collection *(prevent memory leaks)*
- 24. Language support *(currently English and Spanish)*
+ 24. Language support *(currently English and Spanish, we might need more language)*
 
 ### Note:
 Please note that this is updated very frequently and you should check for updates every week. I added an update system but It needs to be initialized by you (because I don't think it is the right thing to do, updating without your consent). Also you may copy this and modify it just please give some credit to the hard working dev team, that is all I care. Another note is that I am sometimes terrible in my grammar (I still cannot spell potato out loud). If there is an issue, please notify me. If there is something you want in this, just make a pull request.
@@ -93,9 +93,9 @@ If you got OgarUL from anywhere besides github, **DELETE IT IMMEDIATLY!!!** Thos
 ### Obtaining and Using
 As Ogar Unlimited is written in Node.js, you must have Node.js and its modules installed to use it. You can usually download Node using your distribution's package manager _(for *nix-like systems)_, or from the [**Node website**](http://nodejs.org) *(use version 5.9.0)*. To install the modules that is required, open up your system command line *(cmd for windows, terminal for mac)*, and simply type "**npm install**". If you are on windows, you could simply double click the `Install Dependencies (Windows).bat`. To see a detailed guide, go to the [Installation guide](https://github.com/AJS-development/Ogar-unlimited/wiki/Installation) in the wiki.
 
-Currently, OgarUL listens on the following addresses and ports:
+Currently, OgarUL listens on the following addresses and ports *(by default)*:
 * *:88 - for the stats server
-* *:443 - for the game server
+* *:443 - for the "Main" game server
 
 To start the game, simply double click the `Start.bat` or run "index.js" by typing `node index.js` in the console. Please note that on some systems, you may have to run the process as root or otherwise elevate your privileges to allow the process to listen on the needed ports.
 Once the game server is running, you can connect *(locally)* by typing `play.ogarul.tk/?ip=127.0.0.1:443` into your browser's address bar.
@@ -132,15 +132,15 @@ In order to use minions, you can spawn them by typing `minion [yourid] [amount] 
 #### play.ogarul.tk
 Input | Description
 ----|----
-E | Split the minion
+E | Splits the minion
 R | Makes minion to eject some mass
-T | Freeze the minion
+T | Freezes the minion
 
 #### agar.io *(change `useER = 0` in config.ini)*
 Input | Description
 ----|----
 Q | Toggles control mode between you and your minion *(a letter "B" will appear next to your name, indicates that you are in "minion" mode)*
-Space | Split the minion *(while in "minion" mode)*
+Space | Splits the minion *(while in "minion" mode)*
 W | Makes minion to eject some mass *(while in "minion" mode)*
 You can disable minions by typing `minion [id]` in console, or do `minion destroy` and it will remove all minions in your server.
 
@@ -168,7 +168,7 @@ C's(in order) | When pressing "W"       | When pressing "Space"
 __NOTE: Names *(CC's)* don't work when player's name is blank and it doesn't work on Leap gamemodes and/or while using minions. Also, you can configure this in config.ini__
 
 ### Easy Verify (anti bot measure)
-For those of you who have trouble with minions and such, this feature is for you. Currently, there is no program that can get through all of Ogar Unlimited's filters and features. But in some future, someone might be able to crack the other anti bot measures. So we created an easy verify system, a currently foolproof system that filters out the bots. To turn on, turn `verify` to 1 in advConfig.ini . Then when a player spawns, he is frozen at a spot and is given a 3 digit code. Then that player presses "W" to kill himself and types in the code in the nickname box. Afterwards, when pressing "Play" again, it shows a success message. Press "W" again to play.
+For those of you who have trouble with minions and such, this feature is for you. Currently, there is no program that can get through all of Ogar Unlimited's filters and features. But in some future, someone might be able to crack the other anti bot measures. So we created an easy verify system, a currently foolproof system that filters out the bots. To turn on, turn `verify` to 1 in "advConfig.ini". Then when a player spawns, he is frozen at a spot and is given a 3 digit code. Then that player presses "W" to kill himself and types in the code in the nickname box. Afterwards, when pressing "Play" again, it shows a success message. Press "W" again to play.
 
 ## Custom Game Modes
 Ogar UL has support for custom game modes. To switch between game modes, change the value of "serverGamemode" in the configurations file to the selected game mode id and restart the server. The current supported game modes are:
@@ -178,7 +178,7 @@ Id   | Name                         | Additional Description
 0    | Free For All                 | Everyone on there own
 1    | Teams                        | Team and be the best
 2    | Experimental                 | Something cool
-3    | Timed FFA                    | Normal FFA but with time limit *(see config.ini for time configuration)*
+3    | Timed FFA                    | Normal FFA but with time limit *(see "config.ini" for time configuration)*
 4    | Virus Off                    | No virus in the map
 5    | Unlimited PVP                | Where you can split indefinitely and rejoin instantly - 1v1 game *(created by me)*
 6    | Unlimited FFA                | Same as above *(Unlimited PVP)* except in FFA *(created by me)*
@@ -192,8 +192,8 @@ Id   | Name                         | Additional Description
 15   | NoCollision Teams            | Same as Teams mode but no collision between teammates
 17   | NoCollision TeamX            | Same as Team Experimental mode but no collision between teammates
 18   | Leap                         | Where you leap instead of split *(made by Ogarplus)*
-20   | Rainbow FFA                  | Where every entity gets rainbow effect. Hint: Use "Acid Mode" in the custom client's settings
-22   | BlackHole                    | Normal FFA but with one big black hole in the middle of the map.
+20   | Rainbow FFA                  | Where every entity gets rainbow effect. Hint: Use *"Acid Mode"* in the custom client's settings
+22   | BlackHole                    | Normal FFA but with one big black hole at the middle of the map.
 
 ## Chat Commands
 The available in-game chat commands.
@@ -218,74 +218,72 @@ ban [ip]                      | Bans an IP and sends a Message. Do (**ban record
 banlist                       | Lists banned IP's
 clearban                      | Clears ban list
 unban [ip]                    | Unbans an IP
-blind [id]                    | Blinds/Unblind a player (player can't see other players)
+blind [id]                    | Blinds/Unblind a player *(player can't see other players)*
 board [String 1] [String 2] ...| Replaces the text on the leaderboard with the string text.
 boardreset                    | Resets the leaderboard to display the proper data for the current gamemode
-change [config setting] [value]| Changes a config setting to a value. (Usage: **change serverMaxConnections 32**).Note that some config values (Like serverGamemode) are parsed before the server starts so changing them mid game will have no effect.
-changelog [page]              | Changelog of the latest update. The arg **[page]** is a number of page
-chat [command] [args]         | Chat from console. (all, pm) (Usage: **chat all [msg]**)
-chatban [id]                  | Ban people user id from chatting.
+change [config setting] [value]| Changes a config setting to a value. _(Usage: **change serverMaxConnections 32**)_.Note that some config values *(like serverGamemode)* are parsed before the server starts so changing them mid game will have no effect.
+changelog [page]              | Changelog of the latest update. The arg **[page]** is a number of page.
+chat [command] [args]         | Chat from console. (**all**, **pm**) _(Usage: **chat all [msg]**)_
+chatban [id]                  | Ban people user id from chatting
 clear                         | Clears the console output
 color [id] [r] [g] [b]        | Replaces the color of the specified player with this color.
-colortext [color]             | Changes console color and style. (blue, green,red,yellow,bold,reset,dim,white, help)
+colortext [color]             | Changes console color and style. *(blue, green, red, yellow, bold, reset, dim, white, help)*
 enlarge [amount]              | Enlarge the game place space. _Amount is optional_
 exit                          | Closes the server
-explode [id]                  | Explodes a player (Usage: **explode 1**)
-fmsg [message 1] [message 2] [etc...] | Force players to read a message. Changes leaderboard, freeze players, and change their name temporarily
-food [x pos] [y pos] [mass]   | Spawns a food cell at those coordinates. If a mass value is not specified, then the server will default to "foodStartMass" in the config.
+explode [id]                  | Explodes a player
+fmsg [message 1] [message 2] [etc...] | Force players to read a message. Changes leaderboard, freeze players, and change their name temporarily.
+food [x pos] [y pos] [mass]   | Spawns a food cell at those coordinates. If a mass value is not specified, then the server will default to *"foodStartMass"* in the config.
 freeze [id]                   | Freezes a player
 gamemode [id]                 | Changes the gamemode of the server. **Warning. _This can cause problems!._**
-hide [id]                     | Hide/Unhide a player (will not seen by other players)
-kickrange/killrange/banrange [start] [end] | Kicks/kills/bans in a range (eg: killrange 1 10 will kill players whos ids are between them)
-kick [id]                     | Kicks a specific player -or- bot from the server
-kickbots [number]             | Kick a specific number of bots. (_Leave blank to kick all_)
+hide [id]                     | Hide/Unhide a player *(will not seen by other players)*
+kickrange/killrange/banrange [start] [end] | Kicks/kills/bans in a range _(eg: "**killrange 1 10**" will kill players whos ids are between them)_
+kick [id]                     | Kicks a specific player or bot from the server
+kickbots [number]             | Kick a specific number of bots. *(leave blank to kick all)*
 kill [id]/killall             | Kills all cells belonging to a specific player. Do **killall** to kill all players.
-mass [id] [mass]              | Sets the mass of all cells belonging to a specified player.
+mass [id] [mass]              | Sets the mass of all cells belonging to a specified player
 merge [id]                    | Forces a player to merge
 minion [id] [amount] [name]   | Create minions. To turn off, do **minion [id]**. To destroy, do **minion destroy**.
 msg [message1] [message2] [etc...] | Changes the leaderboard to a message for a short time
-multiverse [command] [args]   | Manage multiple servers in 1 console. See [here](https://github.com/AJS-development/Ogar-unlimited#multiverse) for more info
-name [id] [new name]          | Changes the name of the player with the specified id with [new name]. Skin name can be use aswell.
+multiverse [command] [args]   | Manage multiple servers in 1 console. *(see [here](https://github.com/AJS-development/Ogar-unlimited#multiverse) for more info)*
+name [id] [new name]          | Changes the name of the player with the specified id with **[new name]**. Skin name can be added aswell. _(Usage: **name 1 <kraken>Kraken**)_
 nojoin [id]                   | Makes a player unable to join
 op [id]                       | Makes a player OP
 dop [id]                      | De-OP's a player
 rop                           | Resets player's OP
-opbyip [command] [ip]         | OP based on ip. Available commands are:**add, remove, list, clear, record**.
+opbyip [command] [ip]         | OP based on ip. Available commands are: **add, remove, list, clear, record**.
 pause                         | Pauses/Unpauses the game
-pcmd [delay] [repeattime] [command] [flag] | Periodic commands, where **[flag]** is a command's arg.
-pfmsg [delay] [duration] [x to repeat] [msg1] [msg2] [etc...] | Periodically sends a force message (seconds)
+pcmd [delay] [repeattime] [command] [flag] | Periodic commands _(where **[flag]** is a command's arg)_
+pfmsg [delay] [duration] [x to repeat] [msg1] [msg2] [etc...] | Periodically sends a force message *(in seconds)*
 spfmsg                        | Stops pfmsg
 playerlist                    | Shows a list of connected players, their IP, player ID, the amount of cells they have, total mass, and their position.
-plugin [command] [name]       | Manage plugins. (Usage: **reload,list,delete,add,install,update,search**)
-pmsg [delay] [duration] [x to repeat] [msg1] [msg2] [etc...] | Periodically sends a message (seconds)
+plugin [command] [name]       | Manage plugins. (Usage: **reload, list, delete, add, install, update, search**)
+pmsg [delay] [duration] [x to repeat] [msg1] [msg2] [etc...] | Periodically sends a message *(in seconds)*
 spmsg                         | Stops pmsg
-quickrestart                  | Quickly restart your server. (**Does not restart, nor reduce memory**)
+quickrestart                  | Quickly restart your server. *(does not restart, nor reduce memory)*
 rainbow [id]                  | Gives a player a rainbow effect
-range [start] [end] [command] [flag] | Bulk commands, where **[flag]** is a command's arg. (Usage: **range 1 10 freeze**) freezes players 1-10(id)
-reload                        | Reloads the config file used by the server. However, some configs are not affected. (eg: serverPort, serverGamemode, serverBots, serverStatsPort, serverStatsUpdate, etc.)
+range [start] [end] [command] [flag] | Bulk commands, where **[flag]** is a command's arg. _(Usage: **range 1 10 freeze**)_ freezes players 1-10*(id)*
+reload                        | Reloads the config file used by the server. However, some configs are not affected. *(eg: serverPort, serverGamemode, serverBots, serverStatsPort, serverStatsUpdate, etc.)*
 reset                         | Destroys everything and start from scratch.
-resetvirus                    | Turns specials virusus (_From OP's_) into normal ones.
-restart [minutes]             | Restarts the server after a specific amount of minutes. (_Leave blank for instant restart_)
+resetvirus                    | Turns specials viruses *(from OP's)* into normal ones.
+restart [minutes]             | Restarts the server after a specific amount of minutes. *(leave blank for instant restart)*
 shrink [amount]               | Shrinks the game play space. _Amount is optional_
 spawnmass [id] [mass]         | Sets a player spawnmass. Default is (0)
 speed [id] [mass]             | Sets a player base speed. Default is (0)
-split [id] [count]            | Splits a player into [count] pieces.
-status                        | Shows the amount of players currently connected, time elapsed, memory usage (memory used/memory allocated), and the current gamemode.
-team [id] [team (r,g,b)]      | Changes a players team. (_You might have to split to see the changes though_)
+split [id] [count]            | Splits a player into **[count]** pieces.
+status                        | Shows the amount of players currently connected, time elapsed, memory usage *(memory used/memory allocated)*, and the current gamemode.
+team [id] [team (r,g,b)]      | Changes a players team. *(you might have to split to see the changes though)*
 tp [id] [x pos] [y pos]       | Teleports the specified player to the specified coordinates.
-troll [id]                    | You'll figure this one out. It's a suprise!.
+troll [id]                    | You'll figure this one out. It's a suprise!
 update  [all,botname,skin]    | Update to current/recent version & replace old with new.
-verify [command] [id]         | Verifies/Re-verifies a player. (Usage: **verify reverify 1** force 1 to verify again)
+verify [command] [id]         | Verifies/Re-verifies a player. _(Usage: **verify reverify 1** force 1 to verify again)_
 virus [x pos] [y pos] [mass]  | Spawns a virus cell at those coordinates. If a mass value is not specified, then the server will default to "virusStartMass" in the config.
 whitelist [ip]                | Whitelist an IP. Do **whitelist** only for a list of whitelisted IP
-unwhitelist [ip]              | Remove ip from whitelist
+unwhitelist [ip]              | Remove an IP from whitelist
 
 ## Contributing
-Just make a pull request or make your own fork.
+Just make a pull request or make your own copy.
 
 ### Things that I don't want you to copy *(copying it to your own file or fork)*
-**Anything else, if you improved it, you don't have to give us credit. Or else, if you just copied, you must give us credit**
-
 1. No-Lag antibot measures
 2. OP
 3. Minions
@@ -299,3 +297,5 @@ Just make a pull request or make your own fork.
 11. Language support system
 12. Tutorial system
 13. Quadrants
+
+**Anything else, if you improved it, you don't have to give us credit. Or else, if you just copied, you must give us credit**
