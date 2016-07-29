@@ -18,7 +18,7 @@ A fully functional open source Agar.io server implementation, written in Node.js
 - [Plugins](https://github.com/AJS-development/Ogar-unlimited#plugins)
  - [How can I get plugins? Is there any official library?](https://github.com/AJS-development/Ogar-unlimited#how-can-i-get-plugins-is-there-any-official-library)
  - [How do I use other plugins?](https://github.com/AJS-development/Ogar-unlimited#how-do-i-use-other-plugin)
- - [How do I create a plugin? Is there any documentation?](https://github.com/AJS-development/Ogar-unlimited#https://github.com/AJS-development/Ogar-unlimited#how-do-i-create-a-plugin-is-there-any-documentation)
+ - [How do I create a plugin? Is there any documentation?](https://github.com/AJS-development/Ogar-unlimited#how-do-i-create-a-plugin-is-there-any-documentation)
 - [Multiverse](https://github.com/AJS-development/Ogar-unlimited#multiverse)
 - [Minions](https://github.com/AJS-development/Ogar-unlimited#minions)
 - [Skin list and custom skins](https://github.com/AJS-development/Ogar-unlimited#skin-list-and-custom-skins)
