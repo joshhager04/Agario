@@ -97,7 +97,7 @@
 <taiwan>taiwan
 <texas>texas
 <thailand>thailand
-<tsarist russia>tsarist russia
+<tsarist_russia>tsarist russia
 <tumblr>tumblr
 <turkey>turkey
 <ukraine>ukraine
