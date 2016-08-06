@@ -85,10 +85,10 @@ A fully functional open source Agar.io server implementation, written in Node.js
 Please note that this is updated very frequently and you should check for updates every week. I added an update system but It needs to be initialized by you (because I don't think it is the right thing to do, updating without your consent). Also you may copy this and modify it just please give some credit to the hard working dev team, that is all I care. Another note is that I am sometimes terrible in my grammar (I still cannot spell potato out loud). If there is an issue, please notify me. If there is something you want in this, just make a pull request.
 
 ### DO NOT BUY OGAR UL!
-If you've purchased a copy of Ogar UL, **you just got scammed**. It is open source which means it's **FREE**. Yes, **FREE!** So if you paid any money, well, too bad.
+If you've purchased a copy of Ogar UL, **you've just been scammed**! Ogar UL is an open source project, which means it is **FREE**. Yes, **FREE!** So if you paid any money for it, well, too bad.
 
-### Do not get from other sources
-If you got OgarUL from anywhere besides github, **DELETE IT IMMEDIATLY!!!** Those might be bundled with **viruses and other things**. Remember, you are running this probably from `sudo`. **Get it from github only!**: https://github.com/AJS-development/Ogar-unlimited
+### Do not get Ogar UL from other sources
+If you got OgarUL from anywhere besides github, **YOU SHOULD DELETE IT IMMEDIATLY!!!** Those might be bundled with **viruses and other things**. Remember, you are running this probably from `sudo`. **Get it from github only!**: https://github.com/AJS-development/Ogar-unlimited
 
 ### Obtaining and Using
 As Ogar Unlimited is written in Node.js, you must have Node.js and its modules installed to use it. You can usually download Node using your distribution's package manager _(for *nix-like systems)_, or from the [**Node website**](http://nodejs.org) *(use version 5.9.0)*. To install the modules that is required, open up your system command line *(cmd for windows, terminal for mac)*, and simply type "**npm install**". If you are on windows, you could simply double click the `Install Dependencies (Windows).bat`. To see a detailed guide, go to the [Installation guide](https://github.com/AJS-development/Ogar-unlimited/wiki/Installation) in the wiki.
@@ -105,7 +105,7 @@ If you want to use agar.io site as your client, use [OgarUL-NoClient](https://gi
  **If you are getting an _EADDRINUSE_ error, it means that the port required to run Ogar UL is being used. Usually, Skype is the culprit. To solve this, either close out skype, or change the serverPort value in settings/advconfig.ini to a different port. You will have to change your IP connection to "127.0.0.1:PORT"**
 
 ### Configuring Ogar UL
-To control how your server is running, you can edit your settings to your own liking in `src/settings/`. If you don't want your config gets overwritten by the updates, you can copy the configs you want and paste it into `override.ini` *(where configs doesn't matter, either from "config.ini", "advConfig.ini" or "clientConfig.ini")*
+To control how your server is running, you can edit your settings to your own liking in `src/settings/`. If you don't want your config gets overwritten by the updates, you can copy the configs you want and paste it into `override.ini` *(where the configs come from doesn't matter, either from "config.ini", "advConfig.ini" or "clientConfig.ini")*
 
 ### Plugins
 #### How can I get plugins? Is there any official library?
@@ -139,14 +139,14 @@ T | Freezes the minion
 #### agar.io *(change `useER = 0` in config.ini)*
 Input | Description
 ----|----
-Q | Toggles control mode between you and your minion *(a letter "B" will appear next to your name, indicates that you are in "minion" mode)*
+Q | Toggles control mode between you and your minion *(a letter "B" will appear next to your name, indicates that you are in "minion" control mode)*
 Space | Splits the minion *(while in "minion" mode)*
 W | Makes minion to eject some mass *(while in "minion" mode)*
 You can disable minions by typing `minion [id]` in console, or do `minion destroy` and it will remove all minions in your server.
 
 ### Skin list and custom skins
 **Play.ogarul.tk**
-- Click "*Want skin list?*" located at the bottom. Then, you can choose the skin that you wanted. After that, type your name next to the `<skinname>`. *(eg: `<nuclear>Bomb` would give you a "nuclear" skin with the name of "Bomb")*
+- To see the default skins list, click "*Want skin list?*" located at the bottom left corner. Then, you can choose the skin that you wanted. After that, type your name next to the `<skinname>`. *(eg: `<nuclear>Bomb` would give you a "nuclear" skin with the name of "Bomb")*
 
 **Agar.io**
 - To use agar.io skins, type `<skinname>` and then type your name. For example `<spy>lol` will give you "spy" skin with name of "lol". You can also use a custom skin from a website by typing `[website_url]name` *(without typing `http://` or `https://`, you need to use a url shortener though)*
