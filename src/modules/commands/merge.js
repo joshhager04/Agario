@@ -1,65 +1,55 @@
 module.exports = function(gameServer, split) {
-  if (split[1] == "destroy") {
-    gameServer.destroym = true;
-    for (var i in gameServer.clients) {
-      if (gameServer.clients[i]) {
-        var client = gameServer.clients[i];
-        if (client.owner && !client.socket.remoteAddress) {
-          client.socket.close();
-        } else {
-
-          gameServer.clients[i].playerTracker.minioncontrol = false;
-        }
-
-      }
-    }
-    console.log("[Console] Succesfully destroyed all minions");
-    return;
-  }
+  // Validation checks
   var id = parseInt(split[1]);
-  var name = split[3];
-  var add = parseInt(split[2]);
-  gameServer.minion = true;
-
+  var set = split[2];
   if (isNaN(id)) {
-    console.log("[Console] Please specify a valid id!");
+    console.log("[Console] Please specify a valid player ID!");
     return;
   }
-  if (!name) {
-    name = "minion";
-  }
-
-  for (var i in gameServer.clients) {
-    if (gameServer.clients[i].playerTracker.pID == id) {
-      var client = gameServer.clients[i].playerTracker;
-      if (client.minioncontrol == true && isNaN(add)) {
-        client.minioncontrol = false;
-        client.mi = 0;
-        if (client.oldname) client.name = client.oldname;
-        if (client.name.length == 0) {
-          console.log("[Console] Succesfully removed minions for An unnamed cell");
-        } else {
-          console.log("[Console] Succesfully removed minions for " + client.name);
-        }
-      } else {
-
-        if (isNaN(add)) {
-          add = 1; // Adds 1 bot if user doesnt specify a number
-        }
-        gameServer.destroym = false;
-        gameServer.livestage = 2;
-        gameServer.liveticks = 0;
-        client.minioncontrol = true;
-        for (var i = 0; i < add; i++) {
-          gameServer.minions.addBot(client, name);
-        }
-        if (client.name.length == 0) {
-          console.log("[Console] Succesfully added " + add + " minions for An unnamed cell");
-        } else {
-          console.log("[Console] Succesfully added " + add + " minions for " + client.name);
-        }
-      }
+  // Find client with same ID as player entered
+  var client;
+  for (var i = 0; i < gameServer.clients.length; i++) {
+    if (id == gameServer.clients[i].playerTracker.pID) {
+      client = gameServer.clients[i].playerTracker;
       break;
     }
+  }
+  if (!client) {
+    console.log("[Console] That player is nonexistent!");
+    return;
+  }
+  if (client.cells.length == 1) {
+    console.log("[Console] That player already has one cell!");
+    return;
+  }
+  // Set client's merge override
+  var state;
+  if (set == "true") {
+    client.recombineinstant = true;
+    client.mergeOverride = true;
+    state = true;
+  } else if (set == "false") {
+    client.recombineinstant = false;
+    client.mergeOverride = false;
+    client.mergeOverrideDuration = 0;
+    state = false;
+  } else {
+    if (client.mergeOverride) {
+      client.mergeOverride = false;
+      client.recombineinstant = false;
+    } else {
+      client.mergeOverride = true;
+      client.recombineinstant = true;
+    }
+    state = client.mergeOverrideDuration;
+  }
+  // Log
+  if (state) {
+    console.log("[Console] Player " + client.name + " is no longer force merging");
+    client.recombineinstant = false;
+    return;
+  } else {
+    console.log("[Console] Player " + client.name + " is now force merging");
+    client.recombineinstant = true;
   }
 };
