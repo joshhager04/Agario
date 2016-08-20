@@ -31,7 +31,7 @@ cuba :http://agarioskins.com/img/skin/cuba.png
 denmark :http://agarioskins.com/img/skin/denmark.png
 doge :http://agarioskins.com/img/skin/doge.png
 ea :http://agarioskins.com/img/skin/ea.png
-earth :http://agarioskins.com/img/skin/earth.pnghttp://agarioskins.com/img/skin/estonia.png
+earth :http://agarioskins.com/img/skin/earth.png
 estonia :http://agarioskins.com/img/skin/estonia.png
 european_union :http://agarioskins.com/img/skin/european%20union.png
 facebook :http://agarioskins.com/img/skin/facebook.png
