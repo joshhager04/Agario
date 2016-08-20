@@ -5,7 +5,7 @@ ingameexample %spy
 origin :http://www.agarioguide.com/wp-content/uploads/2015/05/origin.png
 2ch.hk :http://i.stack.imgur.com/f2eBw.png
 4chan :http://i.stack.imgur.com/bg6QO.png
-8 :http://lh3.googleusercontent.com/-OcKOCW8oNDE/Vao91SJ4YYI/AAAAAAACJuk/Q6PNd9yKz38/s0/8-hd.pnghttp://i.stack.imgur.com/s360B.png
+8 :http://lh3.googleusercontent.com/-OcKOCW8oNDE/Vao91SJ4YYI/AAAAAAACJuk/Q6PNd9yKz38/s0/8-hd.png
 8ch :http://i.stack.imgur.com/s360B.png
 9gag :http://i.stack.imgur.com/fGt8t.png
 argentina :http://i.stack.imgur.com/XNp96.png
@@ -27,13 +27,13 @@ china :http://agarioskins.com/img/skin/china.png
 cia :http://agarioskins.com/img/skin/cia.png
 confederate :http://agarioskins.com/img/skin/confederate.png
 croatia :http://agarioskins.com/img/skin/croatia.png
-cuba :http://agarioskins.com/img/skin/cuba.pnghttp://agarioskins.com/img/skin/denmark.png
+cuba :http://agarioskins.com/img/skin/cuba.png
 denmark :http://agarioskins.com/img/skin/denmark.png
 doge :http://agarioskins.com/img/skin/doge.png
 ea :http://agarioskins.com/img/skin/ea.png
 earth :http://agarioskins.com/img/skin/earth.pnghttp://agarioskins.com/img/skin/estonia.png
 estonia :http://agarioskins.com/img/skin/estonia.png
-european_union :http://agarioskins.com/img/skin/european%20union.pnghttp://agarioskins.com/img/skin/facebook.png
+european_union :http://agarioskins.com/img/skin/european%20union.png
 facebook :http://agarioskins.com/img/skin/facebook.png
 facepunch :http://agarioskins.com/img/skin/facepunch.png
 feminism :http://agarioskins.com/img/skin/feminism.png
