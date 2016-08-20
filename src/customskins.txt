@@ -24,7 +24,7 @@ cambodia :http://agarioskins.com/img/skin/cambodia.png
 canada :http://agarioskins.com/img/skin/canada.png
 chile :http://agarioskins.com/img/skin/chile.png
 china :http://agarioskins.com/img/skin/china.png
-cia :http://agarioskins.com/img/skin/cia.pnghttp://agarioskins.com/img/skin/confederate.png
+cia :http://agarioskins.com/img/skin/cia.png
 confederate :http://agarioskins.com/img/skin/confederate.png
 croatia :http://agarioskins.com/img/skin/croatia.png
 cuba :http://agarioskins.com/img/skin/cuba.pnghttp://agarioskins.com/img/skin/denmark.png
