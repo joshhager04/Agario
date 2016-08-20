@@ -82,7 +82,7 @@
 <romania>romania
 <russia>russia
 <sanik>sanik
-<stanist>satanist
+<satanist>satanist
 <scotland>scotland
 <sealand>sealand
 <sir>sir
