@@ -1,7 +1,7 @@
 urlexample :http//:someurl
 ingameexample %spy
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Bots skins
+-> Bots skins
 origin :http://www.agarioguide.com/wp-content/uploads/2015/05/origin.png
 2ch.hk :http://i.stack.imgur.com/f2eBw.png
 4chan :http://i.stack.imgur.com/bg6QO.png
@@ -29,7 +29,7 @@ confederate :http://agarioskins.com/img/skin/confederate.png
 croatia :http://agarioskins.com/img/skin/croatia.png
 cuba :http://agarioskins.com/img/skin/cuba.pnghttp://agarioskins.com/img/skin/denmark.png
 denmark :http://agarioskins.com/img/skin/denmark.png
-doge :http://agarioskins.com/img/skin/doge.pnghttp://agarioskins.com/img/skin/ea.png
+doge :http://agarioskins.com/img/skin/doge.png
 ea :http://agarioskins.com/img/skin/ea.png
 earth :http://agarioskins.com/img/skin/earth.pnghttp://agarioskins.com/img/skin/estonia.png
 estonia :http://agarioskins.com/img/skin/estonia.png
@@ -112,7 +112,7 @@ vinesauce :http://agarioskins.com/img/skin/vinesauce.png
 wojak :http://vignette2.wikia.nocookie.net/agario/images/4/4d/Wojak.png/revision/latest?cb=20150625140550
 yaranaika :http://vignette4.wikia.nocookie.net/agario/images/2/20/Yaranaika.png/revision/latest?cb=20150701214900&path-prefix=pt-br
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Other skins
+-> Other skins
 darkspy :http://i.imgur.com/OZdYBGu.png
 maxrage :http://i.imgur.com/oAOUyY0.gif
 troll :http://openclipart.org/image/2400px/svg_to_png/130795/Trollface.png
