@@ -57,7 +57,7 @@
 <luxembourg>luxembourg
 <maldivas>maldivas
 <mars>mars
-<matriarch>matriarchy
+<matriarch>matriarch
 <mexico>mexico
 <moon>moon
 <nasa>nasa
