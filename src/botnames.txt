@@ -8,7 +8,7 @@
 <austria>austria
 <ayy_lmao>ayy lmao
 <bait>bait
-<blangadesh>bangladesh
+<bangadesh>bangadesh
 <belgium>belgium
 <bosnia>bosnia
 <botswana>botswana
