@@ -13,7 +13,7 @@ australia :http://i.stack.imgur.com/7ihy9.png
 austria : http://i.stack.imgur.com/Ph9nL.png
 ayy_lmao :http://agarioskins.com/img/skin/ayy%20lmao.png
 bait :http://agarioskins.com/img/skin/bait.png
-bangladesh :http://agarioskins.com/img/skin/bangladesh.png
+bangadesh :http://agarioskins.com/img/skin/bangladesh.png
 belgium :http://agarioskins.com/img/skin/belgium.png
 bosnia :http://agarioskins.com/img/skin/bosnia.png
 botswana :http://agario-skins.org/images/skins/bosnia.png?v0.10.5
