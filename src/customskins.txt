@@ -17,7 +17,7 @@ bangladesh :http://agarioskins.com/img/skin/bangladesh.png
 belgium :http://agarioskins.com/img/skin/belgium.png
 bosnia :http://agarioskins.com/img/skin/bosnia.png
 botswana :http://agario-skins.org/images/skins/bosnia.png?v0.10.5
-brazil :http://agarioskins.com/img/skin/brazil.pnghttp://agarioskins.com/img/skin/bulgaria.png
+brazil :http://agarioskins.com/img/skin/brazil.png
 bulgaria :http://agarioskins.com/img/skin/bulgaria.png
 byzantium :http://agarioskins.com/img/skin/byzantium.png
 cambodia :http://agarioskins.com/img/skin/cambodia.png
