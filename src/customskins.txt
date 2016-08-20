@@ -62,7 +62,7 @@ lithuania :http://agarioskins.com/img/skin/lithuania.png
 luxembourg :http://agarioskins.com/img/skin/luxembourg.png
 maldivas :http://agarioskins.com/img/skin/maldivas.png
 mars :http://agarioskins.com/img/skin/mars.png
-matriarchy :http://www.agarioguide.com/wp-content/uploads/2015/05/matriarchy.png
+matriarch :http://www.agarioguide.com/wp-content/uploads/2015/05/matriarchy.png
 mexico :https://optclean.com.br/wp-content/uploads/2015/08/mexico.png
 moon :http://agarioskins.com/img/skin/moon.png
 nasa :http://agarioskins.com/img/skin/nasa.png
