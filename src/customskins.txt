@@ -63,7 +63,7 @@ luxembourg :http://agarioskins.com/img/skin/luxembourg.png
 maldivas :http://agarioskins.com/img/skin/maldivas.png
 mars :http://agarioskins.com/img/skin/mars.png
 matriarch :http://www.agarioguide.com/wp-content/uploads/2015/05/matriarchy.png
-mexico :https://optclean.com.br/wp-content/uploads/2015/08/mexico.png
+mexico :http://optclean.com.br/wp-content/uploads/2015/08/mexico.png
 moon :http://agarioskins.com/img/skin/moon.png
 nasa :http://agarioskins.com/img/skin/nasa.png
 netherlands :http://agarioskins.com/img/skin/netherlands.png
@@ -134,7 +134,7 @@ bandaid :http://i.imgur.com/NVSei5G.png
 superman :http://i.imgur.com/2tRi2kI.png
 masterball :http://i.imgur.com/Bln2bbF.png
 chrome :http://i.imgur.com/f2gllMe.png
-transparent :https://i.imgsafe.org/7d52025.png
+transparent :http://i.imgsafe.org/7d52025.png
 zebra :http://i.imgur.com/0E1e8uO.png
 lenny :http://i.imgur.com/iD8GbLp.png
 creeper :http://i.imgur.com/29sSXCX.png
