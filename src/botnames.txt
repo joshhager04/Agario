@@ -101,7 +101,7 @@
 <tumblr>tumblr
 <turkey>turkey
 <ukraine>ukraine
-<unided_kingdom>united kingdom
+<united_kingdom>united kingdom
 <usa>usa
 <ussr>ussr
 <vinesauce>vinesauce
