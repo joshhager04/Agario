@@ -28,7 +28,7 @@
 <ea>ea
 <earth>earth
 <estonia>estonia
-<european_onion>european union
+<european_union>european union
 <facebook>facebook
 <facepunch>facepunch
 <feminism>feminism
