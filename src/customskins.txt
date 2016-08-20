@@ -1,11 +1,11 @@
 urlexample :http//:someurl
 ingameexample %spy
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Bots skins
+-> Bots skins
 origin :http://www.agarioguide.com/wp-content/uploads/2015/05/origin.png
 2ch.hk :http://i.stack.imgur.com/f2eBw.png
 4chan :http://i.stack.imgur.com/bg6QO.png
-8 :http://lh3.googleusercontent.com/-OcKOCW8oNDE/Vao91SJ4YYI/AAAAAAACJuk/Q6PNd9yKz38/s0/8-hd.pnghttp://i.stack.imgur.com/s360B.png
+8 :http://lh3.googleusercontent.com/-OcKOCW8oNDE/Vao91SJ4YYI/AAAAAAACJuk/Q6PNd9yKz38/s0/8-hd.png
 8ch :http://i.stack.imgur.com/s360B.png
 9gag :http://i.stack.imgur.com/fGt8t.png
 argentina :http://i.stack.imgur.com/XNp96.png
@@ -17,23 +17,23 @@ bangladesh :http://agarioskins.com/img/skin/bangladesh.png
 belgium :http://agarioskins.com/img/skin/belgium.png
 bosnia :http://agarioskins.com/img/skin/bosnia.png
 botswana :http://agario-skins.org/images/skins/bosnia.png?v0.10.5
-brazil :http://agarioskins.com/img/skin/brazil.pnghttp://agarioskins.com/img/skin/bulgaria.png
+brazil :http://agarioskins.com/img/skin/brazil.png
 bulgaria :http://agarioskins.com/img/skin/bulgaria.png
 byzantium :http://agarioskins.com/img/skin/byzantium.png
 cambodia :http://agarioskins.com/img/skin/cambodia.png
 canada :http://agarioskins.com/img/skin/canada.png
 chile :http://agarioskins.com/img/skin/chile.png
 china :http://agarioskins.com/img/skin/china.png
-cia :http://agarioskins.com/img/skin/cia.pnghttp://agarioskins.com/img/skin/confederate.png
+cia :http://agarioskins.com/img/skin/cia.png
 confederate :http://agarioskins.com/img/skin/confederate.png
 croatia :http://agarioskins.com/img/skin/croatia.png
-cuba :http://agarioskins.com/img/skin/cuba.pnghttp://agarioskins.com/img/skin/denmark.png
+cuba :http://agarioskins.com/img/skin/cuba.png
 denmark :http://agarioskins.com/img/skin/denmark.png
-doge :http://agarioskins.com/img/skin/doge.pnghttp://agarioskins.com/img/skin/ea.png
+doge :http://agarioskins.com/img/skin/doge.png
 ea :http://agarioskins.com/img/skin/ea.png
-earth :http://agarioskins.com/img/skin/earth.pnghttp://agarioskins.com/img/skin/estonia.png
+earth :http://agarioskins.com/img/skin/earth.png
 estonia :http://agarioskins.com/img/skin/estonia.png
-european_union :http://agarioskins.com/img/skin/european%20union.pnghttp://agarioskins.com/img/skin/facebook.png
+european_union :http://agarioskins.com/img/skin/european%20union.png
 facebook :http://agarioskins.com/img/skin/facebook.png
 facepunch :http://agarioskins.com/img/skin/facepunch.png
 feminism :http://agarioskins.com/img/skin/feminism.png
@@ -62,8 +62,8 @@ lithuania :http://agarioskins.com/img/skin/lithuania.png
 luxembourg :http://agarioskins.com/img/skin/luxembourg.png
 maldivas :http://agarioskins.com/img/skin/maldivas.png
 mars :http://agarioskins.com/img/skin/mars.png
-matriarchy :http://www.agarioguide.com/wp-content/uploads/2015/05/matriarchy.png
-mexico :https://optclean.com.br/wp-content/uploads/2015/08/mexico.png
+matriarch :http://www.agarioguide.com/wp-content/uploads/2015/05/matriarchy.png
+mexico :http://optclean.com.br/wp-content/uploads/2015/08/mexico.png
 moon :http://agarioskins.com/img/skin/moon.png
 nasa :http://agarioskins.com/img/skin/nasa.png
 netherlands :http://agarioskins.com/img/skin/netherlands.png
@@ -112,7 +112,7 @@ vinesauce :http://agarioskins.com/img/skin/vinesauce.png
 wojak :http://vignette2.wikia.nocookie.net/agario/images/4/4d/Wojak.png/revision/latest?cb=20150625140550
 yaranaika :http://vignette4.wikia.nocookie.net/agario/images/2/20/Yaranaika.png/revision/latest?cb=20150701214900&path-prefix=pt-br
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Other skins
+-> Other skins
 darkspy :http://i.imgur.com/OZdYBGu.png
 maxrage :http://i.imgur.com/oAOUyY0.gif
 troll :http://openclipart.org/image/2400px/svg_to_png/130795/Trollface.png
@@ -134,7 +134,7 @@ bandaid :http://i.imgur.com/NVSei5G.png
 superman :http://i.imgur.com/2tRi2kI.png
 masterball :http://i.imgur.com/Bln2bbF.png
 chrome :http://i.imgur.com/f2gllMe.png
-transparent :https://i.imgsafe.org/7d52025.png
+transparent :http://i.imgsafe.org/7d52025.png
 zebra :http://i.imgur.com/0E1e8uO.png
 lenny :http://i.imgur.com/iD8GbLp.png
 creeper :http://i.imgur.com/29sSXCX.png
@@ -177,5 +177,5 @@ atari :http://i.imgur.com/S89bzoM.png
 mortalcombat :http://i.imgur.com/iOtXDGS.png
 mario :http://i.imgur.com/I48HJEd.jpg
 luigi :http://i.imgur.com/Tac44Gm.jpg
-flames :https://cdn.discordapp.com/avatars/148931702201384960/6bee7dab159ecb996183b7c30956c54b.jpg
+flames :http://cdn.discordapp.com/avatars/148931702201384960/6bee7dab159ecb996183b7c30956c54b.jpg
 statue :http://agario-skins.org/images/skins/custom/statue.png?v0.10.2
